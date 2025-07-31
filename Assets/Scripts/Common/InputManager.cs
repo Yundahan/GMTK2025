@@ -6,7 +6,7 @@ public class InputManager : MonoBehaviour
 {
     private static InputManager instance;
 
-    private PlayerBehaviour player;
+    private PlayerMovement player;
 
     private void Awake()
     {
@@ -36,7 +36,7 @@ public class InputManager : MonoBehaviour
             player.SetMove(horizontalAxis);
 
             if(Mathf.RoundToInt(horizontalAxis) != 0) {
-                ShadowManager.Instance().SetLooping(true);
+                player.GetComponent<ShadowManager>().SetLooping(true);
             }
 
             if (Input.GetKeyDown(KeyCode.Space))
@@ -53,7 +53,7 @@ public class InputManager : MonoBehaviour
 
     private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
-        player = GameObject.FindFirstObjectByType<PlayerBehaviour>();
+        player = GameObject.FindFirstObjectByType<PlayerMovement>();
     }
 
     public static InputManager Instance()

@@ -10,7 +10,7 @@ public abstract class Interactable : MonoBehaviour
 
     protected virtual void Awake()
     {
-        player = FindFirstObjectByType<PlayerBehaviour>().gameObject;
+        player = FindFirstObjectByType<PlayerMovement>().gameObject;
     }
 
     void OnTriggerStay2D(Collider2D collision)
@@ -20,7 +20,7 @@ public abstract class Interactable : MonoBehaviour
             && Time.time - lastInteractionTime > cooldown)
         {
             Interact();
-            ShadowManager.Instance().RecordInteraction(this);
+            player.GetComponent<ShadowManager>().RecordInteraction(this);
             lastInteractionTime = Time.time;
         }
     }

@@ -2,7 +2,6 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using static UnityEditor.Experimental.GraphView.GraphView;
 
 public class BGMManager : MonoBehaviour
 {
@@ -17,18 +16,6 @@ public class BGMManager : MonoBehaviour
         };
 
     private BGMManager() {
-
-    }
-
-    private void shadowPlayLayers(string activeSceneName, int listlength)
-    {
-        for (int i = 1; i < listlength; i++)
-        {
-            AudioClip clip = Resources.Load<AudioClip>(sceneToBGMMapping[activeSceneName][i]);
-            bgmAudioSource[i].clip = clip;
-            bgmAudioSource[i].mute = true;
-            bgmAudioSource[i].Play();
-        }
 
     }
 
@@ -52,6 +39,18 @@ public class BGMManager : MonoBehaviour
         this.transform.position = Camera.main.transform.position;
     }
 
+    private void ShadowPlayLayers(string activeSceneName, int listlength)
+    {
+        for (int i = 1; i < listlength; i++)
+        {
+            AudioClip clip = Resources.Load<AudioClip>(sceneToBGMMapping[activeSceneName][i]);
+            bgmAudioSource[i].clip = clip;
+            bgmAudioSource[i].mute = true;
+            bgmAudioSource[i].Play();
+        }
+
+    }
+
     private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
         string activeSceneName = SceneLoader.Instance().GetActiveSceneName();
@@ -62,12 +61,12 @@ public class BGMManager : MonoBehaviour
                 AudioClip clip = Resources.Load<AudioClip>(sceneToBGMMapping[activeSceneName][0]);
                 bgmAudioSource[0].clip = clip;
                 bgmAudioSource[0].Play();
-                shadowPlayLayers(activeSceneName, sceneToBGMMapping[activeSceneName].Count);
+                ShadowPlayLayers(activeSceneName, sceneToBGMMapping[activeSceneName].Count);
             }
         }
         else
         {
-            muteShadowLayers();
+            MuteShadowLayers();
         }
     }
     
@@ -83,16 +82,6 @@ public class BGMManager : MonoBehaviour
         return bgmAudioSource[0].clip!= null && fileName == bgmAudioSource[0].clip.name;
     }
 
-    public static BGMManager Instance()
-    {
-        if (instance == null)
-        {
-            instance = new BGMManager();
-        }
-
-        return instance;
-    }
-
     public void ShadowSpawned(int shadowNumber)
     {
         if (shadowNumber < 0 || shadowNumber >= bgmAudioSource.Length)
@@ -102,7 +91,7 @@ public class BGMManager : MonoBehaviour
 
         bgmAudioSource[shadowNumber].mute = false;
     }
-    private void muteShadowLayers()
+    private void MuteShadowLayers()
     {
         string activeSceneName = SceneLoader.Instance().GetActiveSceneName();
 
@@ -111,12 +100,17 @@ public class BGMManager : MonoBehaviour
             AudioClip clip = Resources.Load<AudioClip>(sceneToBGMMapping[activeSceneName][i]);
             bgmAudioSource[i].clip = clip;
             bgmAudioSource[i].mute = true;
-          
         }
 
     }
 
+    public static BGMManager Instance()
+    {
+        if (instance == null)
+        {
+            instance = new BGMManager();
+        }
 
-
-    
+        return instance;
+    }
 }

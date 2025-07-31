@@ -8,7 +8,7 @@ public class Door : ToggleObject
     protected override void Awake()
     {
         base.Awake();
-        player = FindFirstObjectByType<PlayerBehaviour>().gameObject;
+        player = FindFirstObjectByType<PlayerMovement>().gameObject;
     }
 
     protected override void ToggleActions()
@@ -22,11 +22,11 @@ public class Door : ToggleObject
         }
     }
 
-    void OnTriggerEnter2D(Collider2D collision)
+    void OnTriggerStay2D(Collider2D collision)
     {
-        if (collision.gameObject == player)
+        if (active && collision.gameObject == player)
         {
-
+            Debug.Log("Tür ist offen und betreten");
         }
     }
 

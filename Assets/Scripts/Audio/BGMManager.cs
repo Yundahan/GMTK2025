@@ -1,20 +1,34 @@
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using static UnityEditor.Experimental.GraphView.GraphView;
 
 public class BGMManager : MonoBehaviour
 {
     private static BGMManager instance;
 
-    private AudioSource bgmAudioSource;
+    private AudioSource[] bgmAudioSource;
 
-    private Dictionary<string, string> sceneToBGMMapping = new Dictionary<string, string>
+    private Dictionary<string, List<string>> sceneToBGMMapping = new Dictionary<string, List<string>>
         {
-          {"Scene1", "Sound/AhriTheme" },
-          {"Scene2", "Sound/ACallToArmsTirionFordring"},
+          {"Scene2", new List<string> { "Sound/GTMK 2025 Testsoundtrack Layer1", "Sound/GTMK 2025 Testsoundtrack Layer2", "Sound/GTMK 2025 Testsoundtrack Layer3", "Sound/GTMK 2025 Testsoundtrack Layer4", "Sound/GTMK 2025 Testsoundtrack Layer5" } },
+          {"Scene1", new List<string> { "AdditionalCardPersonAdressType" } },
         };
 
     private BGMManager() {
+
+    }
+
+    private void shadowPlayLayers(string activeSceneName, int listlength)
+    {
+        for (int i = 1; i < listlength; i++)
+        {
+            AudioClip clip = Resources.Load<AudioClip>(sceneToBGMMapping[activeSceneName][i]);
+            bgmAudioSource[i].clip = clip;
+            bgmAudioSource[i].mute = true;
+            bgmAudioSource[i].Play();
+        }
 
     }
 
@@ -25,7 +39,7 @@ public class BGMManager : MonoBehaviour
             instance = this;
             DontDestroyOnLoad(gameObject);
             SceneManager.sceneLoaded += OnSceneLoaded;
-            bgmAudioSource = GetComponent<AudioSource>();
+            bgmAudioSource = GetComponents<AudioSource>();
         }
         else if (instance != this)
         {
@@ -42,29 +56,21 @@ public class BGMManager : MonoBehaviour
     {
         string activeSceneName = SceneLoader.Instance().GetActiveSceneName();
 
-        if (!IsTrackCurrentlyPlaying(sceneToBGMMapping[activeSceneName]))
+        if (!IsTrackCurrentlyPlaying(sceneToBGMMapping[activeSceneName][0]))
         {
-            AudioClip clip = Resources.Load<AudioClip>(sceneToBGMMapping[activeSceneName]);
-            bgmAudioSource.clip = clip;
-            bgmAudioSource.Play();
+            {
+                AudioClip clip = Resources.Load<AudioClip>(sceneToBGMMapping[activeSceneName][0]);
+                bgmAudioSource[0].clip = clip;
+                bgmAudioSource[0].Play();
+                shadowPlayLayers(activeSceneName, sceneToBGMMapping[activeSceneName].Count);
+            }
+        }
+        else
+        {
+            muteShadowLayers();
         }
     }
-
-    /// <summary>
-    /// Changes the stored BGM file for a scene. If the scene is currently loaded, the BGM will be changed accordingly.
-    /// </summary>
-    /// <param name="sceneName">Name of the scene.</param>
-    /// <param name="bgmFilePath">File path of the new BGM.</param>
-    public void SetBGMForScene(string sceneName, string bgmFilePath)
-    {
-        sceneToBGMMapping[sceneName] = bgmFilePath;
-
-        if (SceneLoader.Instance().GetActiveSceneName() == sceneName
-            && !IsTrackCurrentlyPlaying(bgmFilePath))
-        {
-            bgmAudioSource.clip = Resources.Load<AudioClip>(bgmFilePath);
-        }
-    }
+    
 
     /// <summary>
     /// Checks if the BGM from a given audio file is currently playing.
@@ -74,7 +80,7 @@ public class BGMManager : MonoBehaviour
     {
         string[] pathArray = bgmFilePath.Split('/');
         string fileName = pathArray[pathArray.Length - 1];
-        return bgmAudioSource.clip!= null && fileName == bgmAudioSource.clip.name;
+        return bgmAudioSource[0].clip!= null && fileName == bgmAudioSource[0].clip.name;
     }
 
     public static BGMManager Instance()
@@ -86,4 +92,26 @@ public class BGMManager : MonoBehaviour
 
         return instance;
     }
+
+    public void shadowSpawned(int shadowNumber)
+    {
+        bgmAudioSource[shadowNumber].mute = false;
+    }
+    private void muteShadowLayers()
+    {
+        string activeSceneName = SceneLoader.Instance().GetActiveSceneName();
+
+        for (int i = 1; i < bgmAudioSource.Length; i++)
+        {
+            AudioClip clip = Resources.Load<AudioClip>(sceneToBGMMapping[activeSceneName][i]);
+            bgmAudioSource[i].clip = clip;
+            bgmAudioSource[i].mute = true;
+          
+        }
+
+    }
+
+
+
+    
 }

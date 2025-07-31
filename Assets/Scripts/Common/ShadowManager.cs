@@ -10,6 +10,7 @@ public class ShadowManager : MonoBehaviour
     public GameObject playerShadow;
 
     public float loopTime = 5f;
+    public int maxShadows = 4;
 
     // time in seconds between points on the recorded path of a shadow
     private const float PATH_INTERVAL = 0.01f;
@@ -31,17 +32,18 @@ public class ShadowManager : MonoBehaviour
     {
         SetLooping(false);
         toggleObjectsInScene = FindObjectsByType<ToggleObject>(FindObjectsSortMode.None);
-        spawnPoint = transform.position;
+        spawnPoint = this.transform.position;
     }
 
     void Update()
     {
         if (looping)
         {
-            PerformInteractions();
+            PerformPreviousInteractions();
 
             if (Time.time - lastPositionTime > PATH_INTERVAL)
             {
+                playerPath.Add(this.transform.position);
                 MoveShadows();
             }
 
@@ -52,7 +54,7 @@ public class ShadowManager : MonoBehaviour
         }
     }
 
-    private void PerformInteractions()
+    private void PerformPreviousInteractions()
     {
         foreach (Interaction interaction in interactions)
         {
@@ -66,8 +68,6 @@ public class ShadowManager : MonoBehaviour
 
     private void MoveShadows()
     {
-        playerPath.Add(GetComponent<PlayerMovement>().gameObject.transform.position);
-
         foreach (ShadowMovement shadowMovement in shadows)
         {
             shadowMovement.ContinueOnPath(pathPosition);
@@ -81,6 +81,7 @@ public class ShadowManager : MonoBehaviour
     {
         GetComponent<PlayerMovement>().Reset();
 
+        // Reset old shadows and interactions
         foreach (ShadowMovement oldShadow in shadows)
         {
             oldShadow.Reset();
@@ -97,7 +98,30 @@ public class ShadowManager : MonoBehaviour
             toggleObject.Reset();
         }
 
-        // Add shadows
+        AddNewShadow();
+
+        if (shadows.Count > maxShadows)
+        {
+            ShadowMovement oldestShadow = shadows[0];
+            interactions.RemoveAll(interaction => interaction.GetShadow() == oldestShadow);
+            shadows.RemoveAt(0);
+            Destroy(oldestShadow.gameObject);
+        }
+
+        // Add interactions from current cycle to complete list
+        interactions.AddRange(currentInteractions);
+        currentInteractions.Clear();
+
+        // Update BGM, reset values
+        BGMManager.Instance().ShadowSpawned(shadows.Count);
+        playerPath = new();
+        pathPosition = 0;
+        loopStartTime = Time.time;
+    }
+
+    private void AddNewShadow()
+    {
+        // Add new shadow
         GameObject newShadow = Instantiate(this.playerShadow, this.spawnPoint, Quaternion.identity);
         ShadowMovement newShadowMovement = newShadow.GetComponent<ShadowMovement>();
         newShadowMovement.SetSpawnPoint(spawnPoint);
@@ -109,15 +133,6 @@ public class ShadowManager : MonoBehaviour
         {
             interaction.SetShadow(newShadowMovement);
         }
-
-        // Add interactions from current cycle to complete list
-        interactions.AddRange(currentInteractions);
-        currentInteractions.Clear();
-
-        BGMManager.Instance().ShadowSpawned(shadows.Count);
-        playerPath = new();
-        pathPosition = 0;
-        loopStartTime = Time.time;
     }
 
     public void RecordInteraction(Interactable interactable)

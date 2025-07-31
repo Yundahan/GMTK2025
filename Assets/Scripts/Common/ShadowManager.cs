@@ -108,10 +108,6 @@ public class ShadowManager : MonoBehaviour
             Destroy(oldestShadow.gameObject);
         }
 
-        // Add interactions from current cycle to complete list
-        interactions.AddRange(currentInteractions);
-        currentInteractions.Clear();
-
         // Update BGM, reset values
         BGMManager.Instance().ShadowSpawned(shadows.Count);
         playerPath = new();
@@ -133,6 +129,10 @@ public class ShadowManager : MonoBehaviour
         {
             interaction.SetShadow(newShadowMovement);
         }
+
+        // Add interactions from current cycle to complete list
+        interactions.AddRange(currentInteractions);
+        currentInteractions.Clear();
     }
 
     public void RecordInteraction(Interactable interactable)

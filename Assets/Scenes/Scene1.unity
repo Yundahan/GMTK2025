@@ -423,8 +423,8 @@ Transform:
   - {fileID: 400060134}
   - {fileID: 795085999}
   - {fileID: 418597543}
-  - {fileID: 1855640533}
   - {fileID: 1758199156}
+  - {fileID: 1855640533}
   - {fileID: 1165455657}
   - {fileID: 182450812}
   m_Father: {fileID: 0}
@@ -1673,7 +1673,7 @@ GameObject:
   - component: {fileID: 1855640535}
   - component: {fileID: 1855640534}
   m_Layer: 6
-  m_Name: wall
+  m_Name: Wall
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

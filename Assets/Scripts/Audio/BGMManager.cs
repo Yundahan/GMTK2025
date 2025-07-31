@@ -93,8 +93,13 @@ public class BGMManager : MonoBehaviour
         return instance;
     }
 
-    public void shadowSpawned(int shadowNumber)
+    public void ShadowSpawned(int shadowNumber)
     {
+        if (shadowNumber < 0 || shadowNumber >= bgmAudioSource.Length)
+        {
+            return;
+        }
+
         bgmAudioSource[shadowNumber].mute = false;
     }
     private void muteShadowLayers()

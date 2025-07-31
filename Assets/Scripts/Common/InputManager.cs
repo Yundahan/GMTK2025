@@ -46,6 +46,11 @@ public class InputManager : MonoBehaviour
         }
     }
 
+    public bool IsPlayerInteracting()
+    {
+        return Input.GetKey(KeyCode.E);
+    }
+
     private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
         player = GameObject.FindFirstObjectByType<PlayerBehaviour>();

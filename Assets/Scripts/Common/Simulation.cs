@@ -8,6 +8,8 @@ public class Simulation
     // This is a variable that persists even when the scene changes.
     private int eCount = 0;
 
+    private bool simulating = true;
+
     private Simulation()
     {
 
@@ -25,7 +27,16 @@ public class Simulation
     /// </summary>
     public void ToggleSimulation()
     {
+        simulating = !simulating;
         Time.timeScale = 1f -Time.timeScale;
+    }
+
+    /// <summary>
+    /// Returns whether the simulation is currently running or paused.
+    /// </summary>
+    public bool IsSimulating()
+    {
+        return simulating;
     }
 
     /// <summary>

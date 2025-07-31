@@ -8,8 +8,6 @@ public class InputManager : MonoBehaviour
 
     private PlayerBehaviour player;
 
-    string guid = null;
-
     private void Awake()
     {
         if (instance == null)
@@ -26,34 +24,25 @@ public class InputManager : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.E))
-        {
-            Debug.Log(Simulation.Instance().IncreaseECount());
-        }
         if (Input.GetKeyDown(KeyCode.Escape))
         {
             FindFirstObjectByType<UIManager>().ToggleMenu();
             Simulation.Instance().ToggleSimulation();
         }
-        if (Input.GetKeyDown(KeyCode.X))
-        {
-            guid = FindFirstObjectByType<UIManager>().ShowTextInGameGUI(new Vector2(0f, 1f), new Vector2(250f, -120f), "hier ist ein text");
-        }
-        if (Input.GetKeyDown(KeyCode.C))
-        {
-            FindFirstObjectByType<UIManager>().RemoveTextInGameGUI(guid);
-        }
-        if (Input.GetKeyDown(KeyCode.V))
-        {
-            FindFirstObjectByType<UIManager>().RemoveAllTextsInGameGUI();
-        }
 
-        if (player != null)
+        if (player != null && Simulation.Instance().IsSimulating())
         {
             float horizontalAxis = Input.GetAxisRaw("Horizontal");
-            float verticalAxis = Input.GetAxisRaw("Vertical");
+            player.SetMove(horizontalAxis);
 
-            player.Move(Mathf.RoundToInt(horizontalAxis), Mathf.RoundToInt(verticalAxis));
+            if(Mathf.RoundToInt(horizontalAxis) != 0) {
+                ShadowManager.Instance().SetLooping(true);
+            }
+
+            if (Input.GetKeyDown(KeyCode.Space))
+            {
+                player.Jump();
+            }
         }
     }
 

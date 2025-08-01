@@ -64,7 +64,7 @@ public class BGMManager : MonoBehaviour
                 AudioClip clip = Resources.Load<AudioClip>(sceneToBGMMapping[activeSceneName][0]);
                 bgmAudioSource[0].clip = clip;
                 bgmAudioSource[0].Play();
-                ShadowPlayLayers(activeSceneName, sceneToBGMMapping[activeSceneName].Count);
+                ShadowPlayLayers(activeSceneName, sceneToBGMMapping[activeSceneName].Count-1);
             }
         }
         else

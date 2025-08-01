@@ -110,6 +110,7 @@ public class Key : Interactable
         rigidBody.linearVelocity = Vector2.zero;
         rigidBody.angularVelocity = 0f;
         this.transform.position = this.keySpawnPoint;
+        this.interacter = null;
     }
 
     public Vector2 GetThrowingDirection()

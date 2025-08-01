@@ -12,13 +12,15 @@ public class Door : ToggleObject
 
     private SFXManager sfxManager;
 
+    private Key[] allKeys;
+
 
     protected override void Awake()
     {
         base.Awake();
         player = FindFirstObjectByType<PlayerMovement>().gameObject;
         sfxManager = FindFirstObjectByType<SFXManager>();
-
+        allKeys = FindObjectsByType<Key>(FindObjectsSortMode.None);
         animator = GetComponent<Animator>();
     }
 
@@ -37,7 +39,7 @@ public class Door : ToggleObject
 
     void OnTriggerStay2D(Collider2D collision)
     {
-        if (active && collision.gameObject == player)
+        if (active && collision.gameObject == player && AllKeysCollected())
         {
             Debug.Log("Tür ist offen und betreten");
 
@@ -47,10 +49,23 @@ public class Door : ToggleObject
         }
     }
 
+    private bool AllKeysCollected()
+    {
+        foreach (Key key in allKeys)
+        {
+            if (!key.IsInPlayerHand())
+            {
+                return false;
+            }
+        }
+
+        return true;
+
+    }
+
     public override void Reset()
     {
         base.Reset();
         GetComponent<SpriteRenderer>().color = Color.red;
     }
-
 }

@@ -38,6 +38,7 @@ public class LoopManager : MonoBehaviour
 
             if (!loopEndSoundPlayed && Time.time - loopStartTime > loopTime - loopEndSoundPredelay)
             {
+                BGMManager.Instance().ShadowSpawned(shadows.Count);
                 SFXManager.Instance().PlaySFX("Loop");
                 loopEndSoundPlayed = true;
             }
@@ -85,7 +86,6 @@ public class LoopManager : MonoBehaviour
         }
 
         // Update BGM, reset loopStartTime
-        BGMManager.Instance().ShadowSpawned(shadows.Count);
         loopEndSoundPlayed = false;
         loopStartTime = Time.time;
     }

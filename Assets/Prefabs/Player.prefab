@@ -132,9 +132,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1b77e6f6d9d41f145b92d753d5e57767, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerShadow: {fileID: 5935097887000629168, guid: 2f4a740d1242e654289b656a5d48d365, type: 3}
-  loopTime: 5
-  maxShadows: 4
 --- !u!114 &2310291948227641806
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -147,6 +144,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8038c13b14a5e394b8a4e30bfab0ac56, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerShadow: {fileID: 5935097887000629168, guid: 2f4a740d1242e654289b656a5d48d365, type: 3}
+  loopTime: 5
+  maxShadows: 4
 --- !u!61 &6558504314466615844
 BoxCollider2D:
   m_ObjectHideFlags: 0

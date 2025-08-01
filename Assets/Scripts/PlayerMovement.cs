@@ -133,6 +133,11 @@ public class PlayerMovement : MonoBehaviour
         return spawnPoint;
     }
 
+    public Collider2D GetFeet()
+    {
+        return feetCollider;
+    }
+
     public void Reset()
     {
         this.transform.position = spawnPoint;

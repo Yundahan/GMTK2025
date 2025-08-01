@@ -1,27 +1,17 @@
 using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
 
 public class ShadowMovement : MonoBehaviour
 {
     private Vector2 spawnPoint;
     private List<Vector2> path;
+    public Animator animator;
 
     public void ContinueOnPath(int newPathPosition)
     {
         if (newPathPosition < 0 || newPathPosition >= path.Count)
         {
             return;
-        }
-
-        float deltaX = path[newPathPosition].x - this.transform.position.x;
-
-        if (deltaX < 0)
-        {
-            GetComponent<SpriteRenderer>().flipX = true;
-        } else if (deltaX > 0)
-        {
-            GetComponent<SpriteRenderer>().flipX = false;
         }
 
         this.transform.position = path[newPathPosition];

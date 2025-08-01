@@ -8,8 +8,27 @@ public class UIManager : MonoBehaviour
     public GameObject uiMessage;
     public GameObject gameUI;
     public GameObject menuUI;
+    public GameObject zeigerParent;
 
     private Dictionary<string, GameObject> currentTextsInGameGUI = new Dictionary<string, GameObject>();
+    private LoopManager loopManager;
+    private float zeigerAngle = 0f;
+    private float angularSpeed;
+
+    void Awake()
+    {
+        loopManager = FindFirstObjectByType<LoopManager>();
+        angularSpeed = 360f / loopManager.GetLoopDuration();
+    }
+
+    void Update()
+    {
+        if (loopManager.GetLooping())
+        {
+            zeigerAngle -= angularSpeed * Time.deltaTime;
+            zeigerParent.transform.rotation = Quaternion.Euler(new Vector3(0, 0, zeigerAngle));
+        }
+    }
 
     public void ToggleMenu()
     {
@@ -63,5 +82,11 @@ public class UIManager : MonoBehaviour
         }
 
         currentTextsInGameGUI.Clear();
+    }
+
+    public void Reset()
+    {
+        zeigerAngle = 0f;
+        zeigerParent.transform.rotation = Quaternion.Euler(new Vector3(0, 0, 0));
     }
 }

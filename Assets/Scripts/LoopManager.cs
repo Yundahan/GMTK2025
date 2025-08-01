@@ -6,7 +6,7 @@ public class LoopManager : MonoBehaviour
     // PlayerShadow prefab for instantiating of new shadows
     public GameObject playerShadow;
 
-    public float loopTime = 5f;
+    public float loopDuration = 5f;
     public int maxShadows = 4;
 
     // interactions from the current cycle, not yet to be repeated
@@ -16,6 +16,7 @@ public class LoopManager : MonoBehaviour
     // list of interactions that can't be repeated anymore
     private List<Interaction> deleteInteractions = new();
 
+    private UIManager uiManager;
     private List<GameObject> shadows = new();
     private ToggleObject[] toggleObjectsInScene;
     private bool looping = false;
@@ -28,6 +29,7 @@ public class LoopManager : MonoBehaviour
     private void Awake()
     {
         SetLooping(false);
+        uiManager = FindFirstObjectByType<UIManager>();
         toggleObjectsInScene = FindObjectsByType<ToggleObject>(FindObjectsSortMode.None);
     }
 
@@ -39,14 +41,14 @@ public class LoopManager : MonoBehaviour
             PerformPreviousInteractions();
             GetComponent<PlayerActions>().PerformPreviousActions(loopStartTime);
 
-            if (!loopEndSoundPlayed && Time.time - loopStartTime > loopTime - loopEndSoundPredelay)
+            if (!loopEndSoundPlayed && Time.time - loopStartTime > loopDuration - loopEndSoundPredelay)
             {
                 BGMManager.Instance().ShadowSpawned(shadows.Count + 1);
                 SFXManager.Instance().PlaySFX("Loop");
                 loopEndSoundPlayed = true;
             }
 
-            if (Time.time - loopStartTime > loopTime)
+            if (Time.time - loopStartTime > loopDuration)
             {
                 EndLoop();
             }
@@ -108,7 +110,8 @@ public class LoopManager : MonoBehaviour
             Destroy(oldestShadow.gameObject);
         }
 
-        // Update BGM, reset loopStartTime
+        // Update UI, reset loopStartTime
+        this.uiManager.Reset();
         loopEndSoundPlayed = false;
         loopStartTime = Time.time;
     }
@@ -170,5 +173,10 @@ public class LoopManager : MonoBehaviour
     public List<GameObject> GetShadows()
     {
         return shadows;
+    }
+
+    public float GetLoopDuration()
+    {
+        return loopDuration;
     }
 }

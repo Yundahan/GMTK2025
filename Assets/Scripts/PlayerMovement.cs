@@ -17,6 +17,8 @@ public class PlayerMovement : MonoBehaviour
     private List<Collider2D> groundColliders = new();
     private Rigidbody2D rigidBody;
 
+    public Animator animator;
+
     private Vector3 velocity = Vector3.zero;
     private Vector2 spawnPoint;
     // The direction in which the character moves, 0 if no movement
@@ -26,6 +28,7 @@ public class PlayerMovement : MonoBehaviour
     {
         rigidBody = GetComponent<Rigidbody2D>();
         spawnPoint = transform.position;
+        animator = GetComponent<Animator>();
 
         foreach (Collider2D collider2D in FindObjectsByType<Collider2D>(FindObjectsSortMode.None))
         {
@@ -45,6 +48,7 @@ public class PlayerMovement : MonoBehaviour
         float xSpeed = GetComponent<PlayerActions>().GetJumpBoosting() ? 0f : SPEED * horizontalAxis;
         Vector3 targetVelocity = new Vector3(xSpeed, rigidBody.linearVelocity.y, 0);
         rigidBody.linearVelocity = Vector3.SmoothDamp(rigidBody.linearVelocity, targetVelocity, ref velocity, IsGrounded() ? SMOOTHING : AIR_SMOOTHING);
+
     }
 
     public void SetMove(float value)
@@ -59,10 +63,17 @@ public class PlayerMovement : MonoBehaviour
             return;
         }
 
+        if (Input.GetKeyDown(KeyCode.W)) 
+
+            animator.SetBool("isJumping", true);
+        else
+            animator.SetBool("isJumping", false);
+
         if (TouchesJumpBoostingShadow())
         {
             GetComponent<Rigidbody2D>().AddForce(new Vector3(0, BOOSTED_JUMP_FORCE, 0));
-        } else if (IsGrounded())
+        }
+        else if (IsGrounded())
         {
             GetComponent<Rigidbody2D>().AddForce(new Vector3(0, JUMP_FORCE, 0));
         }

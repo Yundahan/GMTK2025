@@ -40,10 +40,7 @@ public class Door : ToggleObject
 
             portalShine.SetActive(true);
             animator.SetBool("isClosing", true);
-        } else
-        {
-            animator.SetBool("isClosing", false);
-        }
+        } 
     }
 
     private bool AllKeysCollected()

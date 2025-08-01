@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: b0ae712d7b07bce4bb54681a8e05b3b2
+guid: d33e300de46874146848df83269d2789
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 3714173391968149924
-    second: Frontal_Arm_rechts_0
+      213: 4397731641430804692
+    second: Frontal_Bein_links_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Frontal_Arm_rechts_0
+      name: Frontal_Bein_links_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 519
-        height: 667
+        x: 190
+        y: 3
+        width: 68
+        height: 195
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 4a1287e75056b8330800000000000000
-      internalID: 3714173391968149924
+      spriteID: 4d88af0b0a1e70d30800000000000000
+      internalID: 4397731641430804692
       vertices: []
       indices: 
       edges: []
@@ -135,7 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Frontal_Arm_rechts_0: 3714173391968149924
+      Frontal_Bein_links_0: 4397731641430804692
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.InteropServices.WindowsRuntime;
 using Unity.VisualScripting;
 using UnityEngine;
 
@@ -41,6 +42,16 @@ public class PlayerMovement : MonoBehaviour
     void FixedUpdate()
     {
         Move(move);
+        if (rigidBody.linearVelocity.y < 0 && !IsGrounded())
+        {
+            animator.SetBool("isFalling", true);
+        }
+        else
+        {
+            animator.SetBool("isFalling", false);
+
+        }
+
     }
 
     public void Move(float horizontalAxis)
@@ -49,6 +60,14 @@ public class PlayerMovement : MonoBehaviour
         Vector3 targetVelocity = new Vector3(xSpeed, rigidBody.linearVelocity.y, 0);
         rigidBody.linearVelocity = Vector3.SmoothDamp(rigidBody.linearVelocity, targetVelocity, ref velocity, IsGrounded() ? SMOOTHING : AIR_SMOOTHING);
 
+        if (horizontalAxis != 0)
+        {
+            animator.SetBool("isRunning", true);
+        }
+        else
+        {
+            animator.SetBool("isRunning", false);
+        }
     }
 
     public void SetMove(float value)
@@ -63,7 +82,7 @@ public class PlayerMovement : MonoBehaviour
             return;
         }
 
-        if (Input.GetKeyDown(KeyCode.W)) 
+        if (Input.GetKeyDown(KeyCode.Space)) 
 
             animator.SetBool("isJumping", true);
         else

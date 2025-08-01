@@ -3,7 +3,7 @@ using UnityEngine;
 using System.Collections.Generic;
 using UnityEngine.UI;
 
-public class PlayerActions : MonoBehaviour
+public class PlayerActions : Interacter
 {
     private bool jumpBoosting = false;
     // actions from the current cycle, not yet to be repeated

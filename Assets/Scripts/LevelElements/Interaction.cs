@@ -6,8 +6,11 @@ public class Interaction
 {
     private Interactable interactable;
     private float time;
-    private GameObject shadow;
+    private GameObject interacter;
     private bool done;
+
+    // Property used for the throwing of keys only
+    private Vector2 throwingDirection;
 
     public Interactable GetInteractable()
     {
@@ -29,14 +32,14 @@ public class Interaction
         this.time = value;
     }
 
-    public GameObject GetShadow()
+    public GameObject GetInteracter()
     {
-        return shadow;
+        return interacter;
     }
 
-    public void SetShadow(GameObject value)
+    public void SetInteracter(GameObject value)
     {
-        this.shadow = value;
+        this.interacter = value;
     }
 
     public bool GetDone()
@@ -47,5 +50,15 @@ public class Interaction
     public void SetDone(bool value)
     {
         this.done = value;
+    }
+
+    public Vector2 GetThrowingDirection()
+    {
+        return throwingDirection;
+    }
+
+    public void SetThrowingDirection(Vector2 value)
+    {
+        this.throwingDirection = value;
     }
 }

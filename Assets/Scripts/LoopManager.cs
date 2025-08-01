@@ -55,7 +55,7 @@ public class LoopManager : MonoBehaviour
         {
             if (!interaction.GetDone() && Time.time - loopStartTime > interaction.GetTime())
             {
-                interaction.GetInteractable().Interact();
+                interaction.GetInteractable().Interact(interaction);
                 interaction.SetDone(true);
             }
         }
@@ -64,12 +64,6 @@ public class LoopManager : MonoBehaviour
     private void EndLoop()
     {
         GetComponent<PlayerMovement>().Reset();
-
-        foreach (Interaction interaction in interactions)
-        {
-            interaction.SetDone(false);
-            interaction.GetInteractable().Reset();
-        }
 
         foreach (ToggleObject toggleObject in toggleObjectsInScene)
         {
@@ -84,7 +78,7 @@ public class LoopManager : MonoBehaviour
         if (shadows.Count > maxShadows)
         {
             GameObject oldestShadow = shadows[0];
-            interactions.RemoveAll(interaction => interaction.GetShadow() == oldestShadow);
+            interactions.RemoveAll(interaction => interaction.GetInteracter() == oldestShadow);
             GetComponent<PlayerActions>().GetRecordedActions().RemoveAll(action => action.GetShadow() == oldestShadow.GetComponent<ShadowActions>());
             shadows.RemoveAt(0);
             Destroy(oldestShadow.gameObject);
@@ -104,22 +98,28 @@ public class LoopManager : MonoBehaviour
         // Add new shadow to current cycle interactions
         foreach (Interaction interaction in currentInteractions)
         {
-            interaction.SetShadow(newShadow);
+            interaction.SetInteracter(newShadow);
         }
 
         // Add interactions from current cycle to complete list
         interactions.AddRange(currentInteractions);
         currentInteractions.Clear();
 
+        foreach (Interaction interaction in interactions)
+        {
+            interaction.SetDone(false);
+            interaction.GetInteractable().Reset();
+        }
+
         return newShadow;
     }
 
-    public void RecordInteraction(Interactable interactable)
+    public Interaction RecordInteraction(Interaction interaction)
     {
-        Interaction interaction = new Interaction();
-        interaction.SetInteractable(interactable);
         interaction.SetTime(Time.time - loopStartTime);
+        interaction.SetInteracter(this.gameObject);
         currentInteractions.Add(interaction);
+        return interaction;
     }
 
     public void SetLooping(bool value)

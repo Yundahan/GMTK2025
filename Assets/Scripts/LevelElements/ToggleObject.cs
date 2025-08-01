@@ -4,7 +4,7 @@ public abstract class ToggleObject : MonoBehaviour
 {
     public bool active = false;
 
-    private bool initValue = false;
+    protected bool initValue = false;
 
     protected virtual void Awake()
     {

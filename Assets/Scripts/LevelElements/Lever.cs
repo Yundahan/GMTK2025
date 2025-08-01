@@ -5,7 +5,7 @@ public class Lever : Interactable
 {
     public List<ToggleObject> toggleObjects;
 
-    public override void Interact()
+    public override void Interact(Interaction interaction)
     {
         foreach (ToggleObject toggleObject in toggleObjects)
         {

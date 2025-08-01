@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class ShadowActions : MonoBehaviour
+public class ShadowActions : Interacter
 {
     private bool jumpBoosting = false;
 

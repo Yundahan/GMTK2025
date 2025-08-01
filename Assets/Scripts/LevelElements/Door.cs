@@ -47,10 +47,10 @@ public class Door : ToggleObject
             animator.SetBool("isClosing", true);
 
           
-        } else
-        {
-            animator.SetBool("isClosing", false);
-        }
+        } return;
+        
+           
+        
     }
 
     public override void Reset()

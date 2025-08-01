@@ -13,6 +13,8 @@ public class LoopManager : MonoBehaviour
     private List<Interaction> currentInteractions = new();
     // interactions from previous cycles that are being repeated
     private List<Interaction> interactions = new();
+    // list of interactions that can't be repeated anymore
+    private List<Interaction> deleteInteractions = new();
 
     private List<GameObject> shadows = new();
     private ToggleObject[] toggleObjectsInScene;
@@ -33,6 +35,7 @@ public class LoopManager : MonoBehaviour
     {
         if (looping)
         {
+            DeleteInteractionsFromList();
             PerformPreviousInteractions();
             GetComponent<PlayerActions>().PerformPreviousActions(loopStartTime);
 
@@ -52,14 +55,34 @@ public class LoopManager : MonoBehaviour
 
     private void PerformPreviousInteractions()
     {
-        foreach (Interaction interaction in interactions)
+        // Attempt all interactions and remove those that failed to execute
+        interactions.RemoveAll(interaction => !AttemptInteraction(interaction));
+    }
+
+    private void DeleteInteractionsFromList()
+    {
+        foreach (Interaction interaction in deleteInteractions)
         {
-            if (!interaction.GetDone() && Time.time - loopStartTime > interaction.GetTime())
-            {
-                interaction.GetInteractable().Interact(interaction);
-                interaction.SetDone(true);
-            }
+            interactions.Remove(interaction);
         }
+
+        deleteInteractions.Clear();
+    }
+
+    public void AddInteractionToDeletionList(Interaction interaction)
+    {
+        deleteInteractions.Add(interaction);
+    }
+
+    private bool AttemptInteraction(Interaction interaction)
+    {
+        if (!interaction.GetDone() && Time.time - loopStartTime > interaction.GetTime())
+        {
+            interaction.SetDone(true);
+            return interaction.GetInteractable().Interact(interaction);
+        }
+
+        return true;
     }
 
     private void EndLoop()

@@ -14,14 +14,14 @@ public class Lever : Interactable
     }
 
     
-    public override void Interact(Interaction interaction)
+    public override bool Interact(Interaction interaction)
     {
         foreach (ToggleObject toggleObject in toggleObjects)
         {
             toggleObject.Toggle();
         }
-        sfxManager.PlaySFX("Lever");
-    }
-    
 
+        sfxManager.PlaySFX("Lever");
+        return true;
+    }
 }

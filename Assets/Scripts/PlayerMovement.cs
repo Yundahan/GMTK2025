@@ -12,6 +12,7 @@ public class PlayerMovement : MonoBehaviour
     private const float JUMP_FORCE = 150f;
     private const float BOOSTED_JUMP_FORCE = 180f;
     private const float SMOOTHING = 0.1f;
+    private const float AIR_SMOOTHING = 0.2f;
 
     private List<Collider2D> groundColliders = new();
     private Rigidbody2D rigidBody;
@@ -41,9 +42,9 @@ public class PlayerMovement : MonoBehaviour
 
     public void Move(float horizontalAxis)
     {
-        float xSpeed = SPEED * horizontalAxis;
+        float xSpeed = GetComponent<PlayerActions>().GetJumpBoosting() ? 0f : SPEED * horizontalAxis;
         Vector3 targetVelocity = new Vector3(xSpeed, rigidBody.linearVelocity.y, 0);
-        rigidBody.linearVelocity = Vector3.SmoothDamp(rigidBody.linearVelocity, targetVelocity, ref velocity, SMOOTHING);
+        rigidBody.linearVelocity = Vector3.SmoothDamp(rigidBody.linearVelocity, targetVelocity, ref velocity, IsGrounded() ? SMOOTHING : AIR_SMOOTHING);
     }
 
     public void SetMove(float value)
@@ -53,6 +54,11 @@ public class PlayerMovement : MonoBehaviour
 
     public void Jump()
     {
+        if (GetComponent<PlayerActions>().GetJumpBoosting())
+        {
+            return;
+        }
+
         if (TouchesJumpBoostingShadow())
         {
             GetComponent<Rigidbody2D>().AddForce(new Vector3(0, BOOSTED_JUMP_FORCE, 0));

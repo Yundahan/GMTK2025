@@ -9,11 +9,6 @@ public class SFXManager : MonoBehaviour
 
     private AudioSource[] sfxAudioSource;
 
-   
-    private SFXManager() {
-
-    }
-
     private Dictionary<string, string> sfxDict = new Dictionary<string, string>
     {
         {"Lever", "Sound/SFX/SFX_Lever" },
@@ -23,13 +18,17 @@ public class SFXManager : MonoBehaviour
 
     };
 
+
+    private SFXManager() {
+
+    }
+
     private void Awake()
     {
         if (instance == null)
         {
             instance = this;
             DontDestroyOnLoad(gameObject);
-            SceneManager.sceneLoaded += OnSceneLoaded;
             sfxAudioSource = GetComponents<AudioSource>();
         }
         else if (instance != this)
@@ -43,20 +42,19 @@ public class SFXManager : MonoBehaviour
         this.transform.position = Camera.main.transform.position;
     }
 
-
-    private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+    public void PlaySFX(string name)
     {
-       
+        for (int i = 0; i < sfxAudioSource.Length; i++)
+        {
+            if (!sfxAudioSource[i].isPlaying)
+            {
+                AudioClip clip = Resources.Load<AudioClip>(sfxDict[name]);
+                sfxAudioSource[i].clip = clip;
+                sfxAudioSource[i].Play();
+                i = sfxAudioSource.Length;
+            }
+        }
     }
-    
-
-    /// <summary>
-    /// Checks if the BGM from a given audio file is currently playing.
-    /// </summary>
-    /// <param name="bgmFilePath">Path of the BGM file.</param>
-   
-    
-   
 
     public static SFXManager Instance()
     {
@@ -66,19 +64,5 @@ public class SFXManager : MonoBehaviour
         }
 
         return instance;
-    }
-    public void PlaySFX(string name)
-    {
-        for(int i =0; i<sfxAudioSource.Length; i++)
-        {
-            if (!sfxAudioSource[i].isPlaying)
-            {
-                AudioClip clip = Resources.Load<AudioClip>(sfxDict[name]);
-                sfxAudioSource[i].clip = clip;
-                sfxAudioSource[i].Play();
-                i =sfxAudioSource.Length;
-            }
-        }
-       
     }
 }

@@ -46,7 +46,7 @@ public class PlayerActions : MonoBehaviour
     {
         Action action = new Action();
         action.SetActionType(actionType);
-        action.SetTime(Time.time - GetComponent<ShadowManager>().GetLoopStartTime());
+        action.SetTime(Time.time - GetComponent<LoopManager>().GetLoopStartTime());
         currentActions.Add(action);
     }
 

@@ -70,10 +70,10 @@ public class PlayerMovement : MonoBehaviour
 
     private bool TouchesJumpBoostingShadow()
     {
-        foreach (ShadowMovement shadow in GetComponent<ShadowManager>().GetShadows())
+        foreach (GameObject shadow in GetComponent<LoopManager>().GetShadows())
         {
-            ShadowActions shadowActions = shadow.gameObject.GetComponent<ShadowActions>();
-            Collider2D collider = shadow.gameObject.GetComponent<Collider2D>();
+            ShadowActions shadowActions = shadow.GetComponent<ShadowActions>();
+            Collider2D collider = shadow.GetComponent<Collider2D>();
 
             if (shadowActions.GetJumpBoosting() 
                 && collider != null 
@@ -97,6 +97,11 @@ public class PlayerMovement : MonoBehaviour
         }
 
         return false;
+    }
+
+    public Vector2 GetSpawnPoint()
+    {
+        return spawnPoint;
     }
 
     public void Reset()

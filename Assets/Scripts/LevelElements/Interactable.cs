@@ -20,7 +20,7 @@ public abstract class Interactable : MonoBehaviour
             && Time.time - lastInteractionTime > cooldown)
         {
             Interact();
-            player.GetComponent<ShadowManager>().RecordInteraction(this);
+            player.GetComponent<LoopManager>().RecordInteraction(this);
             lastInteractionTime = Time.time;
         }
     }

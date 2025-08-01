@@ -3,8 +3,7 @@ using UnityEngine;
 
 public class Door : ToggleObject
 {
-    public Animator animator;
-    public GameObject portalShine;
+   
 
     private GameObject player;
     private SFXManager sfxManager;
@@ -15,7 +14,7 @@ public class Door : ToggleObject
         base.Awake();
         player = FindFirstObjectByType<PlayerMovement>().gameObject;
         sfxManager = FindFirstObjectByType<SFXManager>();
-        animator = GetComponent<Animator>();
+        
         allKeys = FindObjectsByType<Key>(FindObjectsSortMode.None);
     }
 
@@ -38,8 +37,8 @@ public class Door : ToggleObject
         {
             Debug.Log("Tür ist offen und betreten");
 
-            portalShine.SetActive(true);
-            animator.SetBool("isClosing", true);
+            
+            
         } 
     }
 

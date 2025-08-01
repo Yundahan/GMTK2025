@@ -8,11 +8,13 @@ public class BGMManager : MonoBehaviour
     private static BGMManager instance;
 
     private AudioSource[] bgmAudioSource;
+    private SFXManager sfxManager;
 
     private Dictionary<string, List<string>> sceneToBGMMapping = new Dictionary<string, List<string>>
         {
           {"Scene2", new List<string> { "Sound/GTMK 2025 Testsoundtrack Layer1", "Sound/GTMK 2025 Testsoundtrack Layer2", "Sound/GTMK 2025 Testsoundtrack Layer3", "Sound/GTMK 2025 Testsoundtrack Layer4", "Sound/GTMK 2025 Testsoundtrack Layer5" } },
-          {"Scene1", new List<string> { "AdditionalCardPersonAdressType" } },
+          {"Scene1", new List<string> { "Sound/GTMK 2025 Testsoundtrack Layer1", "Sound/GTMK 2025 Testsoundtrack Layer2", "Sound/GTMK 2025 Testsoundtrack Layer3", "Sound/GTMK 2025 Testsoundtrack Layer4", "Sound/GTMK 2025 Testsoundtrack Layer5" } },
+          {"LeonTestScene", new List<string> { "Sound/GTMK 2025 Testsoundtrack Layer1", "Sound/GTMK 2025 Testsoundtrack Layer2", "Sound/GTMK 2025 Testsoundtrack Layer3", "Sound/GTMK 2025 Testsoundtrack Layer4", "Sound/GTMK 2025 Testsoundtrack Layer5" } }
         };
 
     private BGMManager() {
@@ -27,6 +29,7 @@ public class BGMManager : MonoBehaviour
             DontDestroyOnLoad(gameObject);
             SceneManager.sceneLoaded += OnSceneLoaded;
             bgmAudioSource = GetComponents<AudioSource>();
+            sfxManager = FindFirstObjectByType<SFXManager>();
         }
         else if (instance != this)
         {
@@ -90,6 +93,9 @@ public class BGMManager : MonoBehaviour
         }
 
         bgmAudioSource[shadowNumber].mute = false;
+       
+        sfxManager.PlaySFX("Loop");
+        return;
     }
     private void MuteShadowLayers()
     {

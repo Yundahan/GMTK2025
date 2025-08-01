@@ -62,20 +62,15 @@ public class PlayerMovement : MonoBehaviour
         {
             animator.SetBool("isRunning", true);
 
-            GetComponent<SpriteRenderer>().flipX = true;
-        }
-        else
-        {
-            animator.SetBool("isRunning", false);
-        }
+            GetComponent<SpriteRenderer>().flipX = false;
 
-        if (horizontalAxis > 0)
+        }
+        else if(horizontalAxis > 0)
         {
             animator.SetBool("isRunning", true);
 
-            GetComponent<SpriteRenderer>().flipX = false;
-        }
-        else
+            GetComponent<SpriteRenderer>().flipX = true;
+        } else
         {
             animator.SetBool("isRunning", false);
         }

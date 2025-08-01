@@ -40,16 +40,15 @@ public class PlayerMovement : MonoBehaviour
     void FixedUpdate()
     {
         Move(move);
+
         if (rigidBody.linearVelocity.y < 0 && !IsGrounded())
         {
             animator.SetBool("isFalling", true);
-        }
-        else
+            animator.SetBool("isJumping", false);
+        } else
         {
             animator.SetBool("isFalling", false);
-
         }
-
     }
 
     public void Move(float horizontalAxis)
@@ -63,9 +62,7 @@ public class PlayerMovement : MonoBehaviour
             animator.SetBool("isRunning", true);
 
             GetComponent<SpriteRenderer>().flipX = false;
-
-        }
-        else if(horizontalAxis > 0)
+        } else if(horizontalAxis > 0)
         {
             animator.SetBool("isRunning", true);
 
@@ -88,11 +85,7 @@ public class PlayerMovement : MonoBehaviour
             return;
         }
 
-        if (Input.GetKeyDown(KeyCode.Space)) 
-
-            animator.SetBool("isJumping", true);
-        else
-            animator.SetBool("isJumping", false);
+        animator.SetBool("isJumping", true);
 
         if (TouchesJumpBoostingShadow())
         {

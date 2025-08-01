@@ -8,7 +8,6 @@ public class Door : ToggleObject
 
     public Animator animator;
 
-
     public GameObject portalShine;
 
     private SFXManager sfxManager;
@@ -45,9 +44,7 @@ public class Door : ToggleObject
             portalShine.SetActive(true);
 
             animator.SetBool("isClosing", true);
-
-          
-        } return;
+        }
     }
 
     public override void Reset()

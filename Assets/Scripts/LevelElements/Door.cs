@@ -8,6 +8,8 @@ public class Door : ToggleObject
 
     public Animator animator;
 
+    public GameObject portalShine;
+
     protected override void Awake()
     {
         base.Awake();
@@ -32,6 +34,8 @@ public class Door : ToggleObject
         if (active && collision.gameObject == player)
         {
             Debug.Log("Tür ist offen und betreten");
+
+            portalShine.SetActive(true);
 
             animator.SetBool("isClosing", true);
 

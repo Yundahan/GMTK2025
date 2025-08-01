@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
@@ -9,6 +10,7 @@ public class PlayerMovement : MonoBehaviour
     private const int GROUND_LAYER = 6;
     private const float SPEED = 7f;
     private const float JUMP_FORCE = 150f;
+    private const float BOOSTED_JUMP_FORCE = 180f;
     private const float SMOOTHING = 0.1f;
 
     private List<Collider2D> groundColliders = new();
@@ -44,22 +46,41 @@ public class PlayerMovement : MonoBehaviour
         rigidBody.linearVelocity = Vector3.SmoothDamp(rigidBody.linearVelocity, targetVelocity, ref velocity, SMOOTHING);
     }
 
-    public void Jump()
-    {
-        if (!IsGrounded())
-        {
-            return;
-        }
-
-        GetComponent<Rigidbody2D>().AddForce(new Vector3(0, JUMP_FORCE, 0));
-    }
-
     public void SetMove(float value)
     {
         this.move = value;
     }
 
-    private bool IsGrounded()
+    public void Jump()
+    {
+        if (TouchesJumpBoostingShadow())
+        {
+            GetComponent<Rigidbody2D>().AddForce(new Vector3(0, BOOSTED_JUMP_FORCE, 0));
+        } else if (IsGrounded())
+        {
+            GetComponent<Rigidbody2D>().AddForce(new Vector3(0, JUMP_FORCE, 0));
+        }
+    }
+
+    private bool TouchesJumpBoostingShadow()
+    {
+        foreach (ShadowMovement shadow in GetComponent<ShadowManager>().GetShadows())
+        {
+            ShadowActions shadowActions = shadow.gameObject.GetComponent<ShadowActions>();
+            Collider2D collider = shadow.gameObject.GetComponent<Collider2D>();
+
+            if (shadowActions.GetJumpBoosting() 
+                && collider != null 
+                && collider.IsTouching(feetCollider))
+            {
+                return true;
+            }
+        }
+
+        return false;
+    }
+
+    public bool IsGrounded()
     {
         foreach (Collider2D collider in groundColliders)
         {

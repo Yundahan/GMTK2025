@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 3941219399103439200}
   - component: {fileID: 3306923223138211221}
   - component: {fileID: 2882665665435551271}
+  - component: {fileID: 6261265540035876499}
   - component: {fileID: 7488760262986121132}
   - component: {fileID: 6558504314466615844}
   - component: {fileID: 6002292589509585023}
@@ -106,6 +107,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   feetCollider: {fileID: 3324080373453167483}
+--- !u!114 &6261265540035876499
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 511857069718271729}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0e574b65803dc8845af2556dd418d29e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &7488760262986121132
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -120,6 +133,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerShadow: {fileID: 5935097887000629168, guid: 2f4a740d1242e654289b656a5d48d365, type: 3}
   loopTime: 5
+  maxShadows: 4
 --- !u!61 &6558504314466615844
 BoxCollider2D:
   m_ObjectHideFlags: 0

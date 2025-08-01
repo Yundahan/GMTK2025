@@ -40,6 +40,7 @@ public class ShadowManager : MonoBehaviour
         if (looping)
         {
             PerformPreviousInteractions();
+            GetComponent<PlayerActions>().PerformPreviousActions(loopStartTime);
 
             if (Time.time - lastPositionTime > PATH_INTERVAL)
             {
@@ -98,12 +99,14 @@ public class ShadowManager : MonoBehaviour
             toggleObject.Reset();
         }
 
-        AddNewShadow();
+        ShadowMovement newShadowMovement = AddNewShadow();
+        GetComponent<PlayerActions>().EndLoop(newShadowMovement.GetComponent<ShadowActions>());
 
         if (shadows.Count > maxShadows)
         {
             ShadowMovement oldestShadow = shadows[0];
             interactions.RemoveAll(interaction => interaction.GetShadow() == oldestShadow);
+            GetComponent<PlayerActions>().GetRecordedActions().RemoveAll(action => action.GetShadow() == oldestShadow.GetComponent<ShadowActions>());
             shadows.RemoveAt(0);
             Destroy(oldestShadow.gameObject);
         }
@@ -115,7 +118,7 @@ public class ShadowManager : MonoBehaviour
         loopStartTime = Time.time;
     }
 
-    private void AddNewShadow()
+    private ShadowMovement AddNewShadow()
     {
         // Add new shadow
         GameObject newShadow = Instantiate(this.playerShadow, this.spawnPoint, Quaternion.identity);
@@ -133,6 +136,8 @@ public class ShadowManager : MonoBehaviour
         // Add interactions from current cycle to complete list
         interactions.AddRange(currentInteractions);
         currentInteractions.Clear();
+
+        return newShadowMovement;
     }
 
     public void RecordInteraction(Interactable interactable)
@@ -160,5 +165,15 @@ public class ShadowManager : MonoBehaviour
     public bool GetLooping()
     {
         return looping;
+    }
+
+    public float GetLoopStartTime()
+    {
+        return loopStartTime;
+    }
+
+    public List<ShadowMovement> GetShadows()
+    {
+        return shadows;
     }
 }

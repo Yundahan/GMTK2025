@@ -30,6 +30,14 @@ public class InputManager : MonoBehaviour
             Simulation.Instance().ToggleSimulation();
         }
 
+        if (Input.GetKey(KeyCode.R))
+        {
+            player.GetComponent<PlayerActions>().ActivateJumpBoosting();
+        } else if (Input.GetKeyUp(KeyCode.R))
+        {
+            player.GetComponent<PlayerActions>().DeactivateJumpBoosting();
+        }
+
         if (player != null && Simulation.Instance().IsSimulating())
         {
             float horizontalAxis = Input.GetAxisRaw("Horizontal");

@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using UnityEngine.Audio;
 using UnityEngine.SceneManagement;
 
 public class BGMManager : MonoBehaviour
@@ -14,7 +15,7 @@ public class BGMManager : MonoBehaviour
         {
           {"Scene2", new List<string> { "Sound/Basement1", "Sound/Basement2", "Sound/Basement3", "Sound/Basement4", "Sound/Basement5" } },
           {"Scene1", new List<string> { "Sound/Floor1", "Sound/Floor2", "Sound/Floor3", "Sound/Floor4", "Sound/Floor5" } },
-          {"LeonTestScene", new List<string> { "Sound/Observatory1", "Sound/Observatory2", "Sound/Observatory3", "Sound/Observatory4", "Sound/Observatory5" } }
+          {"LeonTestScene", new List<string> { "Sound/Observatory1", "Sound/Observatory2", "Sound/Observatory3", "Sound/Observatory4", "Sound/Observatory5","Sound/Observatory6" } }
         };
 
     private BGMManager() {
@@ -91,16 +92,17 @@ public class BGMManager : MonoBehaviour
         {
             return;
         }
-
+        bgmAudioSource[shadowNumber].volume = 0f;
         bgmAudioSource[shadowNumber].mute = false;
-       
+        StartCoroutine(FadeAudioSource.StartFade(bgmAudioSource[shadowNumber], 1f, 1f));
+
         return;
     }
     private void MuteShadowLayers()
     {
         string activeSceneName = SceneLoader.Instance().GetActiveSceneName();
 
-        for (int i = 1; i < bgmAudioSource.Length; i++)
+        for (int i = 1; i < sceneToBGMMapping[activeSceneName].Count; i++)
         {
             AudioClip clip = Resources.Load<AudioClip>(sceneToBGMMapping[activeSceneName][i]);
             bgmAudioSource[i].clip = clip;

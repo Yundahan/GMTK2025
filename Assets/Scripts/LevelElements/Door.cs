@@ -1,21 +1,26 @@
-using System.Collections.Generic;
+using Unity.VisualScripting;
+using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 
 public class Door : ToggleObject
 {
-   
-
     private GameObject player;
+
+    public Animator animator;
+
+
+    public GameObject portalShine;
+
     private SFXManager sfxManager;
-    private Key[] allKeys;
+
 
     protected override void Awake()
     {
         base.Awake();
         player = FindFirstObjectByType<PlayerMovement>().gameObject;
         sfxManager = FindFirstObjectByType<SFXManager>();
-        
-        allKeys = FindObjectsByType<Key>(FindObjectsSortMode.None);
+
+        animator = GetComponent<Animator>();
     }
 
     protected override void ToggleActions()
@@ -33,26 +38,16 @@ public class Door : ToggleObject
 
     void OnTriggerStay2D(Collider2D collision)
     {
-        if (active && collision.gameObject == player && AllKeysCollected())
+        if (active && collision.gameObject == player)
         {
             Debug.Log("Tür ist offen und betreten");
 
-            
-            
-        } 
-    }
+            portalShine.SetActive(true);
 
-    private bool AllKeysCollected()
-    {
-        foreach (Key key in allKeys)
-        {
-            if (!key.IsInPlayerHand())
-            {
-                return false;
-            }
-        }
+            animator.SetBool("isClosing", true);
 
-        return true;
+          
+        } return;
     }
 
     public override void Reset()

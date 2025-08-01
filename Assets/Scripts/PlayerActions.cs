@@ -11,6 +11,8 @@ public class PlayerActions : Interacter
     // actions from previous cycles that are being repeated
     private List<Action> recordedActions = new();
 
+    public Animator animator;
+
     public void PerformPreviousActions(float loopStartTime)
     {
         foreach (Action action in recordedActions)
@@ -67,6 +69,11 @@ public class PlayerActions : Interacter
             GetComponent<SpriteRenderer>().color = Color.blue;
             this.jumpBoosting = true;
             RecordAction(Action.ActionType.JUMP_BOOSTING_ON);
+            animator.SetBool("isJumpBoosting", true);
+        }
+        else
+        {
+            animator.SetBool("isJumpBoosting", false);
         }
     }
 

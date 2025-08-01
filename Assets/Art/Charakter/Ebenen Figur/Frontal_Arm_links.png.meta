@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 59788f9753a0f294880c955868ff8cd6
+guid: 8aa51ce81775a7f419c5bd5a7a96b694
 TextureImporter:
   internalIDToNameTable:
   - first:
@@ -103,10 +103,10 @@ TextureImporter:
       name: Frontal_Arm_links_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 519
-        height: 667
+        x: 16
+        y: 22
+        width: 128
+        height: 387
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}

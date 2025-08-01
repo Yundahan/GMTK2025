@@ -44,7 +44,7 @@ public class InputManager : MonoBehaviour
             player.SetMove(horizontalAxis);
 
             if(Mathf.RoundToInt(horizontalAxis) != 0) {
-                player.GetComponent<ShadowManager>().SetLooping(true);
+                player.GetComponent<LoopManager>().SetLooping(true);
             }
 
             if (Input.GetKeyDown(KeyCode.Space))

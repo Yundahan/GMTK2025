@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.InteropServices.WindowsRuntime;
 using Unity.VisualScripting;
 using UnityEngine;
 
@@ -17,6 +18,8 @@ public class PlayerMovement : MonoBehaviour
     private List<Collider2D> groundColliders = new();
     private Rigidbody2D rigidBody;
 
+    public Animator animator;
+
     private Vector3 velocity = Vector3.zero;
     private Vector2 spawnPoint;
     // The direction in which the character moves, 0 if no movement
@@ -26,6 +29,7 @@ public class PlayerMovement : MonoBehaviour
     {
         rigidBody = GetComponent<Rigidbody2D>();
         spawnPoint = transform.position;
+        animator = GetComponent<Animator>();
 
         foreach (Collider2D collider2D in FindObjectsByType<Collider2D>(FindObjectsSortMode.None))
         {
@@ -38,6 +42,16 @@ public class PlayerMovement : MonoBehaviour
     void FixedUpdate()
     {
         Move(move);
+        if (rigidBody.linearVelocity.y < 0 && !IsGrounded())
+        {
+            animator.SetBool("isFalling", true);
+        }
+        else
+        {
+            animator.SetBool("isFalling", false);
+
+        }
+
     }
 
     public void Move(float horizontalAxis)
@@ -45,6 +59,15 @@ public class PlayerMovement : MonoBehaviour
         float xSpeed = GetComponent<PlayerActions>().GetJumpBoosting() ? 0f : SPEED * horizontalAxis;
         Vector3 targetVelocity = new Vector3(xSpeed, rigidBody.linearVelocity.y, 0);
         rigidBody.linearVelocity = Vector3.SmoothDamp(rigidBody.linearVelocity, targetVelocity, ref velocity, IsGrounded() ? SMOOTHING : AIR_SMOOTHING);
+
+        if (horizontalAxis != 0)
+        {
+            animator.SetBool("isRunning", true);
+        }
+        else
+        {
+            animator.SetBool("isRunning", false);
+        }
     }
 
     public void SetMove(float value)
@@ -59,10 +82,17 @@ public class PlayerMovement : MonoBehaviour
             return;
         }
 
+        if (Input.GetKeyDown(KeyCode.Space)) 
+
+            animator.SetBool("isJumping", true);
+        else
+            animator.SetBool("isJumping", false);
+
         if (TouchesJumpBoostingShadow())
         {
             GetComponent<Rigidbody2D>().AddForce(new Vector3(0, BOOSTED_JUMP_FORCE, 0));
-        } else if (IsGrounded())
+        }
+        else if (IsGrounded())
         {
             GetComponent<Rigidbody2D>().AddForce(new Vector3(0, JUMP_FORCE, 0));
         }
@@ -70,10 +100,10 @@ public class PlayerMovement : MonoBehaviour
 
     private bool TouchesJumpBoostingShadow()
     {
-        foreach (ShadowMovement shadow in GetComponent<ShadowManager>().GetShadows())
+        foreach (GameObject shadow in GetComponent<LoopManager>().GetShadows())
         {
-            ShadowActions shadowActions = shadow.gameObject.GetComponent<ShadowActions>();
-            Collider2D collider = shadow.gameObject.GetComponent<Collider2D>();
+            ShadowActions shadowActions = shadow.GetComponent<ShadowActions>();
+            Collider2D collider = shadow.GetComponent<Collider2D>();
 
             if (shadowActions.GetJumpBoosting() 
                 && collider != null 
@@ -97,6 +127,11 @@ public class PlayerMovement : MonoBehaviour
         }
 
         return false;
+    }
+
+    public Vector2 GetSpawnPoint()
+    {
+        return spawnPoint;
     }
 
     public void Reset()

@@ -1,3 +1,4 @@
+using UnityEngine;
 /// <summary>
 /// An <c>Interaction</c> is a data object used to replicate a player interaction in later loops
 /// </summary>
@@ -5,7 +6,7 @@ public class Interaction
 {
     private Interactable interactable;
     private float time;
-    private ShadowMovement shadow;
+    private GameObject shadow;
     private bool done;
 
     public Interactable GetInteractable()
@@ -28,12 +29,12 @@ public class Interaction
         this.time = value;
     }
 
-    public ShadowMovement GetShadow()
+    public GameObject GetShadow()
     {
         return shadow;
     }
 
-    public void SetShadow(ShadowMovement value)
+    public void SetShadow(GameObject value)
     {
         this.shadow = value;
     }

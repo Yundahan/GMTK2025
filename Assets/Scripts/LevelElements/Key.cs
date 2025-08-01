@@ -67,4 +67,9 @@ public class Key : Interactable
     {
         return throwingDirection;
     }
+
+    public bool IsInPlayerHand()
+    {
+        return this.pickedUp && this.interacter.GetComponent<Interacter>() == player;
+    }
 }

@@ -6,6 +6,7 @@ using UnityEngine;
 public class Key : Interactable
 {
     private const float THROWING_SPEED = 10f;
+    private const float PICKUP_DISTANCE = 1f;
 
     private Vector2 keySpawnPoint;
     public Interacter interacter;
@@ -37,6 +38,22 @@ public class Key : Interactable
     {
         if (!pickedUp)
         {
+            float distanceToKey = Vector3.Distance(interaction.GetInteracter().transform.position, this.transform.position);
+
+            // if someone tries to pickup a key from out of range, it's a shadow trying to pick up a key that is no longer there
+            // remove corresponding throw from interaction list
+            if (distanceToKey > PICKUP_DISTANCE)
+            {
+                Tuple<Interaction, Interaction> pair = pickUpThrowPairs.Find(pair => pair.Item1 == interaction);
+
+                if (pair != null)
+                {
+                    player.GetComponent<LoopManager>().AddInteractionToDeletionList(pair.Item2);
+                }
+
+                return false;
+            }
+
             // Pick up key
             pickedUp = true;
             this.interacter = interaction.GetInteracter().GetComponent<Interacter>();
@@ -44,16 +61,25 @@ public class Key : Interactable
             lastPickUpEvent = interaction;
         } else if (pickedUp)
         {
+            // someone else than the current key holder tries to interact with it
+            // either the player tries to steal, or a shadow tries to interact with a key thats no longer there
             if (this.interacter.gameObject != interaction.GetInteracter())
             {
                 Tuple<Interaction, Interaction> pair = pickUpThrowPairs.Find(pair => pair.Item1 == interaction);
 
+                // if the player is not the interacter, then the interaction was unsuccessful and returns false as a result
                 if (player.gameObject != interaction.GetInteracter() && pair != null)
                 {
-                    player.GetComponent<LoopManager>().AddInteractionToDeletionList(pair.Item2);
+                    // if the pair is not null, then there is a shadow trying to throw the key later on -> this interaction needs to be removed from the list
+                    if (pair != null)
+                    {
+                        player.GetComponent<LoopManager>().AddInteractionToDeletionList(pair.Item2);
+                    }
+
                     return false;
                 }
 
+                // at this point in the code, the player tries to steal. he isnt allowed to do that, but there are also no further consequences
                 return true;
             }
 

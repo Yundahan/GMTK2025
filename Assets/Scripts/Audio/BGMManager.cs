@@ -13,7 +13,7 @@ public class BGMManager : MonoBehaviour
     private Dictionary<string, List<string>> sceneToBGMMapping = new Dictionary<string, List<string>>
         {
           {"Scene2", new List<string> { "Sound/Basement1", "Sound/Basement2", "Sound/Basement3", "Sound/Basement4", "Sound/Basement5" } },
-          {"Scene1", new List<string> { "Sound/Floor1", "Sound/Floor2", "Sound/Floor3", "Sound/Floor4", "Sound/Floor4", "Sound/Floor5" } },
+          {"Scene1", new List<string> { "Sound/Floor1", "Sound/Floor2", "Sound/Floor3", "Sound/Floor4", "Sound/Floor5" } },
           {"LeonTestScene", new List<string> { "Sound/Observatory1", "Sound/Observatory2", "Sound/Observatory3", "Sound/Observatory4", "Sound/Observatory5" } }
         };
 
@@ -64,7 +64,7 @@ public class BGMManager : MonoBehaviour
                 AudioClip clip = Resources.Load<AudioClip>(sceneToBGMMapping[activeSceneName][0]);
                 bgmAudioSource[0].clip = clip;
                 bgmAudioSource[0].Play();
-                ShadowPlayLayers(activeSceneName, sceneToBGMMapping[activeSceneName].Count-1);
+                ShadowPlayLayers(activeSceneName, sceneToBGMMapping[activeSceneName].Count);
             }
         }
         else

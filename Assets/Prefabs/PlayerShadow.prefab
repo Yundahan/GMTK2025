@@ -14,7 +14,6 @@ GameObject:
   - component: {fileID: 6583943018116949637}
   - component: {fileID: 1928331903291029324}
   - component: {fileID: 5793351192367623895}
-  - component: {fileID: 3265915324706349742}
   m_Layer: 0
   m_Name: PlayerShadow
   m_TagString: Untagged
@@ -104,6 +103,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 75f26e0d7ac2ed64fb2779710dd4ff93, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  animator: {fileID: 5793351192367623895}
 --- !u!114 &6583943018116949637
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -184,19 +184,3 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!111 &3265915324706349742
-Animation:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5935097887000629168}
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Animation: {fileID: 7400000, guid: e5ff340754f913e40af54520182cad7c, type: 2}
-  m_Animations: []
-  m_WrapMode: 0
-  m_PlayAutomatically: 1
-  m_AnimatePhysics: 0
-  m_UpdateMode: 0
-  m_CullingType: 0

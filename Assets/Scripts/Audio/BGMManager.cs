@@ -94,7 +94,6 @@ public class BGMManager : MonoBehaviour
 
         bgmAudioSource[shadowNumber].mute = false;
        
-        sfxManager.PlaySFX("Loop");
         return;
     }
     private void MuteShadowLayers()

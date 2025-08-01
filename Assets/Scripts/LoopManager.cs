@@ -5,6 +5,8 @@ public class LoopManager : MonoBehaviour
 {
     // PlayerShadow prefab for instantiating of new shadows
     public GameObject playerShadow;
+    // Shadow Animation prefab
+    public GameObject shadowSpawnAnimGameObject;
 
     public float loopDuration = 5f;
     public int maxShadows = 4;
@@ -19,6 +21,7 @@ public class LoopManager : MonoBehaviour
     private UIManager uiManager;
     private List<GameObject> shadows = new();
     private ToggleObject[] toggleObjectsInScene;
+    private GameObject lastShadowSpawnAnim;
     private bool looping = false;
     private float loopStartTime = -5000f;
 
@@ -120,6 +123,13 @@ public class LoopManager : MonoBehaviour
     {
         // Add new shadow
         GameObject newShadow = Instantiate(this.playerShadow, GetComponent<PlayerMovement>().GetSpawnPoint(), Quaternion.identity);
+
+        if (lastShadowSpawnAnim != null)
+        {
+            Destroy(lastShadowSpawnAnim);
+        }
+
+        lastShadowSpawnAnim = Instantiate(this.shadowSpawnAnimGameObject, GetComponent<PlayerMovement>().GetSpawnPoint(), Quaternion.identity);
 
         // Add new shadow to current cycle interactions
         foreach (Interaction interaction in currentInteractions)

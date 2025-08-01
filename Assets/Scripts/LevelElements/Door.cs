@@ -8,12 +8,17 @@ public class Door : ToggleObject
 
     public Animator animator;
 
+
     public GameObject portalShine;
+
+    private SFXManager sfxManager;
+
 
     protected override void Awake()
     {
         base.Awake();
         player = FindFirstObjectByType<PlayerMovement>().gameObject;
+        sfxManager = FindFirstObjectByType<SFXManager>();
 
         animator = GetComponent<Animator>();
     }
@@ -23,6 +28,8 @@ public class Door : ToggleObject
         if (active)
         {
             GetComponent<SpriteRenderer>().color = Color.green;
+            sfxManager.PlaySFX("Portal");
+
         } else
         {
             GetComponent<SpriteRenderer>().color = Color.red;

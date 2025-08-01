@@ -58,9 +58,22 @@ public class PlayerMovement : MonoBehaviour
         Vector3 targetVelocity = new Vector3(xSpeed, rigidBody.linearVelocity.y, 0);
         rigidBody.linearVelocity = Vector3.SmoothDamp(rigidBody.linearVelocity, targetVelocity, ref velocity, IsGrounded() ? SMOOTHING : AIR_SMOOTHING);
 
-        if (horizontalAxis != 0)
+        if (horizontalAxis < 0)
         {
             animator.SetBool("isRunning", true);
+
+            GetComponent<SpriteRenderer>().flipX = true;
+        }
+        else
+        {
+            animator.SetBool("isRunning", false);
+        }
+
+        if (horizontalAxis > 0)
+        {
+            animator.SetBool("isRunning", true);
+
+            GetComponent<SpriteRenderer>().flipX = false;
         }
         else
         {

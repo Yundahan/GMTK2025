@@ -18,7 +18,7 @@ public class SFXManager : MonoBehaviour
     {
         {"Lever", "Sound/SFX/SFX_Lever" },
         {"Loop", "Sound/SFX/SFX_Loop" },
-        {"Portal", "Sound/SFX/Portal_Open" }
+        {"Portal", "Sound/SFX/SFX_Portal_Open" }
 
 
     };

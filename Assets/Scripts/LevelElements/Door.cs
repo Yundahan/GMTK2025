@@ -1,14 +1,19 @@
 using Unity.VisualScripting;
+using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 
 public class Door : ToggleObject
 {
     private GameObject player;
 
+    public Animator animator;
+
     protected override void Awake()
     {
         base.Awake();
         player = FindFirstObjectByType<PlayerMovement>().gameObject;
+
+        animator = GetComponent<Animator>();
     }
 
     protected override void ToggleActions()
@@ -27,6 +32,13 @@ public class Door : ToggleObject
         if (active && collision.gameObject == player)
         {
             Debug.Log("Tür ist offen und betreten");
+
+            animator.SetBool("isClosing", true);
+
+          
+        } else
+        {
+            animator.SetBool("isClosing", false);
         }
     }
 
@@ -35,4 +47,5 @@ public class Door : ToggleObject
         base.Reset();
         GetComponent<SpriteRenderer>().color = Color.red;
     }
+
 }

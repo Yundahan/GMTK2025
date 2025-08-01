@@ -15,6 +15,8 @@ public class PlayerMovement : MonoBehaviour
 
     private List<Collider2D> groundColliders = new();
     private Rigidbody2D rigidBody;
+    public SpriteRenderer idleRenderer;
+    public SpriteRenderer movingRenderer;
 
     public Animator animator;
 
@@ -60,16 +62,20 @@ public class PlayerMovement : MonoBehaviour
         if (horizontalAxis < 0)
         {
             animator.SetBool("isRunning", true);
-
-            GetComponent<SpriteRenderer>().flipX = false;
+            movingRenderer.enabled = true;
+            idleRenderer.enabled = false;
+            movingRenderer.flipX = true;
         } else if(horizontalAxis > 0)
         {
             animator.SetBool("isRunning", true);
-
-            GetComponent<SpriteRenderer>().flipX = true;
+            movingRenderer.enabled = true;
+            idleRenderer.enabled = false;
+            movingRenderer.flipX = false;
         } else
         {
             animator.SetBool("isRunning", false);
+            movingRenderer.enabled = false;
+            idleRenderer.enabled = true;
         }
     }
 

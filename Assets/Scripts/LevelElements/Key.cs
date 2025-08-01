@@ -1,3 +1,6 @@
+using NUnit.Framework;
+using System;
+using System.Collections.Generic;
 using UnityEngine;
 
 public class Key : Interactable
@@ -10,6 +13,8 @@ public class Key : Interactable
     private Vector2 throwingDirection;
     private bool pickedUp = false;
     private float initialGravityScale;
+    private Interaction lastPickUpEvent;
+    private List<Tuple<Interaction, Interaction>> pickUpThrowPairs = new();
 
     protected override void Awake()
     {
@@ -28,7 +33,7 @@ public class Key : Interactable
         }
     }
 
-    public override void Interact(Interaction interaction)
+    public override bool Interact(Interaction interaction)
     {
         if (!pickedUp)
         {
@@ -36,14 +41,32 @@ public class Key : Interactable
             pickedUp = true;
             this.interacter = interaction.GetInteracter().GetComponent<Interacter>();
             rigidBody.gravityScale = 0f;
+            lastPickUpEvent = interaction;
         } else if (pickedUp)
         {
+            if (this.interacter.gameObject != interaction.GetInteracter())
+            {
+                Tuple<Interaction, Interaction> pair = pickUpThrowPairs.Find(pair => pair.Item1 == interaction);
+
+                if (player.gameObject != interaction.GetInteracter() && pair != null)
+                {
+                    player.GetComponent<LoopManager>().AddInteractionToDeletionList(pair.Item2);
+                    return false;
+                }
+
+                return true;
+            }
+
             // Throw key
             throwingDirection = interaction.GetThrowingDirection();
             pickedUp = false;
             rigidBody.AddForce(throwingDirection * THROWING_SPEED);
             rigidBody.gravityScale = this.initialGravityScale;
+            this.interacter = null;
+            pickUpThrowPairs.Add(new Tuple<Interaction, Interaction>(lastPickUpEvent, interaction));
         }
+
+        return true;
     }
 
     public override Interaction RecordInteraction()
@@ -66,5 +89,10 @@ public class Key : Interactable
     public Vector2 GetThrowingDirection()
     {
         return throwingDirection;
+    }
+
+    public bool IsInPlayerHand()
+    {
+        return this.pickedUp && this.interacter.GetComponent<Interacter>() == player;
     }
 }

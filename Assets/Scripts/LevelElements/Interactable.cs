@@ -34,7 +34,7 @@ public abstract class Interactable : MonoBehaviour
         return interaction;
     }
 
-    public abstract void Interact(Interaction interaction);
+    public abstract bool Interact(Interaction interaction);
 
     public virtual void Reset()
     {

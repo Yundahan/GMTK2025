@@ -9,8 +9,9 @@ public class Interaction
     private GameObject interacter;
     private bool done;
 
-    // Property used for the throwing of keys only
+    // Properties used for the throwing of keys only
     private Vector2 throwingDirection;
+    private bool pickUp;
 
     public Interactable GetInteractable()
     {
@@ -60,5 +61,15 @@ public class Interaction
     public void SetThrowingDirection(Vector2 value)
     {
         this.throwingDirection = value;
+    }
+
+    public bool GetPickUp()
+    {
+        return pickUp;
+    }
+
+    public void SetPickUp(bool value)
+    {
+        this.pickUp = value;
     }
 }

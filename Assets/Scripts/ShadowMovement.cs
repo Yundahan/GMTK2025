@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class ShadowMovement : MonoBehaviour
@@ -11,6 +12,16 @@ public class ShadowMovement : MonoBehaviour
         if (newPathPosition < 0 || newPathPosition >= path.Count)
         {
             return;
+        }
+
+        float deltaX = path[newPathPosition].x - this.transform.position.x;
+
+        if (deltaX < 0)
+        {
+            GetComponent<SpriteRenderer>().flipX = true;
+        } else if (deltaX > 0)
+        {
+            GetComponent<SpriteRenderer>().flipX = false;
         }
 
         this.transform.position = path[newPathPosition];

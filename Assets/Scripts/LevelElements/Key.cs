@@ -46,9 +46,15 @@ public class Key : Interactable
         {
             if (this.interacter.gameObject != interaction.GetInteracter())
             {
-                Interaction throwToDelete = pickUpThrowPairs.Find(pair => pair.Item1 == interaction).Item2;
-                player.GetComponent<LoopManager>().AddInteractionToDeletionList(throwToDelete);
-                return false;
+                Tuple<Interaction, Interaction> pair = pickUpThrowPairs.Find(pair => pair.Item1 == interaction);
+
+                if (player.gameObject != interaction.GetInteracter() && pair != null)
+                {
+                    player.GetComponent<LoopManager>().AddInteractionToDeletionList(pair.Item2);
+                    return false;
+                }
+
+                return true;
             }
 
             // Throw key

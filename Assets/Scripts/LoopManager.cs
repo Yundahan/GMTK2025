@@ -19,6 +19,10 @@ public class LoopManager : MonoBehaviour
     private bool looping = false;
     private float loopStartTime = -5000f;
 
+    // Audio values
+    private float loopEndSoundPredelay = 0.2f;
+    private bool loopEndSoundPlayed = false;
+
     private void Awake()
     {
         SetLooping(false);
@@ -31,6 +35,12 @@ public class LoopManager : MonoBehaviour
         {
             PerformPreviousInteractions();
             GetComponent<PlayerActions>().PerformPreviousActions(loopStartTime);
+
+            if (!loopEndSoundPlayed && Time.time - loopStartTime > loopTime - loopEndSoundPredelay)
+            {
+                SFXManager.Instance().PlaySFX("Loop");
+                loopEndSoundPlayed = true;
+            }
 
             if (Time.time - loopStartTime > loopTime)
             {
@@ -82,6 +92,7 @@ public class LoopManager : MonoBehaviour
 
         // Update BGM, reset loopStartTime
         BGMManager.Instance().ShadowSpawned(shadows.Count);
+        loopEndSoundPlayed = false;
         loopStartTime = Time.time;
     }
 

@@ -26,13 +26,13 @@ public class ShadowActions : Interacter
 
     public void ActivateJumpBoosting()
     {
-        GetComponent<SpriteRenderer>().color = new Color(0f, 0f, 1f, 0.32f);
+        GetComponent<SpriteRenderer>().color = new Color(0f, 0f, 1f, 1f);
         this.jumpBoosting = true;
     }
 
     public void DeactivateJumpBoosting()
     {
-        GetComponent<SpriteRenderer>().color = new Color(1f, 1f, 1f, 0.32f);
+        GetComponent<SpriteRenderer>().color = new Color(1f, 1f, 1f, 1f);
         this.jumpBoosting = false;
     }
 

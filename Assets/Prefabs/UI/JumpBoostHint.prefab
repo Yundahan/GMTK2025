@@ -112,9 +112,9 @@ GameObject:
   m_Component:
   - component: {fileID: 6953294083475593388}
   - component: {fileID: 2820186760948972660}
-  - component: {fileID: 6807624693902544844}
+  - component: {fileID: 6881734217283232833}
   m_Layer: 0
-  m_Name: Hint
+  m_Name: JumpBoostHint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -172,7 +172,7 @@ CircleCollider2D:
   m_CompositeOrder: 0
   m_Offset: {x: 0, y: 0}
   m_Radius: 1.3
---- !u!114 &6807624693902544844
+--- !u!114 &6881734217283232833
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -181,11 +181,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1394313519867170063}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ac4742ed684d1cc4a846e8041065156d, type: 3}
+  m_Script: {fileID: 11500000, guid: 403e2ee8e97cd41488f1f34e3b09a777, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   text: {fileID: 2664677911690803503}
-  lever: {fileID: 0}
 --- !u!1 &7451071000830172662
 GameObject:
   m_ObjectHideFlags: 0
@@ -251,7 +250,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Press E to pull lever
+  m_text: Press R to perform a jump boost
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -278,8 +277,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 0.5
-  m_fontSizeBase: 0.5
+  m_fontSize: 0.3
+  m_fontSizeBase: 0.3
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18

@@ -14,6 +14,12 @@ public class Hint : MonoBehaviour
         }
     }
 
+    protected virtual void OnTriggerExit2D(Collider2D collision)
+    {
+        hintShown = false;
+        HideMessage();
+    }
+
     protected void ShowMessage()
     {
         if (!hintShown)

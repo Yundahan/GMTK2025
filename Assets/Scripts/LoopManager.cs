@@ -46,9 +46,7 @@ public class LoopManager : MonoBehaviour
         if (looping)
         {
             DeleteInteractionsFromList();
-            PerformPreviousInteractions();
             GetComponent<PlayerActions>().PerformPreviousActions(loopStartTime);
-
 
             // Start playing the loop end sounds a little earlier so that it actually matches up
             if (!loopEndSoundPlayed && Time.time - loopStartTime > loopDuration - loopEndSoundPredelay)
@@ -71,8 +69,17 @@ public class LoopManager : MonoBehaviour
                     shadow.GetComponent<ShadowMovement>().StartDespawnAnimation(shadowDespawnAnimPrefab);
                 }
 
+                GetComponent<PlayerMovement>().StartDespawnAnimation(shadowDespawnAnimPrefab);
                 shadowDespawnAnimationPlayed = true;
             }
+        }
+    }
+
+    void FixedUpdate()
+    {
+        if (looping)
+        {
+            PerformPreviousInteractions();
 
             if (Time.time - loopStartTime > loopDuration)
             {

@@ -12,7 +12,6 @@ public class Door : ToggleObject
 
     private Animator animator;
     private GameObject player;
-    private SFXManager sfxManager;
     private Key[] allKeys;
     private bool doorReached = false;
     private float doorReachedTime = -5000f;
@@ -22,7 +21,6 @@ public class Door : ToggleObject
     {
         base.Awake();
         player = FindFirstObjectByType<PlayerMovement>().gameObject;
-        sfxManager = FindFirstObjectByType<SFXManager>();
         allKeys = FindObjectsByType<Key>(FindObjectsSortMode.None);
         animator = GetComponent<Animator>();
     }
@@ -41,7 +39,7 @@ public class Door : ToggleObject
         if (active)
         {
             GetComponent<SpriteRenderer>().color = Color.green;
-            sfxManager.PlaySFX("Portal");
+            SFXManager.Instance().PlaySFX("Portal");
 
         } else
         {

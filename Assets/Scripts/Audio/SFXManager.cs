@@ -6,7 +6,7 @@ public class SFXManager : MonoBehaviour
 {
     private static SFXManager instance;
 
-    public AudioSource[] sfxAudioSource;
+    private AudioSource[] sfxAudioSource;
 
     private Dictionary<string, string> sfxDict = new Dictionary<string, string>
     {
@@ -14,7 +14,6 @@ public class SFXManager : MonoBehaviour
         {"Loop", "Sound/SFX/SFX_Loop" },
         {"Portal", "Sound/SFX/SFX_Portal_Open" }
     };
-
 
     private SFXManager() {
 
@@ -33,6 +32,7 @@ public class SFXManager : MonoBehaviour
             Destroy(gameObject);
         }
     }
+
     private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
         sfxAudioSource = GetComponents<AudioSource>();
@@ -52,7 +52,7 @@ public class SFXManager : MonoBehaviour
                 AudioClip clip = Resources.Load<AudioClip>(sfxDict[name]);
                 sfxAudioSource[i].clip = clip;
                 sfxAudioSource[i].Play();
-                i = sfxAudioSource.Length;
+                return;
             }
         }
     }

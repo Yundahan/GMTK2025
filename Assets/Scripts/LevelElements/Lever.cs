@@ -3,14 +3,12 @@ using UnityEngine;
 
 public class Lever : Interactable
 {
-    private SFXManager sfxManager;
     public List<ToggleObject> toggleObjects;
     public Animator animator;
 
     protected override void Awake()
     {
         base.Awake();
-        sfxManager = FindFirstObjectByType<SFXManager>();
     }
 
     
@@ -21,7 +19,7 @@ public class Lever : Interactable
             toggleObject.Toggle();
         }
 
-        sfxManager.PlaySFX("Lever");
+        SFXManager.Instance().PlaySFX("Lever");
         return true;
     }
 }

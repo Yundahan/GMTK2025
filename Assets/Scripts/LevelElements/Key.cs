@@ -57,6 +57,8 @@ public class Key : Interactable
 
             // Pick up key
             pickedUp = true;
+            interaction.SetThrowingDirection(Vector2.zero);
+            this.throwingDirection = Vector3.zero;
             this.interacter = interaction.GetInteracter().GetComponent<Interacter>();
             rigidBody.gravityScale = 0f;
             lastPickUpEvent = interaction;
@@ -87,8 +89,9 @@ public class Key : Interactable
             // Throw key
             throwingDirection = interaction.GetThrowingDirection();
             pickedUp = false;
-            rigidBody.AddForce(throwingDirection * THROWING_SPEED);
+            rigidBody.linearVelocity = Vector3.zero;
             rigidBody.gravityScale = this.initialGravityScale;
+            rigidBody.AddForce(throwingDirection * THROWING_SPEED);
             this.interacter = null;
             pickUpThrowPairs.Add(new Tuple<Interaction, Interaction>(lastPickUpEvent, interaction));
         }

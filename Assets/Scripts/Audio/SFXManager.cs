@@ -1,5 +1,4 @@
 using System.Collections.Generic;
-using System.Linq;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -7,15 +6,13 @@ public class SFXManager : MonoBehaviour
 {
     private static SFXManager instance;
 
-    private AudioSource[] sfxAudioSource;
+    public AudioSource[] sfxAudioSource;
 
     private Dictionary<string, string> sfxDict = new Dictionary<string, string>
     {
         {"Lever", "Sound/SFX/SFX_Lever" },
         {"Loop", "Sound/SFX/SFX_Loop" },
         {"Portal", "Sound/SFX/SFX_Portal_Open" }
-
-
     };
 
 
@@ -29,12 +26,16 @@ public class SFXManager : MonoBehaviour
         {
             instance = this;
             DontDestroyOnLoad(gameObject);
-            sfxAudioSource = GetComponents<AudioSource>();
+            SceneManager.sceneLoaded += OnSceneLoaded;
         }
         else if (instance != this)
         {
             Destroy(gameObject);
         }
+    }
+    private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+    {
+        sfxAudioSource = GetComponents<AudioSource>();
     }
 
     private void Update()

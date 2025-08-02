@@ -31,5 +31,35 @@ public static class FadeAudioSource
         }
         yield break;
     }
+    public static IEnumerator PauseFadeIn(AudioSource audioSource, float duration, float targetVolume)
+    {
+        float currentTime = 0;
+        audioSource.Play();
+        float start = audioSource.volume;
+      
+        while (currentTime < duration)
+        {
+            currentTime += Time.deltaTime;
+            audioSource.volume = Mathf.Lerp(start, targetVolume, currentTime / duration);
+            yield return null;
+        }
+        yield break;
+    }
+    public static IEnumerator PauseFadeOut(AudioSource audioSource, float duration)
+    {
+        float currentTime = 0;
+        float start = 1f - audioSource.volume;
+        while (currentTime < duration)
+        {
+            currentTime += Time.deltaTime;
+            audioSource.volume = 1f - (Mathf.Lerp(start, 1f, currentTime / duration));
+            if (audioSource.volume == 0f)
+            {
+                audioSource.Pause();
+            }
+            yield return null;
+        }
+        yield break;
+    }
 
 }

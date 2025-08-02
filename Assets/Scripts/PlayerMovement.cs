@@ -15,6 +15,7 @@ public class PlayerMovement : MonoBehaviour
 
     private List<Collider2D> groundColliders = new();
     private Rigidbody2D rigidBody;
+    private GameObject despawnAnim;
     public SpriteRenderer idleRenderer;
     public SpriteRenderer movingRenderer;
 
@@ -149,6 +150,11 @@ public class PlayerMovement : MonoBehaviour
         return false;
     }
 
+    public void StartDespawnAnimation(GameObject despawnPrefab)
+    {
+        despawnAnim = Instantiate(despawnPrefab, this.transform);
+    }
+
     public Vector2 GetSpawnPoint()
     {
         return spawnPoint;
@@ -161,6 +167,12 @@ public class PlayerMovement : MonoBehaviour
 
     public void Reset()
     {
+        // leave despawn animation behind when resetting position
+        if (despawnAnim != null)
+        {
+            despawnAnim.transform.parent = null;
+        }
+
         this.transform.position = spawnPoint;
         velocity = Vector3.zero;
     }

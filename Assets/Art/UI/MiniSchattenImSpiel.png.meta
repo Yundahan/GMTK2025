@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 1dfcab06b27f4a74192fbb658c7a20aa
+guid: d0ab40b89ead78047a9c59eda87f3358
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -4445207756741070493
-    second: Schlusel_0
+      213: -2542683390246515283
+    second: Mini Schatten im Spiel_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -113,13 +113,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Schlusel_0
+      name: Mini Schatten im Spiel_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 528
-        height: 501
+        width: 519
+        height: 667
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,8 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 36133a2d8137f42c0800000000000000
-      internalID: -4445207756741070493
+      spriteID: dad0214ade296bcd0800000000000000
+      internalID: -2542683390246515283
       vertices: []
       indices: 
       edges: []
@@ -148,7 +148,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Schlusel_0: -4445207756741070493
+      Mini Schatten im Spiel_0: -2542683390246515283
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

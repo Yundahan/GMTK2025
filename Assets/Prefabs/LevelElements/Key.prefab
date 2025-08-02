@@ -79,8 +79,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 7
-  m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
-  m_Color: {r: 0.726676, g: 0, b: 1, a: 1}
+  m_Sprite: {fileID: -4445207756741070493, guid: 1dfcab06b27f4a74192fbb658c7a20aa, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -103,6 +103,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cooldown: 0.2
+  gemopst: {fileID: 6135560504707577957, guid: eca742125010cc54fa467bc28ac8d608, type: 3}
 --- !u!58 &2902537020579367255
 CircleCollider2D:
   m_ObjectHideFlags: 0

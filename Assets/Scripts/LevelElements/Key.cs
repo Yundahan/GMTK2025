@@ -8,6 +8,9 @@ public class Key : Interactable
     private const float THROWING_SPEED = 10f;
     private const float PICKUP_DISTANCE = 1f;
 
+    private Sprite defaultSprite;
+    public Sprite gemopst;
+
     private Vector2 keySpawnPoint;
     private Interacter interacter;
     private Rigidbody2D rigidBody;
@@ -20,6 +23,7 @@ public class Key : Interactable
     protected override void Awake()
     {
         base.Awake();
+        defaultSprite = GetComponent<SpriteRenderer>().sprite;
         this.keySpawnPoint = this.transform.position;
         rigidBody = GetComponent<Rigidbody2D>();
         this.initialGravityScale = rigidBody.gravityScale;
@@ -56,10 +60,16 @@ public class Key : Interactable
             }
 
             // Pick up key
+            this.interacter = interaction.GetInteracter().GetComponent<Interacter>();
+
+            if (this.interacter.gameObject != player.gameObject)
+            {
+                GetComponent<SpriteRenderer>().sprite = gemopst;
+            }
+
             pickedUp = true;
             interaction.SetThrowingDirection(Vector2.zero);
             this.throwingDirection = Vector3.zero;
-            this.interacter = interaction.GetInteracter().GetComponent<Interacter>();
             rigidBody.gravityScale = 0f;
             lastPickUpEvent = interaction;
             SFXManager.Instance().PlaySFX("Key");
@@ -88,6 +98,7 @@ public class Key : Interactable
             }
 
             // Throw key
+            GetComponent<SpriteRenderer>().sprite = defaultSprite;
             throwingDirection = interaction.GetThrowingDirection();
             pickedUp = false;
             rigidBody.linearVelocity = Vector3.zero;

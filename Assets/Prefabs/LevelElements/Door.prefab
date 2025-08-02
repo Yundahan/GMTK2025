@@ -80,7 +80,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: -5
-  m_Sprite: {fileID: 1423560942981058652, guid: 3f27098aa3dd34d4cbcc086794a0817f, type: 3}
+  m_Sprite: {fileID: -4630418835396706500, guid: 112869d0520ec6f4785e113ab6a53110, type: 3}
   m_Color: {r: 0, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -104,6 +104,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   active: 0
+  activeSprite: {fileID: 2189510010676529607, guid: e4400bb2b2fb3884da2b22415c928933, type: 3}
+  inactiveSprite: {fileID: -4630418835396706500, guid: 112869d0520ec6f4785e113ab6a53110, type: 3}
   portalShine: {fileID: 6588467736213507047}
   nextLevel: MovementTest
 --- !u!61 &5599707481803544999
@@ -144,7 +146,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 3.72, y: 3.79}
+    oldSize: {x: 2.55, y: 3.205}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0

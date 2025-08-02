@@ -21,12 +21,6 @@ public class ShadowMovement : MonoBehaviour
 
     public void StartDespawnAnimation(GameObject despawnPrefab)
     {
-        // clean up old animation object
-        if (despawnAnim != null)
-        {
-            Destroy(despawnAnim);
-        }
-
         despawnAnim = Instantiate(despawnPrefab, this.transform);
     }
 

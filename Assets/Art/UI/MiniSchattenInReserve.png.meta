@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 3d9d3f05cb05d004c9c1f6128ec14957
+guid: 10fd143fb7a0f5d46a9ece6473ff56ef
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -1389403871784171808
-    second: Schalter An_0
+      213: 6601866457025604858
+    second: Mini Schatten in Reserve_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -96,17 +96,30 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Schalter An_0
+      name: Mini Schatten in Reserve_0
       rect:
         serializedVersion: 2
-        x: 8
+        x: 0
         y: 0
-        width: 320
-        height: 541
+        width: 519
+        height: 667
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 0e680cc3a88d7bce0800000000000000
-      internalID: -1389403871784171808
+      spriteID: afce391809a8e9b50800000000000000
+      internalID: 6601866457025604858
       vertices: []
       indices: 
       edges: []
@@ -135,7 +148,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Schalter An_0: -1389403871784171808
+      Mini Schatten in Reserve_0: 6601866457025604858
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

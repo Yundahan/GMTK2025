@@ -11,6 +11,8 @@ public class UIManager : MonoBehaviour
     public GameObject menuUI;
     public GameObject zeigerParent;
     public List<Image> shadowIndicators;
+    public Sprite shadowInReserve;
+    public Sprite shadowInPlay;
 
     private Dictionary<string, GameObject> currentTextsInGameGUI = new Dictionary<string, GameObject>();
     private LoopManager loopManager;
@@ -21,6 +23,14 @@ public class UIManager : MonoBehaviour
     {
         loopManager = FindFirstObjectByType<LoopManager>();
         angularSpeed = 360f / loopManager.GetLoopDuration();
+
+        for (int i = shadowIndicators.Count - 1; i >= 0; i--)
+        {
+            if (i >= loopManager.GetMaxShadows())
+            {
+                shadowIndicators[i].gameObject.SetActive(false);
+            }
+        }
     }
 
     void Update()
@@ -93,10 +103,10 @@ public class UIManager : MonoBehaviour
         {
             if (i < shadowNumber)
             {
-                shadowIndicators[i].enabled = true;
+                shadowIndicators[i].sprite = shadowInReserve;
             } else
             {
-                shadowIndicators[i].enabled = false;
+                shadowIndicators[i].sprite = shadowInPlay;
             }
         }
     }

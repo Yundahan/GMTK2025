@@ -9,6 +9,7 @@ public class BGMManager : MonoBehaviour
     private static BGMManager instance;
 
     private AudioSource[] bgmAudioSource;
+    private AudioSource pauseTrack;
 
     private Dictionary<string, List<string>> sceneToBGMMapping = new Dictionary<string, List<string>>
         {
@@ -41,6 +42,7 @@ public class BGMManager : MonoBehaviour
             DontDestroyOnLoad(gameObject);
             SceneManager.sceneLoaded += OnSceneLoaded;
             bgmAudioSource = GetComponents<AudioSource>();
+            pauseTrack = bgmAudioSource[7];
         }
         else if (instance != this)
         {
@@ -71,17 +73,21 @@ public class BGMManager : MonoBehaviour
 
         if (!IsTrackCurrentlyPlaying(sceneToBGMMapping[activeSceneName][0]))
         {
-            {
-                AudioClip clip = Resources.Load<AudioClip>(sceneToBGMMapping[activeSceneName][0]);
-                bgmAudioSource[0].clip = clip;
-                bgmAudioSource[0].Play();
-                ShadowPlayLayers(activeSceneName, sceneToBGMMapping[activeSceneName].Count);
-            }
+            AudioClip clip = Resources.Load<AudioClip>(sceneToBGMMapping[activeSceneName][0]);
+            bgmAudioSource[0].clip = clip;
+            bgmAudioSource[0].Play();
+            ShadowPlayLayers(activeSceneName, sceneToBGMMapping[activeSceneName].Count);
+
+            
         }
         else
         {
             MuteShadowLayers();
         }
+
+        AudioClip pause = Resources.Load<AudioClip>("Sound/LevelSelect");
+        pauseTrack.clip = pause;
+        pauseTrack.Stop();
     }
     
 
@@ -130,4 +136,26 @@ public class BGMManager : MonoBehaviour
 
         return instance;
     }
+
+    public void MenuToggle(bool menuActive)
+    {
+        string activeSceneName = SceneLoader.Instance().GetActiveSceneName();
+        if (menuActive)
+        {
+            for (int i = 0; i < sceneToBGMMapping[activeSceneName].Count; i++)
+            {
+                bgmAudioSource[i].Pause();
+            }
+            pauseTrack.Play();
+        }
+        if(!menuActive)
+        {
+            for (int i = 0; i < sceneToBGMMapping[activeSceneName].Count; i++)
+            {
+                bgmAudioSource[i].Play();
+            }
+            pauseTrack.Pause();
+        }
+    }
+
 }

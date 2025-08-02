@@ -25,6 +25,7 @@ public class PlayerMovement : MonoBehaviour
     private Vector2 spawnPoint;
     // The direction in which the character moves, 0 if no movement
     private float move;
+    private bool isFalling = false;
 
     private void Awake()
     {
@@ -46,12 +47,20 @@ public class PlayerMovement : MonoBehaviour
 
         if (rigidBody.linearVelocity.y < 0 && !IsGrounded())
         {
+            isFalling = true;
             idleAnimator.SetBool("isFalling", true);
             movingAnimator.SetBool("isFalling", true);
             idleAnimator.SetBool("isJumping", false);
             movingAnimator.SetBool("isJumping", false);
         } else
         {
+            // Player was falling last frame, but isnt anymore, so we play the landing sound
+            if (isFalling)
+            {
+                SFXManager.Instance().PlaySFX("Landing");
+            }
+
+            isFalling = false;
             idleAnimator.SetBool("isFalling", false);
             movingAnimator.SetBool("isFalling", false);
         }
@@ -97,6 +106,7 @@ public class PlayerMovement : MonoBehaviour
 
         idleAnimator.SetBool("isJumping", true);
         movingAnimator.SetBool("isJumping", true);
+        SFXManager.Instance().PlaySFX("Jump");
 
         if (TouchesJumpBoostingShadow())
         {

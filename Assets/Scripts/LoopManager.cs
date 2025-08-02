@@ -67,6 +67,13 @@ public class LoopManager : MonoBehaviour
                 }
 
                 shadowDespawnAnimationPlayed = true;
+
+                if (lastShadowSpawnAnim != null)
+                {
+                    Destroy(lastShadowSpawnAnim);
+                }
+
+                lastShadowSpawnAnim = Instantiate(this.shadowSpawnAnimPrefab, GetComponent<PlayerMovement>().GetSpawnPoint(), Quaternion.identity);
             }
 
             if (Time.time - loopStartTime > loopDuration)
@@ -141,13 +148,6 @@ public class LoopManager : MonoBehaviour
     {
         // Add new shadow
         GameObject newShadow = Instantiate(this.playerShadow, GetComponent<PlayerMovement>().GetSpawnPoint(), Quaternion.identity);
-
-        if (lastShadowSpawnAnim != null)
-        {
-            Destroy(lastShadowSpawnAnim);
-        }
-
-        lastShadowSpawnAnim = Instantiate(this.shadowSpawnAnimPrefab, GetComponent<PlayerMovement>().GetSpawnPoint(), Quaternion.identity);
 
         // Add new shadow to current cycle interactions
         foreach (Interaction interaction in currentInteractions)

@@ -27,13 +27,12 @@ public class InputManager : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Escape))
         {
             FindFirstObjectByType<UIManager>().ToggleMenu();
-            Simulation.Instance().ToggleSimulation();
         }
 
-        if (Input.GetKey(KeyCode.R))
+        if (Input.GetKey(KeyCode.LeftShift))
         {
             player.GetComponent<PlayerActions>().ActivateJumpBoosting();
-        } else if (Input.GetKeyUp(KeyCode.R))
+        } else if (Input.GetKeyUp(KeyCode.LeftShift))
         {
             player.GetComponent<PlayerActions>().DeactivateJumpBoosting();
         }

@@ -62,6 +62,7 @@ public class Key : Interactable
             this.interacter = interaction.GetInteracter().GetComponent<Interacter>();
             rigidBody.gravityScale = 0f;
             lastPickUpEvent = interaction;
+            SFXManager.Instance().PlaySFX("Key");
         } else if (pickedUp)
         {
             // someone else than the current key holder tries to interact with it
@@ -94,6 +95,7 @@ public class Key : Interactable
             rigidBody.AddForce(throwingDirection * THROWING_SPEED);
             this.interacter = null;
             pickUpThrowPairs.Add(new Tuple<Interaction, Interaction>(lastPickUpEvent, interaction));
+            SFXManager.Instance().PlaySFX("Yeet");
         }
 
         return true;

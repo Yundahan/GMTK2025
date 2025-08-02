@@ -16,6 +16,7 @@ public class Key : Interactable
     private Rigidbody2D rigidBody;
     private Vector2 throwingDirection;
     private bool pickedUp = false;
+    private bool hasBeenPickedUpAtLeastOnce = false;
     private float initialGravityScale;
     private Interaction lastPickUpEvent;
     private List<Tuple<Interaction, Interaction>> pickUpThrowPairs = new();
@@ -67,6 +68,7 @@ public class Key : Interactable
                 GetComponent<SpriteRenderer>().sprite = gemopst;
             }
 
+            hasBeenPickedUpAtLeastOnce = true;
             pickedUp = true;
             interaction.SetThrowingDirection(Vector2.zero);
             this.throwingDirection = Vector3.zero;
@@ -128,6 +130,7 @@ public class Key : Interactable
         rigidBody.angularVelocity = 0f;
         this.transform.position = this.keySpawnPoint;
         this.interacter = null;
+        hasBeenPickedUpAtLeastOnce = false;
     }
 
     public Vector2 GetThrowingDirection()
@@ -138,5 +141,10 @@ public class Key : Interactable
     public bool IsInPlayerHand()
     {
         return this.pickedUp && this.interacter.GetComponent<Interacter>() == player;
+    }
+
+    public bool GetHasBeenPickedUpAtLeastOnce()
+    {
+        return hasBeenPickedUpAtLeastOnce;
     }
 }

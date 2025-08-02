@@ -8,8 +8,11 @@ public abstract class Interactable : MonoBehaviour
 
     protected float lastInteractionTime = -5000f;
 
+    protected Vector2 initPosition;
+
     protected virtual void Awake()
     {
+        initPosition = this.transform.position;
         player = FindFirstObjectByType<PlayerActions>();
     }
 
@@ -38,6 +41,7 @@ public abstract class Interactable : MonoBehaviour
 
     public virtual void Reset()
     {
+        this.transform.position = initPosition;
         lastInteractionTime = -5000f;
     }
 }

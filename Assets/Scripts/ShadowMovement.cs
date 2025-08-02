@@ -3,9 +3,11 @@ using UnityEngine;
 
 public class ShadowMovement : MonoBehaviour
 {
+    public Animator animator;
+
     private Vector2 spawnPoint;
     private List<Vector2> path;
-    public Animator animator;
+    private GameObject despawnAnim;
 
     public void ContinueOnPath(int newPathPosition)
     {
@@ -15,6 +17,17 @@ public class ShadowMovement : MonoBehaviour
         }
 
         this.transform.position = path[newPathPosition];
+    }
+
+    public void StartDespawnAnimation(GameObject despawnPrefab)
+    {
+        // clean up old animation object
+        if (despawnAnim != null)
+        {
+            Destroy(despawnAnim);
+        }
+
+        Instantiate(despawnPrefab, this.transform);
     }
 
     public void Reset()

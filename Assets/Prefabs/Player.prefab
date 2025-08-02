@@ -184,9 +184,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerShadow: {fileID: 5935097887000629168, guid: 2f4a740d1242e654289b656a5d48d365, type: 3}
-  shadowSpawnAnimGameObject: {fileID: 7473394255549816129, guid: 290b7b16da17ac94f854e84a44fcf1ef, type: 3}
+  shadowSpawnAnimPrefab: {fileID: 7473394255549816129, guid: 290b7b16da17ac94f854e84a44fcf1ef, type: 3}
+  shadowDespawnAnimPrefab: {fileID: 7473394255549816129, guid: 5640601c2b2b22c42850be6f26490471, type: 3}
   loopDuration: 5
   maxShadows: 4
+  shadowDespawnAnimPredelay: 0.3
 --- !u!61 &6558504314466615844
 BoxCollider2D:
   m_ObjectHideFlags: 0

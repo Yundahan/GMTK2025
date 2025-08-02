@@ -5,11 +5,14 @@ public class LoopManager : MonoBehaviour
 {
     // PlayerShadow prefab for instantiating of new shadows
     public GameObject playerShadow;
-    // Shadow Animation prefab
-    public GameObject shadowSpawnAnimGameObject;
+    // Shadow Spawn Animation prefab
+    public GameObject shadowSpawnAnimPrefab;
+    // Shadow Despawn Animation prefab
+    public GameObject shadowDespawnAnimPrefab;
 
     public float loopDuration = 5f;
     public int maxShadows = 4;
+    public float shadowDespawnAnimPredelay = 0.3f;
 
     // interactions from the current cycle, not yet to be repeated
     private List<Interaction> currentInteractions = new();
@@ -24,6 +27,7 @@ public class LoopManager : MonoBehaviour
     private GameObject lastShadowSpawnAnim;
     private bool looping = false;
     private float loopStartTime = -5000f;
+    private bool shadowDespawnAnimationPlayed = false;
 
     // Audio values
     private float loopEndSoundPredelay = 0.2f;
@@ -44,11 +48,24 @@ public class LoopManager : MonoBehaviour
             PerformPreviousInteractions();
             GetComponent<PlayerActions>().PerformPreviousActions(loopStartTime);
 
+
+            // Start playing the Loop end sounds a little earlier so that it actually matches up
             if (!loopEndSoundPlayed && Time.time - loopStartTime > loopDuration - loopEndSoundPredelay)
             {
                 BGMManager.Instance().ShadowSpawned(shadows.Count + 1);
                 SFXManager.Instance().PlaySFX("Loop");
                 loopEndSoundPlayed = true;
+            }
+
+            //Start playing the shadow despawn animation a little earlier
+            if (!shadowDespawnAnimationPlayed && Time.time - loopStartTime > loopDuration - loopEndSoundPredelay)
+            {
+                foreach (GameObject shadow in  shadows)
+                {
+                    shadow.GetComponent<ShadowMovement>().StartDespawnAnimation(shadowDespawnAnimPrefab);
+                }
+
+                shadowDespawnAnimationPlayed = true;
             }
 
             if (Time.time - loopStartTime > loopDuration)
@@ -129,7 +146,7 @@ public class LoopManager : MonoBehaviour
             Destroy(lastShadowSpawnAnim);
         }
 
-        lastShadowSpawnAnim = Instantiate(this.shadowSpawnAnimGameObject, GetComponent<PlayerMovement>().GetSpawnPoint(), Quaternion.identity);
+        lastShadowSpawnAnim = Instantiate(this.shadowSpawnAnimPrefab, GetComponent<PlayerMovement>().GetSpawnPoint(), Quaternion.identity);
 
         // Add new shadow to current cycle interactions
         foreach (Interaction interaction in currentInteractions)

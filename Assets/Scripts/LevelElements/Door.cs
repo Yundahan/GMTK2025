@@ -31,6 +31,7 @@ public class Door : ToggleObject
     {
         if (doorReached && Time.time - doorReachedTime > LEVEL_END_DELAY)
         {
+            Simulation.Instance().ToggleSimulation();
             SceneLoader.Instance().LoadScene(nextLevel);
         }
     }
@@ -54,8 +55,7 @@ public class Door : ToggleObject
         {
             portalShine.SetActive(true);
             animator.SetBool("isClosing", true);
-            Time.timeScale = 0f;
-
+            Simulation.Instance().ToggleSimulation();
             doorReached = true;
         }
     }

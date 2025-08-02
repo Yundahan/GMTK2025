@@ -1941,30 +1941,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
-    - target: {fileID: 1347039183820746636, guid: 8c8a993a785c3d842be9526f11bf7d20, type: 3}
-      propertyPath: m_AutoRebind
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3435551643833435481, guid: 8c8a993a785c3d842be9526f11bf7d20, type: 3}
-      propertyPath: m_AutoRebind
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3435551643833435481, guid: 8c8a993a785c3d842be9526f11bf7d20, type: 3}
-      propertyPath: 'm_BoneTransforms.Array.data[10]'
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 3435551643833435481, guid: 8c8a993a785c3d842be9526f11bf7d20, type: 3}
-      propertyPath: 'm_BoneTransforms.Array.data[11]'
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 3435551643833435481, guid: 8c8a993a785c3d842be9526f11bf7d20, type: 3}
-      propertyPath: 'm_BoneTransforms.Array.data[12]'
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 3435551643833435481, guid: 8c8a993a785c3d842be9526f11bf7d20, type: 3}
-      propertyPath: 'm_BoneTransforms.Array.data[13]'
-      value: 
-      objectReference: {fileID: 0}
     - target: {fileID: 3941219399103439200, guid: 8c8a993a785c3d842be9526f11bf7d20, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.069
@@ -2319,18 +2295,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 217199752455423274, guid: 2348746d869dac847a510296bb10efd6, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1378246902078074413, guid: 2348746d869dac847a510296bb10efd6, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: -59.928955
-      objectReference: {fileID: 0}
-    - target: {fileID: 2777681932463357139, guid: 2348746d869dac847a510296bb10efd6, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: -59.928955
-      objectReference: {fileID: 0}
     - target: {fileID: 3195199097617935116, guid: 2348746d869dac847a510296bb10efd6, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
@@ -2425,10 +2389,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5319833198674474372, guid: 2348746d869dac847a510296bb10efd6, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7199180749701351015, guid: 2348746d869dac847a510296bb10efd6, type: 3}
-      propertyPath: m_AnchoredPosition.x
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8582094881691242137, guid: 2348746d869dac847a510296bb10efd6, type: 3}

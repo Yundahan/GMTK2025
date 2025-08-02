@@ -34,6 +34,7 @@ public class UIManager : MonoBehaviour
 
     public void ToggleMenu()
     {
+        Simulation.Instance().ToggleSimulation();
         gameUI.SetActive(!gameUI.activeSelf);
         menuUI.SetActive(!menuUI.activeSelf);
     }

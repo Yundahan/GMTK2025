@@ -59,9 +59,10 @@ public class PlayerMovement : MonoBehaviour
             if (isFalling)
             {
                 SFXManager.Instance().PlaySFX("Landing");
+                GetComponent<PlayerActions>().RecordAction(Action.ActionType.LANDING);
+                isFalling = false;
             }
 
-            isFalling = false;
             idleAnimator.SetBool("isFalling", false);
             movingAnimator.SetBool("isFalling", false);
         }
@@ -108,6 +109,7 @@ public class PlayerMovement : MonoBehaviour
         idleAnimator.SetBool("isJumping", true);
         movingAnimator.SetBool("isJumping", true);
         SFXManager.Instance().PlaySFX("Jump");
+        GetComponent<PlayerActions>().RecordAction(Action.ActionType.JUMPING);
 
         if (TouchesJumpBoostingShadow())
         {

@@ -47,6 +47,7 @@ public class UIManager : MonoBehaviour
         Simulation.Instance().ToggleSimulation();
         gameUI.SetActive(!gameUI.activeSelf);
         menuUI.SetActive(!menuUI.activeSelf);
+        BGMManager.Instance().MenuToggle(menuUI.activeSelf);
     }
 
     /// <summary>

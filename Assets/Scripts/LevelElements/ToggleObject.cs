@@ -9,8 +9,11 @@ public abstract class ToggleObject : MonoBehaviour
     public Sprite activeSprite;
     public Sprite inactiveSprite;
 
+    protected Vector3 initPosition;
+
     protected virtual void Awake()
     {
+        initPosition = this.transform.position;
         initValue = active;
     }
 
@@ -24,6 +27,7 @@ public abstract class ToggleObject : MonoBehaviour
 
     public virtual void Reset()
     {
+        this.transform.position = initPosition;
         active = initValue;
     }
 

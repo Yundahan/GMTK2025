@@ -6,6 +6,9 @@ public abstract class ToggleObject : MonoBehaviour
 
     protected bool initValue = false;
 
+    public Sprite activeSprite;
+    public Sprite inactiveSprite;
+
     protected virtual void Awake()
     {
         initValue = active;
@@ -22,5 +25,17 @@ public abstract class ToggleObject : MonoBehaviour
     public virtual void Reset()
     {
         active = initValue;
+    }
+
+    protected void UpdateSprite()
+    {
+        if (active)
+        {
+            GetComponent<SpriteRenderer>().sprite = activeSprite;
+        }
+        else
+        {
+            GetComponent<SpriteRenderer>().sprite = inactiveSprite;
+        }
     }
 }

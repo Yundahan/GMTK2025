@@ -15,10 +15,10 @@ public class Door : ToggleObject
     private bool doorReached = false;
     private float doorReachedTime = -5000f;
 
-
     protected override void Awake()
     {
         base.Awake();
+        UpdateSprite();
         player = FindFirstObjectByType<PlayerMovement>().gameObject;
         allKeys = FindObjectsByType<Key>(FindObjectsSortMode.None);
         animator = GetComponent<Animator>();
@@ -37,12 +37,11 @@ public class Door : ToggleObject
     {
         if (active)
         {
-            GetComponent<SpriteRenderer>().color = Color.green;
             SFXManager.Instance().PlaySFX("Portal");
-
+            GetComponent<SpriteRenderer>().sprite = activeSprite;
         } else
         {
-            GetComponent<SpriteRenderer>().color = Color.red;
+            GetComponent<SpriteRenderer>().sprite = inactiveSprite;
         }
     }
 

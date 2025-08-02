@@ -9,7 +9,7 @@ public class Key : Interactable
     private const float PICKUP_DISTANCE = 1f;
 
     private Vector2 keySpawnPoint;
-    public Interacter interacter;
+    private Interacter interacter;
     private Rigidbody2D rigidBody;
     private Vector2 throwingDirection;
     private bool pickedUp = false;

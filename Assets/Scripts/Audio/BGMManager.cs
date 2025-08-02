@@ -17,7 +17,7 @@ public class BGMManager : MonoBehaviour
           {"Scene1", new List<string> { "Sound/Floor1", "Sound/Floor2", "Sound/Floor3", "Sound/Floor4", "Sound/Floor5" } },
           {"LeonTestScene", new List<string> { "Sound/Observatory1", "Sound/Observatory2", "Sound/Observatory3", "Sound/Observatory4", "Sound/Observatory5","Sound/Observatory6" } },
           {"AndrikTestScene", new List<string> { "Sound/Floor1", "Sound/Floor2", "Sound/Floor3", "Sound/Floor4", "Sound/Floor5" } },
-          {"MovementTestScene", new List<string> { "Sound/Floor1", "Sound/Floor2", "Sound/Floor3", "Sound/Floor4", "Sound/Floor5" } },
+          {"MovementTest", new List<string> { "Sound/Floor1", "Sound/Floor2", "Sound/Floor3", "Sound/Floor4", "Sound/Floor5" } },
           {"Tutorial1TEST", new List<string> { "Sound/Floor1", "Sound/Floor2", "Sound/Floor3", "Sound/Floor4", "Sound/Floor5" } },
           {"Tutorial2TEST", new List<string> { "Sound/Floor1", "Sound/Floor2", "Sound/Floor3", "Sound/Floor4", "Sound/Floor5" } },
           {"Tutorial3TEST", new List<string> { "Sound/Floor1", "Sound/Floor2", "Sound/Floor3", "Sound/Floor4", "Sound/Floor5" } },

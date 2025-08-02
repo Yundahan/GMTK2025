@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 9058af918cc6b3545a8cdd6e35425ea8
+guid: b401a19a92c32474391c1cb1cb9f8cbd
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 5123433526701140720
-    second: Seite_Kopf_0
+      213: -4339038441596103383
+    second: Seite_Arm_vorne_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -96,17 +96,30 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Seite_Kopf_0
+      name: Seite_Arm_vorne_0
       rect:
         serializedVersion: 2
-        x: 292
-        y: 190
-        width: 214
-        height: 475
+        x: 88
+        y: 11
+        width: 224
+        height: 481
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 0fa295db5a71a1740800000000000000
-      internalID: 5123433526701140720
+      spriteID: 92556edc683a8c3c0800000000000000
+      internalID: -4339038441596103383
       vertices: []
       indices: 
       edges: []
@@ -135,7 +148,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Seite_Kopf_0: 5123433526701140720
+      Seite_Arm_vorne_0: -4339038441596103383
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

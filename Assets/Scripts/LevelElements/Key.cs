@@ -23,6 +23,7 @@ public class Key : Interactable
         this.keySpawnPoint = this.transform.position;
         rigidBody = GetComponent<Rigidbody2D>();
         this.initialGravityScale = rigidBody.gravityScale;
+        rigidBody.gravityScale = 0f;
         Physics2D.IgnoreCollision(GetComponent<Collider2D>(), player.GetComponent<Collider2D>());
     }
 
@@ -56,6 +57,8 @@ public class Key : Interactable
 
             // Pick up key
             pickedUp = true;
+            interaction.SetThrowingDirection(Vector2.zero);
+            this.throwingDirection = Vector3.zero;
             this.interacter = interaction.GetInteracter().GetComponent<Interacter>();
             rigidBody.gravityScale = 0f;
             lastPickUpEvent = interaction;
@@ -86,8 +89,9 @@ public class Key : Interactable
             // Throw key
             throwingDirection = interaction.GetThrowingDirection();
             pickedUp = false;
-            rigidBody.AddForce(throwingDirection * THROWING_SPEED);
+            rigidBody.linearVelocity = Vector3.zero;
             rigidBody.gravityScale = this.initialGravityScale;
+            rigidBody.AddForce(throwingDirection * THROWING_SPEED);
             this.interacter = null;
             pickUpThrowPairs.Add(new Tuple<Interaction, Interaction>(lastPickUpEvent, interaction));
         }
@@ -106,7 +110,7 @@ public class Key : Interactable
     {
         base.Reset();
         pickedUp = false;
-        rigidBody.gravityScale = initialGravityScale;
+        rigidBody.gravityScale = 0f;
         rigidBody.linearVelocity = Vector2.zero;
         rigidBody.angularVelocity = 0f;
         this.transform.position = this.keySpawnPoint;

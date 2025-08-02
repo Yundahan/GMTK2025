@@ -9,7 +9,6 @@ public class BGMManager : MonoBehaviour
     private static BGMManager instance;
 
     private AudioSource[] bgmAudioSource;
-    private SFXManager sfxManager;
 
     private Dictionary<string, List<string>> sceneToBGMMapping = new Dictionary<string, List<string>>
         {
@@ -37,7 +36,6 @@ public class BGMManager : MonoBehaviour
             DontDestroyOnLoad(gameObject);
             SceneManager.sceneLoaded += OnSceneLoaded;
             bgmAudioSource = GetComponents<AudioSource>();
-            sfxManager = FindFirstObjectByType<SFXManager>();
         }
         else if (instance != this)
         {

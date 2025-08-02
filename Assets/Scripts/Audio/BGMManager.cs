@@ -22,6 +22,11 @@ public class BGMManager : MonoBehaviour
           {"Tutorial3TEST", new List<string> { "Sound/Floor1", "Sound/Floor2", "Sound/Floor3", "Sound/Floor4", "Sound/Floor5" } },
           {"Tutorial4TEST", new List<string> { "Sound/Floor1", "Sound/Floor2", "Sound/Floor3", "Sound/Floor4", "Sound/Floor5" } },
           {"Level1", new List<string> { "Sound/Floor1", "Sound/Floor2", "Sound/Floor3", "Sound/Floor4", "Sound/Floor5" } },
+          {"Level2", new List<string> { "Sound/Floor1", "Sound/Floor2", "Sound/Floor3", "Sound/Floor4", "Sound/Floor5" } },
+          {"Level3", new List<string> { "Sound/Floor1", "Sound/Floor2", "Sound/Floor3", "Sound/Floor4", "Sound/Floor5" } },
+          {"Level4", new List<string> { "Sound/Floor1", "Sound/Floor2", "Sound/Floor3", "Sound/Floor4", "Sound/Floor5" } },
+          {"Level5", new List<string> { "Sound/Floor1", "Sound/Floor2", "Sound/Floor3", "Sound/Floor4", "Sound/Floor5" } },
+          {"Level6", new List<string> { "Sound/Floor1", "Sound/Floor2", "Sound/Floor3", "Sound/Floor4", "Sound/Floor5" } },
         };
 
     private BGMManager() {

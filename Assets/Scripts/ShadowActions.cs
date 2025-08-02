@@ -2,7 +2,33 @@ using UnityEngine;
 
 public class ShadowActions : Interacter
 {
+    private bool isGrounded = true;
     private bool jumpBoosting = false;
+
+    void Update()
+    {
+        Vector2 lastDirection = GetComponent<ShadowMovement>().GetLastDirection();
+
+        if (!isGrounded)
+        {
+            if (lastDirection.y > 0f)
+            {
+                // JUMPING
+            } else
+            {
+                // FALLING
+            }
+        } else if (!jumpBoosting)
+        {
+            if (Mathf.Abs(lastDirection.x) > 0.01f)
+            {
+                // MOVING
+            } else
+            {
+                // IDLE
+            }
+        }
+    }
 
     public void PerformAction(Action.ActionType actionType)
     {
@@ -13,6 +39,12 @@ public class ShadowActions : Interacter
                 break;
             case Action.ActionType.JUMP_BOOSTING_OFF:
                 DeactivateJumpBoosting();
+                break;
+            case Action.ActionType.JUMPING:
+                isGrounded = false;
+                break;
+            case Action.ActionType.LANDING:
+                isGrounded = true;
                 break;
             default:
                 break;

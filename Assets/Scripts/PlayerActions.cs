@@ -47,7 +47,7 @@ public class PlayerActions : Interacter
         currentActions.Clear();
     }
 
-    private void RecordAction(Action.ActionType actionType)
+    public void RecordAction(Action.ActionType actionType)
     {
         Action action = new Action();
         action.SetActionType(actionType);

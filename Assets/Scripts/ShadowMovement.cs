@@ -8,6 +8,7 @@ public class ShadowMovement : MonoBehaviour
     private Vector2 spawnPoint;
     private List<Vector2> path;
     private GameObject despawnAnim;
+    private Vector2 lastDirection = Vector2.zero;
 
     public void ContinueOnPath(int newPathPosition)
     {
@@ -16,6 +17,7 @@ public class ShadowMovement : MonoBehaviour
             return;
         }
 
+        lastDirection = path[newPathPosition] - (Vector2) this.transform.position;
         this.transform.position = path[newPathPosition];
     }
 
@@ -43,5 +45,10 @@ public class ShadowMovement : MonoBehaviour
     public void SetSpawnPoint(Vector2 value)
     {
         this.spawnPoint = value;
+    }
+
+    public Vector2 GetLastDirection()
+    {
+        return lastDirection;
     }
 }

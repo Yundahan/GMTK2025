@@ -6,7 +6,9 @@ public class Action
     public enum ActionType
     {
         JUMP_BOOSTING_ON,
-        JUMP_BOOSTING_OFF
+        JUMP_BOOSTING_OFF,
+        JUMPING,
+        LANDING
     }
 
     private ActionType actionType;

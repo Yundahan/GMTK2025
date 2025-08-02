@@ -10,7 +10,7 @@ public class KeyHint : Hint
     {
         if (hintShown && !keyPickedUp && key.IsInPlayerHand())
         {
-            SetText("Press E again\n to throw the key\ntowards the mouse");
+            SetText("Press E and aim");
             keyPickedUp = true;
         } else if (keyPickedUp && !key.IsInPlayerHand())
         {

@@ -5,20 +5,11 @@ public class Simulation
 {
     private static Simulation instance;
 
-    // This is a variable that persists even when the scene changes.
-    private int eCount = 0;
-
     private bool simulating = true;
 
     private Simulation()
     {
 
-    }
-
-    public int IncreaseECount()
-    {
-        eCount++;
-        return eCount;
     }
 
     /// <summary>

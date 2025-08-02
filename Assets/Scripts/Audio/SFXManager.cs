@@ -17,7 +17,7 @@ public class SFXManager : MonoBehaviour
         {"Landing", "Sound/SFX/SFX_Landing"},
         {"Key", "Sound/SFX/SFX_Key_Pickup"},
         {"Yeet", "Sound/SFX/SFX_Throw"},
-        {"Button", "Sound/SFX/SFX_UI_Button_Pressed"},
+        {"Button", "Sound/SFX/SFX_UI_Button_Press"},
         {"Level_Select", "Sound/SFX/SFX_UI_Select_Level" },
         {"Shadow", "Sound/SFX/SFX_Shadow_Disappear" }
     };

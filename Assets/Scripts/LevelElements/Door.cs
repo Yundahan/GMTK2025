@@ -1,18 +1,21 @@
+using System.Collections;
 using Unity.VisualScripting;
 using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 
 public class Door : ToggleObject
 {
-    private GameObject player;
-
-    public Animator animator;
-
     public GameObject portalShine;
+    public string nextLevel;
 
+    private const float LEVEL_END_DELAY = 1f;
+
+    private Animator animator;
+    private GameObject player;
     private SFXManager sfxManager;
-
     private Key[] allKeys;
+    private bool doorReached = false;
+    private float doorReachedTime = -5000f;
 
 
     protected override void Awake()
@@ -22,6 +25,14 @@ public class Door : ToggleObject
         sfxManager = FindFirstObjectByType<SFXManager>();
         allKeys = FindObjectsByType<Key>(FindObjectsSortMode.None);
         animator = GetComponent<Animator>();
+    }
+
+    void Update()
+    {
+        if (doorReached && Time.time - doorReachedTime > LEVEL_END_DELAY)
+        {
+            SceneLoader.Instance().LoadScene(nextLevel);
+        }
     }
 
     protected override void ToggleActions()
@@ -41,11 +52,11 @@ public class Door : ToggleObject
     {
         if (active && collision.gameObject == player && AllKeysCollected())
         {
-            Debug.Log("Tür ist offen und betreten");
-
             portalShine.SetActive(true);
-
             animator.SetBool("isClosing", true);
+            Time.timeScale = 0f;
+
+            doorReached = true;
         }
     }
 

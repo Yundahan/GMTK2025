@@ -69,10 +69,9 @@ public class PlayerActions : Interacter
     {
         if (GetComponent<PlayerMovement>().IsGrounded() && !jumpBoosting && jumpBoostingAllowed)
         {
-            GetComponent<SpriteRenderer>().color = Color.blue;
+            idleAnimator.SetBool("isJumpBoosting", true);
             this.jumpBoosting = true;
             RecordAction(Action.ActionType.JUMP_BOOSTING_ON);
-            idleAnimator.SetBool("isJumpBoosting", true);
         }
     }
 
@@ -81,7 +80,6 @@ public class PlayerActions : Interacter
         if (jumpBoostingAllowed)
         {
             idleAnimator.SetBool("isJumpBoosting", false);
-            GetComponent<SpriteRenderer>().color = Color.white;
             this.jumpBoosting = false;
             RecordAction(Action.ActionType.JUMP_BOOSTING_OFF);
         }

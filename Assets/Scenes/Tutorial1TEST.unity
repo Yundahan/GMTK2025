@@ -1976,6 +1976,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6261265540035876499, guid: 8c8a993a785c3d842be9526f11bf7d20, type: 3}
+      propertyPath: jumpBoostingAllowed
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

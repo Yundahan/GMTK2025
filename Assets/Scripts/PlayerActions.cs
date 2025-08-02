@@ -5,6 +5,8 @@ using UnityEngine.UI;
 
 public class PlayerActions : Interacter
 {
+    public bool jumpBoostingAllowed = true;
+
     private bool jumpBoosting = false;
     // actions from the current cycle, not yet to be repeated
     private List<Action> currentActions = new();
@@ -65,7 +67,7 @@ public class PlayerActions : Interacter
 
     public void ActivateJumpBoosting()
     {
-        if (GetComponent<PlayerMovement>().IsGrounded() && !jumpBoosting)
+        if (GetComponent<PlayerMovement>().IsGrounded() && !jumpBoosting && jumpBoostingAllowed)
         {
             GetComponent<SpriteRenderer>().color = Color.blue;
             this.jumpBoosting = true;
@@ -76,10 +78,12 @@ public class PlayerActions : Interacter
 
     public void DeactivateJumpBoosting()
     {
-
-        idleAnimator.SetBool("isJumpBoosting", false);
-        GetComponent<SpriteRenderer>().color = Color.white;
-        this.jumpBoosting = false;
-        RecordAction(Action.ActionType.JUMP_BOOSTING_OFF);
+        if (jumpBoostingAllowed)
+        {
+            idleAnimator.SetBool("isJumpBoosting", false);
+            GetComponent<SpriteRenderer>().color = Color.white;
+            this.jumpBoosting = false;
+            RecordAction(Action.ActionType.JUMP_BOOSTING_OFF);
+        }
     }
 }

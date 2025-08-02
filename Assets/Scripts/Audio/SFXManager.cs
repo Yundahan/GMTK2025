@@ -10,9 +10,16 @@ public class SFXManager : MonoBehaviour
 
     private Dictionary<string, string> sfxDict = new Dictionary<string, string>
     {
-        {"Lever", "Sound/SFX/SFX_Lever" },
-        {"Loop", "Sound/SFX/SFX_Loop" },
-        {"Portal", "Sound/SFX/SFX_Portal_Open" }
+        {"Lever", "Sound/SFX/SFX_Lever"},
+        {"Loop", "Sound/SFX/SFX_Loop"},
+        {"Portal", "Sound/SFX/SFX_Portal_Open"},
+        {"Jump", "Sound/SFX/SFX_Jump"},
+        {"Landing", "Sound/SFX/SFX_Landing"},
+        {"Key", "Sound/SFX/SFX_Key_Pickup"},
+        {"Yeet", "Sound/SFX/SFX_Throw"},
+        {"Button", "Sound/SFX/SFX_UI_Button_Pressed"},
+        {"Level_Select", "Sound/SFX/SFX_UI_Select_Level" },
+        {"Shadow", "Sound/SFX/SFX_Shadow_Disappear" }
     };
 
     private SFXManager() {

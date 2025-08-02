@@ -18,6 +18,10 @@ public class BGMManager : MonoBehaviour
           {"LeonTestScene", new List<string> { "Sound/Observatory1", "Sound/Observatory2", "Sound/Observatory3", "Sound/Observatory4", "Sound/Observatory5","Sound/Observatory6" } },
           {"AndrikTestScene", new List<string> { "Sound/Floor1", "Sound/Floor2", "Sound/Floor3", "Sound/Floor4", "Sound/Floor5" } },
           {"MovementTestScene", new List<string> { "Sound/Floor1", "Sound/Floor2", "Sound/Floor3", "Sound/Floor4", "Sound/Floor5" } },
+          {"Tutorial1TEST", new List<string> { "Sound/Floor1", "Sound/Floor2", "Sound/Floor3", "Sound/Floor4", "Sound/Floor5" } },
+          {"Tutorial2TEST", new List<string> { "Sound/Floor1", "Sound/Floor2", "Sound/Floor3", "Sound/Floor4", "Sound/Floor5" } },
+          {"Tutorial3TEST", new List<string> { "Sound/Floor1", "Sound/Floor2", "Sound/Floor3", "Sound/Floor4", "Sound/Floor5" } },
+          {"Tutorial4TEST", new List<string> { "Sound/Floor1", "Sound/Floor2", "Sound/Floor3", "Sound/Floor4", "Sound/Floor5" } },
         };
 
     private BGMManager() {

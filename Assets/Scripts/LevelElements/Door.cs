@@ -73,6 +73,6 @@ public class Door : ToggleObject
     public override void Reset()
     {
         base.Reset();
-        GetComponent<SpriteRenderer>().color = Color.red;
+        UpdateSprite();
     }
 }

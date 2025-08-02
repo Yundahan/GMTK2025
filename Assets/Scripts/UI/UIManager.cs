@@ -101,6 +101,16 @@ public class UIManager : MonoBehaviour
         }
     }
 
+    public void PlayButtonSFX()
+    {
+        SFXManager.Instance().PlaySFX("Button");
+    }
+
+    public void PlayLevelSelectSFX()
+    {
+        SFXManager.Instance().PlaySFX("Level_Select");
+    }
+
     public void Reset()
     {
         zeigerAngle = 0f;

@@ -37,6 +37,7 @@ public class LoopManager : MonoBehaviour
     {
         SetLooping(false);
         uiManager = FindFirstObjectByType<UIManager>();
+        uiManager.ShowShadowIndicators(maxShadows);
         toggleObjectsInScene = FindObjectsByType<ToggleObject>(FindObjectsSortMode.None);
     }
 
@@ -49,7 +50,7 @@ public class LoopManager : MonoBehaviour
             GetComponent<PlayerActions>().PerformPreviousActions(loopStartTime);
 
 
-            // Start playing the Loop end sounds a little earlier so that it actually matches up
+            // Start playing the loop end sounds a little earlier so that it actually matches up
             if (!loopEndSoundPlayed && Time.time - loopStartTime > loopDuration - loopEndSoundPredelay)
             {
                 BGMManager.Instance().ShadowSpawned(shadows.Count + 1);
@@ -57,7 +58,7 @@ public class LoopManager : MonoBehaviour
                 loopEndSoundPlayed = true;
             }
 
-            //Start playing the shadow despawn animation a little earlier
+            // Start playing the shadow despawn animation a little earlier
             if (!shadowDespawnAnimationPlayed && Time.time - loopStartTime > loopDuration - shadowDespawnAnimPredelay)
             {
                 foreach (GameObject shadow in  shadows)
@@ -117,7 +118,6 @@ public class LoopManager : MonoBehaviour
         }
 
         GameObject newShadow = AddNewShadow();
-        shadows.Add(newShadow);
         GetComponent<ShadowMover>().EndLoop(shadows, newShadow);
         GetComponent<PlayerActions>().EndLoop(newShadow.GetComponent<ShadowActions>());
 
@@ -164,6 +164,9 @@ public class LoopManager : MonoBehaviour
             interaction.SetDone(false);
             interaction.GetInteractable().Reset();
         }
+
+        shadows.Add(newShadow);
+        uiManager.ShowShadowIndicators(maxShadows - shadows.Count);
 
         return newShadow;
     }

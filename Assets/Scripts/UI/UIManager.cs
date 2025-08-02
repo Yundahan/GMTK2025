@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class UIManager : MonoBehaviour
 {
@@ -9,6 +10,7 @@ public class UIManager : MonoBehaviour
     public GameObject gameUI;
     public GameObject menuUI;
     public GameObject zeigerParent;
+    public List<Image> shadowIndicators;
 
     private Dictionary<string, GameObject> currentTextsInGameGUI = new Dictionary<string, GameObject>();
     private LoopManager loopManager;
@@ -82,6 +84,20 @@ public class UIManager : MonoBehaviour
         }
 
         currentTextsInGameGUI.Clear();
+    }
+
+    public void ShowShadowIndicators(int shadowNumber)
+    {
+        for (int i = shadowIndicators.Count - 1; i >= 0; i--)
+        {
+            if (i < shadowNumber)
+            {
+                shadowIndicators[i].enabled = true;
+            } else
+            {
+                shadowIndicators[i].enabled = false;
+            }
+        }
     }
 
     public void Reset()

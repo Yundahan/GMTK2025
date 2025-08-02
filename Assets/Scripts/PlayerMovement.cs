@@ -18,7 +18,8 @@ public class PlayerMovement : MonoBehaviour
     public SpriteRenderer idleRenderer;
     public SpriteRenderer movingRenderer;
 
-    public Animator animator;
+    public Animator idleAnimator;
+    public Animator movingAnimator;
 
     private Vector3 velocity = Vector3.zero;
     private Vector2 spawnPoint;
@@ -29,7 +30,7 @@ public class PlayerMovement : MonoBehaviour
     {
         rigidBody = GetComponent<Rigidbody2D>();
         spawnPoint = transform.position;
-        animator = GetComponent<Animator>();
+        idleAnimator = GetComponent<Animator>();
 
         foreach (Collider2D collider2D in FindObjectsByType<Collider2D>(FindObjectsSortMode.None))
         {
@@ -45,11 +46,14 @@ public class PlayerMovement : MonoBehaviour
 
         if (rigidBody.linearVelocity.y < 0 && !IsGrounded())
         {
-            animator.SetBool("isFalling", true);
-            animator.SetBool("isJumping", false);
+            idleAnimator.SetBool("isFalling", true);
+            movingAnimator.SetBool("isFalling", true);
+            idleAnimator.SetBool("isJumping", false);
+            movingAnimator.SetBool("isJumping", false);
         } else
         {
-            animator.SetBool("isFalling", false);
+            idleAnimator.SetBool("isFalling", false);
+            movingAnimator.SetBool("isFalling", false);
         }
     }
 
@@ -61,19 +65,19 @@ public class PlayerMovement : MonoBehaviour
 
         if (horizontalAxis < 0)
         {
-            animator.SetBool("isRunning", true);
+            idleAnimator.SetBool("isRunning", true);
             movingRenderer.enabled = true;
             idleRenderer.enabled = false;
             movingRenderer.flipX = true;
         } else if(horizontalAxis > 0)
         {
-            animator.SetBool("isRunning", true);
+            idleAnimator.SetBool("isRunning", true);
             movingRenderer.enabled = true;
             idleRenderer.enabled = false;
             movingRenderer.flipX = false;
         } else
         {
-            animator.SetBool("isRunning", false);
+            idleAnimator.SetBool("isRunning", false);
             movingRenderer.enabled = false;
             idleRenderer.enabled = true;
         }
@@ -91,7 +95,8 @@ public class PlayerMovement : MonoBehaviour
             return;
         }
 
-        animator.SetBool("isJumping", true);
+        idleAnimator.SetBool("isJumping", true);
+        movingAnimator.SetBool("isJumping", true);
 
         if (TouchesJumpBoostingShadow())
         {

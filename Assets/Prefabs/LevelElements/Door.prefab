@@ -105,7 +105,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   active: 0
   portalShine: {fileID: 6588467736213507047}
-  nextLevel: MovementTestScene
+  nextLevel: MovementTest
 --- !u!61 &5599707481803544999
 BoxCollider2D:
   m_ObjectHideFlags: 0

@@ -23,6 +23,7 @@ public class Key : Interactable
         this.keySpawnPoint = this.transform.position;
         rigidBody = GetComponent<Rigidbody2D>();
         this.initialGravityScale = rigidBody.gravityScale;
+        rigidBody.gravityScale = 0f;
         Physics2D.IgnoreCollision(GetComponent<Collider2D>(), player.GetComponent<Collider2D>());
     }
 
@@ -106,7 +107,7 @@ public class Key : Interactable
     {
         base.Reset();
         pickedUp = false;
-        rigidBody.gravityScale = initialGravityScale;
+        rigidBody.gravityScale = 0f;
         rigidBody.linearVelocity = Vector2.zero;
         rigidBody.angularVelocity = 0f;
         this.transform.position = this.keySpawnPoint;

@@ -1510,14 +1510,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 422994718584301368, guid: 9c31d3ab2621e5c4fb9667a75ddd952d, type: 3}
-      propertyPath: m_Material
-      value: 
-      objectReference: {fileID: 6200000, guid: 831e77a7561b70d46a8fb6ac9f5c6e24, type: 2}
-    - target: {fileID: 422994718584301368, guid: 9c31d3ab2621e5c4fb9667a75ddd952d, type: 3}
-      propertyPath: m_GravityScale
-      value: 1.65
-      objectReference: {fileID: 0}
     - target: {fileID: 2116128984722627627, guid: 9c31d3ab2621e5c4fb9667a75ddd952d, type: 3}
       propertyPath: m_Name
       value: Key

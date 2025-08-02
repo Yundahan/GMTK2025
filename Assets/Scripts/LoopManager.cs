@@ -58,7 +58,7 @@ public class LoopManager : MonoBehaviour
             }
 
             //Start playing the shadow despawn animation a little earlier
-            if (!shadowDespawnAnimationPlayed && Time.time - loopStartTime > loopDuration - loopEndSoundPredelay)
+            if (!shadowDespawnAnimationPlayed && Time.time - loopStartTime > loopDuration - shadowDespawnAnimPredelay)
             {
                 foreach (GameObject shadow in  shadows)
                 {
@@ -133,6 +133,7 @@ public class LoopManager : MonoBehaviour
         // Update UI, reset loopStartTime
         this.uiManager.Reset();
         loopEndSoundPlayed = false;
+        shadowDespawnAnimationPlayed = false;
         loopStartTime = Time.time;
     }
 

@@ -27,11 +27,17 @@ public class ShadowMovement : MonoBehaviour
             Destroy(despawnAnim);
         }
 
-        Instantiate(despawnPrefab, this.transform);
+        despawnAnim = Instantiate(despawnPrefab, this.transform);
     }
 
     public void Reset()
     {
+        // leave despawn animation behind when resetting position
+        if (despawnAnim != null)
+        {
+            despawnAnim.transform.parent = null;
+        }
+
         this.transform.position = this.spawnPoint;
     }
 

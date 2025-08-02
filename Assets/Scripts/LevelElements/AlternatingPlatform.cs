@@ -79,4 +79,10 @@ public class AlternatingPlatform : ToggleObject
     {
         // No operation necessary
     }
+
+    public override void Reset()
+    {
+        base.Reset();
+        this.transform.position = initPosition;
+    }
 }

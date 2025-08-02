@@ -61,19 +61,17 @@ public class LoopManager : MonoBehaviour
             // Start playing the shadow despawn animation a little earlier
             if (!shadowDespawnAnimationPlayed && Time.time - loopStartTime > loopDuration - shadowDespawnAnimPredelay)
             {
+                foreach (GameObject oldAnim in GameObject.FindGameObjectsWithTag("ShadowAnimation"))
+                {
+                    Destroy(oldAnim);
+                }
+
                 foreach (GameObject shadow in  shadows)
                 {
                     shadow.GetComponent<ShadowMovement>().StartDespawnAnimation(shadowDespawnAnimPrefab);
                 }
 
                 shadowDespawnAnimationPlayed = true;
-
-                if (lastShadowSpawnAnim != null)
-                {
-                    Destroy(lastShadowSpawnAnim);
-                }
-
-                lastShadowSpawnAnim = Instantiate(this.shadowSpawnAnimPrefab, GetComponent<PlayerMovement>().GetSpawnPoint(), Quaternion.identity);
             }
 
             if (Time.time - loopStartTime > loopDuration)
@@ -204,6 +202,11 @@ public class LoopManager : MonoBehaviour
     public List<GameObject> GetShadows()
     {
         return shadows;
+    }
+
+    public int GetMaxShadows()
+    {
+        return maxShadows;
     }
 
     public float GetLoopDuration()

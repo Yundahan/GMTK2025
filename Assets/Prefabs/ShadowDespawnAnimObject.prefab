@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 8084314099727239943}
   m_Layer: 0
   m_Name: ShadowDespawnAnimObject
-  m_TagString: Untagged
+  m_TagString: ShadowAnimation
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

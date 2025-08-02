@@ -111,7 +111,7 @@ public class BGMManager : MonoBehaviour
         {
             AudioClip clip = Resources.Load<AudioClip>(sceneToBGMMapping[activeSceneName][i]);
             bgmAudioSource[i].clip = clip;
-            bgmAudioSource[i].mute = true;
+            StartCoroutine(FadeAudioSource.EndFade(bgmAudioSource[i], 0.5f));
         }
 
     }

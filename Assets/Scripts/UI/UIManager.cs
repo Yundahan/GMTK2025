@@ -34,6 +34,7 @@ public class UIManager : MonoBehaviour
 
     public void ToggleMenu()
     {
+        Simulation.Instance().ToggleSimulation();
         gameUI.SetActive(!gameUI.activeSelf);
         menuUI.SetActive(!menuUI.activeSelf);
     }
@@ -98,6 +99,16 @@ public class UIManager : MonoBehaviour
                 shadowIndicators[i].enabled = false;
             }
         }
+    }
+
+    public void PlayButtonSFX()
+    {
+        SFXManager.Instance().PlaySFX("Button");
+    }
+
+    public void PlayLevelSelectSFX()
+    {
+        SFXManager.Instance().PlaySFX("Level_Select");
     }
 
     public void Reset()

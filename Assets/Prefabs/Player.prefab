@@ -128,6 +128,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0e574b65803dc8845af2556dd418d29e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  jumpBoostingAllowed: 1
   idleAnimator: {fileID: 8878380449752321498}
   movingAnimator: {fileID: 5309851969923594599}
 --- !u!114 &7488760262986121132

@@ -253,6 +253,17 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &330589079 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2409949684351555786, guid: 8a4a2117e60db2b4a978673dc1188659, type: 3}
+  m_PrefabInstance: {fileID: 1488004873}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0d10715c981b22948a40372cc44b2326, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &344060854
 GameObject:
   m_ObjectHideFlags: 0
@@ -1145,7 +1156,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2976023847595944843, guid: 925146c0cc8db3b40bfdb392a90312ea, type: 3}
       propertyPath: platformSpeed
-      value: 0.5
+      value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: 2976023847595944843, guid: 925146c0cc8db3b40bfdb392a90312ea, type: 3}
       propertyPath: movingDirection.x
@@ -1361,6 +1372,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1155486750813639533, guid: b4800b40bebcc39418e45215478a7baf, type: 3}
+      propertyPath: 'toggleObjects.Array.data[0]'
+      value: 
+      objectReference: {fileID: 330589079}
     - target: {fileID: 1622838894385070916, guid: b4800b40bebcc39418e45215478a7baf, type: 3}
       propertyPath: m_Name
       value: PortalLever
@@ -1371,7 +1386,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5005990240893186988, guid: b4800b40bebcc39418e45215478a7baf, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2.06
+      value: 2.05
       objectReference: {fileID: 0}
     - target: {fileID: 5005990240893186988, guid: b4800b40bebcc39418e45215478a7baf, type: 3}
       propertyPath: m_LocalPosition.z

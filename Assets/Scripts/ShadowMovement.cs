@@ -3,7 +3,11 @@ using UnityEngine;
 
 public class ShadowMovement : MonoBehaviour
 {
-    public Animator animator;
+    public Animator idleAnimator;
+    public Animator movingAnimator;
+
+    public SpriteRenderer idleRenderer;
+    public SpriteRenderer movingRenderer;
 
     private Vector2 spawnPoint;
     private List<Vector2> path;

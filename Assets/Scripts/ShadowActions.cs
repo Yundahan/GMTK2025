@@ -2,6 +2,9 @@ using UnityEngine;
 
 public class ShadowActions : Interacter
 {
+    public Animator idleAnimator;
+    public Animator movingAnimator;
+
     private bool jumpBoosting = false;
 
     public void PerformAction(Action.ActionType actionType)
@@ -26,11 +29,13 @@ public class ShadowActions : Interacter
 
     public void ActivateJumpBoosting()
     {
+        idleAnimator.SetBool("isJumpBoosting", true);
         this.jumpBoosting = true;
     }
 
     public void DeactivateJumpBoosting()
     {
+        idleAnimator.SetBool("isJumpBoosting", false);
         this.jumpBoosting = false;
     }
 

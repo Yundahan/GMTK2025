@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: bf16973f120772843a41bb58b7b89388
+guid: 1fc4f6422dd1e28439055b8238bd025b
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -3094555356042248950
-    second: Kern Vordergrund_0
+      213: -6494052241954094328
+    second: transition_0010_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -46,7 +46,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -113,13 +113,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Kern Vordergrund_0
+      name: transition_0010_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 3840
-        height: 2160
+        x: 191
+        y: 83
+        width: 1923
+        height: 1106
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,8 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: a0db151ac4eed05d0800000000000000
-      internalID: -3094555356042248950
+      spriteID: 8034f7594ed70e5a0800000000000000
+      internalID: -6494052241954094328
       vertices: []
       indices: 
       edges: []
@@ -138,7 +138,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 5e97eb03825dee720800000000000000
+    spriteID: 
     internalID: 0
     vertices: []
     indices: 
@@ -148,7 +148,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Kern Vordergrund_0: -3094555356042248950
+      transition_0010_0: -6494052241954094328
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

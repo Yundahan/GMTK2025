@@ -25,8 +25,12 @@ public class Lever : Interactable
         active = !active;
         leverPulled = true;
         SFXManager.Instance().PlaySFX("Lever");
-        animator.SetBool("isPressed",  active);
-        animator.SetBool("isON", active);
+
+        if (animator != null)
+        {
+            animator.SetBool("isPressed", active);
+            animator.SetBool("isON", active);
+        }
         return true;
     }
 
@@ -39,9 +43,12 @@ public class Lever : Interactable
     {
 
         active = false;
-        animator.SetBool("isPressed", false);
-        animator.SetBool("isON", false);
 
+        if (animator != null)
+        {
+            animator.SetBool("isPressed", false);
+            animator.SetBool("isON", false);
+        }
     }
 
     

@@ -57,7 +57,7 @@ public class InputManager : MonoBehaviour
 
     public bool IsPlayerInteracting()
     {
-        return Input.GetKey(KeyCode.E);
+        return Input.GetKey(KeyCode.E) || Input.GetMouseButton(0);
     }
 
     private void OnSceneLoaded(Scene scene, LoadSceneMode mode)

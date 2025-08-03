@@ -195,6 +195,7 @@ MonoBehaviour:
   inactiveSprite: {fileID: -4630418835396706500, guid: 112869d0520ec6f4785e113ab6a53110, type: 3}
   nextLevel: MovementTest
   blub: {fileID: 8456921524980090659}
+  levelEndAnim: {fileID: 7365622646868035332, guid: aefd8855e15535d428cfa0ccc30fbe44, type: 3}
 --- !u!61 &5599707481803544999
 BoxCollider2D:
   m_ObjectHideFlags: 0

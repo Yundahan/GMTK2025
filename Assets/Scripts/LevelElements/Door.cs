@@ -7,7 +7,7 @@ public class Door : ToggleObject
     
     public string nextLevel;
 
-    private const float LEVEL_END_DELAY = 1f;
+    private const float LEVEL_END_DELAY = 0.6f;
 
     private Animator animator;
     private GameObject player;
@@ -16,6 +16,8 @@ public class Door : ToggleObject
     private Key[] allKeys;
     private bool doorReached = false;
     private float doorReachedTime = -5000f;
+
+    public GameObject levelEndAnim;
 
     protected override void Awake()
     {
@@ -28,7 +30,7 @@ public class Door : ToggleObject
 
     void Update()
     {
-        if (doorReached && Time.time - doorReachedTime > LEVEL_END_DELAY)
+        if (doorReached && Time.unscaledTime - doorReachedTime > LEVEL_END_DELAY)
         {
             Simulation.Instance().ToggleSimulation();
             SceneLoader.Instance().LoadScene(nextLevel);
@@ -52,10 +54,12 @@ public class Door : ToggleObject
     void OnTriggerStay2D(Collider2D collision)
     {
         if (active && collision.gameObject == player && AllKeysCollected())
-        {            
+        {
             animator.SetBool("isClosing", true);
-            Simulation.Instance().ToggleSimulation();
             doorReached = true;
+            doorReachedTime = Time.unscaledTime;
+            Instantiate(levelEndAnim, Vector3.zero, Quaternion.identity);
+            Simulation.Instance().ToggleSimulation();
         }
     }
 

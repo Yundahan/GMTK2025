@@ -105,8 +105,8 @@ MonoBehaviour:
   toggleObjects:
   - {fileID: 0}
   animator: {fileID: 0}
-  activeSprite: {fileID: 5258324825297507199, guid: 843088b488217a54293428d77cb92de5, type: 3}
-  inactiveSprite: {fileID: 6065533601819306525, guid: 2a9024c4414d9314e90d35e4854a6bde, type: 3}
+  onSprite: {fileID: 5258324825297507199, guid: 843088b488217a54293428d77cb92de5, type: 3}
+  offSprite: {fileID: 6065533601819306525, guid: 2a9024c4414d9314e90d35e4854a6bde, type: 3}
 --- !u!58 &3787457761072178659
 CircleCollider2D:
   m_ObjectHideFlags: 0

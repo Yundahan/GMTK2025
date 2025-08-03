@@ -9,6 +9,7 @@ public class LoopManager : MonoBehaviour
     public GameObject shadowSpawnAnimPrefab;
     // Shadow Despawn Animation prefab
     public GameObject shadowDespawnAnimPrefab;
+    public GameObject levelStartAnim;
 
     public float loopDuration = 5f;
     public int maxShadows = 4;
@@ -38,6 +39,7 @@ public class LoopManager : MonoBehaviour
         uiManager = FindFirstObjectByType<UIManager>();
         uiManager.ShowShadowIndicators(maxShadows);
         toggleObjectsInScene = FindObjectsByType<ToggleObject>(FindObjectsSortMode.None);
+        Instantiate(levelStartAnim, Vector3.zero, Quaternion.identity);
     }
 
     void Update()

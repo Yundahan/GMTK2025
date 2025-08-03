@@ -1,3 +1,4 @@
+using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 
 public class ShadowActions : Interacter
@@ -15,23 +16,32 @@ public class ShadowActions : Interacter
 
         if (!isGrounded)
         {
-            if (lastDirection.y > 0f)
+            if (lastDirection.y > 0f && Mathf.Abs(lastDirection.x) > 0.01f)
             {
-                // JUMPING
-            } else
-            {
-                // FALLING
+                movingAnimator.SetBool("isJumping", true);
+                movingAnimator.SetBool("isFalling", false);
             }
-        } else if (!jumpBoosting)
+            else
+            {
+                movingAnimator.SetBool("isFalling", true);
+                movingAnimator.SetBool("isJumping", false);
+            }
+        }
+
+        else if (!jumpBoosting)
         {
             if (Mathf.Abs(lastDirection.x) > 0.01f)
             {
+                movingAnimator.SetBool("isRunning", true);
                 // MOVING
-            } else
+            }
+            else
             {
+                movingAnimator.SetBool("isRunning", false);
                 // IDLE
             }
         }
+        
     }
 
     public void PerformAction(Action.ActionType actionType)

@@ -16,7 +16,6 @@ public class TrajectoryRenderer : MonoBehaviour
             this.trajectoryLine.SetActive(true);
             Vector2 trajectory = Camera.main.ScreenToWorldPoint(Input.mousePosition) - this.transform.position;
             float xAngle = Mathf.Atan2(trajectory.y, trajectory.x) * 180 / Mathf.PI;
-            Debug.Log(xAngle);
             this.trajectoryLine.transform.rotation = Quaternion.Euler(new Vector3(0, 0, xAngle));
             this.trajectoryLine.transform.localScale = new Vector3(trajectory.magnitude * 1.5f, 0.1f, 1f);
             this.trajectoryLine.transform.localPosition = trajectory * 0.75f;

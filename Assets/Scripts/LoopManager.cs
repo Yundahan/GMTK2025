@@ -24,7 +24,6 @@ public class LoopManager : MonoBehaviour
     private UIManager uiManager;
     private List<GameObject> shadows = new();
     private ToggleObject[] toggleObjectsInScene;
-    private GameObject lastShadowSpawnAnim;
     private bool looping = false;
     private float loopStartTime = -5000f;
     private bool shadowDespawnAnimationPlayed = false;
@@ -49,7 +48,7 @@ public class LoopManager : MonoBehaviour
             GetComponent<PlayerActions>().PerformPreviousActions(loopStartTime);
 
             // Start playing the loop end sounds a little earlier so that it actually matches up
-            if (!loopEndSoundPlayed && Time.time - loopStartTime > loopDuration - loopEndSoundPredelay)
+            if (!loopEndSoundPlayed && GetLoopElapsedTime() > loopDuration - loopEndSoundPredelay)
             {
                 BGMManager.Instance().ShadowSpawned(shadows.Count + 1);
                 SFXManager.Instance().PlaySFX("Loop");
@@ -57,7 +56,7 @@ public class LoopManager : MonoBehaviour
             }
 
             // Start playing the shadow despawn animation a little earlier
-            if (!shadowDespawnAnimationPlayed && Time.time - loopStartTime > loopDuration - shadowDespawnAnimPredelay)
+            if (!shadowDespawnAnimationPlayed && GetLoopElapsedTime() > loopDuration - shadowDespawnAnimPredelay)
             {
                 foreach (GameObject oldAnim in GameObject.FindGameObjectsWithTag("ShadowAnimation"))
                 {
@@ -81,7 +80,7 @@ public class LoopManager : MonoBehaviour
         {
             PerformPreviousInteractions();
 
-            if (Time.time - loopStartTime > loopDuration)
+            if (GetLoopElapsedTime() > loopDuration)
             {
                 EndLoop();
             }
@@ -178,7 +177,7 @@ public class LoopManager : MonoBehaviour
 
     public Interaction RecordInteraction(Interaction interaction)
     {
-        interaction.SetTime(Time.time - loopStartTime);
+        interaction.SetTime(GetLoopElapsedTime());
         interaction.SetInteracter(this.gameObject);
         currentInteractions.Add(interaction);
         return interaction;
@@ -219,5 +218,10 @@ public class LoopManager : MonoBehaviour
     public float GetLoopDuration()
     {
         return loopDuration;
+    }
+
+    public float GetLoopElapsedTime()
+    {
+        return Time.time - loopStartTime;
     }
 }

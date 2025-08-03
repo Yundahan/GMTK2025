@@ -303,6 +303,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: Canvas
       objectReference: {fileID: 0}
+    - target: {fileID: 3547465603160267500, guid: 2348746d869dac847a510296bb10efd6, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3547465603160267500, guid: 2348746d869dac847a510296bb10efd6, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3547465603160267500, guid: 2348746d869dac847a510296bb10efd6, type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5319833198674474372, guid: 2348746d869dac847a510296bb10efd6, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -383,6 +395,22 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5336195751379567628, guid: 2348746d869dac847a510296bb10efd6, type: 3}
+      propertyPath: startScreen
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5336195751379567628, guid: 2348746d869dac847a510296bb10efd6, type: 3}
+      propertyPath: firstLevelScreen
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8283126545043860930, guid: 2348746d869dac847a510296bb10efd6, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8283126545043860930, guid: 2348746d869dac847a510296bb10efd6, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8540823114882118082, guid: 2348746d869dac847a510296bb10efd6, type: 3}
       propertyPath: m_IsActive
       value: 1
@@ -400,7 +428,9 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 6755963286867079337, guid: 2348746d869dac847a510296bb10efd6, type: 3}
+    - {fileID: 4103883784797558495, guid: 2348746d869dac847a510296bb10efd6, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2348746d869dac847a510296bb10efd6, type: 3}

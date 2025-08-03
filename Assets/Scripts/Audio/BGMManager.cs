@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using System.Linq;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Audio;
 using UnityEngine.SceneManagement;
@@ -17,17 +18,17 @@ public class BGMManager : MonoBehaviour
           {"Scene1", new List<string> { "Sound/Floor1", "Sound/Floor2", "Sound/Floor3", "Sound/Floor4", "Sound/Floor5" } },
           {"LeonTestScene", new List<string> { "Sound/Observatory1", "Sound/Observatory2", "Sound/Observatory3", "Sound/Observatory4", "Sound/Observatory5","Sound/Observatory6" } },
           {"AndrikTestScene", new List<string> { "Sound/Floor1", "Sound/Floor2", "Sound/Floor3", "Sound/Floor4", "Sound/Floor5" } },
-          {"MovementTest", new List<string> { "Sound/Floor1", "Sound/Floor2", "Sound/Floor3", "Sound/Floor4", "Sound/Floor5" } },
-          {"Tutorial1TEST", new List<string> { "Sound/Floor1", "Sound/Floor2", "Sound/Floor3", "Sound/Floor4", "Sound/Floor5" } },
-          {"Tutorial2TEST", new List<string> { "Sound/Floor1", "Sound/Floor2", "Sound/Floor3", "Sound/Floor4", "Sound/Floor5" } },
-          {"Tutorial3TEST", new List<string> { "Sound/Floor1", "Sound/Floor2", "Sound/Floor3", "Sound/Floor4", "Sound/Floor5" } },
-          {"Tutorial4TEST", new List<string> { "Sound/Floor1", "Sound/Floor2", "Sound/Floor3", "Sound/Floor4", "Sound/Floor5" } },
+          {"MovementTest", new List<string> { "Sound/Basement1", "Sound/Basement2", "Sound/Basement3", "Sound/Basement4", "Sound/Basement5" } },
+          {"Tutorial1TEST", new List<string> { "Sound/Basement1", "Sound/Basement2", "Sound/Basement3", "Sound/Basement4", "Sound/Basement5" } },
+          {"Tutorial2TEST", new List<string> { "Sound/Basement1", "Sound/Basement2", "Sound/Basement3", "Sound/Basement4", "Sound/Basement5" } },
+          {"Tutorial3TEST", new List<string> { "Sound/Basement1", "Sound/Basement2", "Sound/Basement3", "Sound/Basement4", "Sound/Basement5" } },
+          {"Tutorial4TEST", new List<string> { "Sound/Basement1", "Sound/Basement2", "Sound/Basement3", "Sound/Basement4", "Sound/Basement5" } },
           {"Level1", new List<string> { "Sound/Floor1", "Sound/Floor2", "Sound/Floor3", "Sound/Floor4", "Sound/Floor5" } },
-          {"Level2", new List<string> { "Sound/Floor1", "Sound/Floor2", "Sound/Floor3", "Sound/Floor4", "Sound/Floor5" } },
-          {"Level3", new List<string> { "Sound/Floor1", "Sound/Floor2", "Sound/Floor3", "Sound/Floor4", "Sound/Floor5" } },
-          {"Level4", new List<string> { "Sound/Floor1", "Sound/Floor2", "Sound/Floor3", "Sound/Floor4", "Sound/Floor5" } },
-          {"Level5", new List<string> { "Sound/Floor1", "Sound/Floor2", "Sound/Floor3", "Sound/Floor4", "Sound/Floor5" } },
-          {"Level6", new List<string> { "Sound/Floor1", "Sound/Floor2", "Sound/Floor3", "Sound/Floor4", "Sound/Floor5" } },
+          {"Level2", new List<string> { "Sound/Greenhouse1", "Sound/Greenhouse2", "Sound/Greenhouse3", "Sound/Greenhouse4", "Sound/Greenhouse5" } },
+          {"Level3", new List<string> { "Sound/Stairs1", "Sound/Stairs2", "Sound/Stairs3", "Sound/Stairs4", "Sound/Stairs5" , "Sound/Stairs6" } },
+          {"Level4", new List<string> { "Sound/Library1", "Sound/Library2", "Sound/Library3", "Sound/Library4", "Sound/Library5" } },
+          {"Level5", new List<string> { "Sound/Observatory1", "Sound/Observatory2", "Sound/Observatory3", "Sound/Observatory4", "Sound/Observatory5", "Sound/Observatory6" } },
+          {"Level6", new List<string> { "Sound/Core1", "Sound/Core2", "Sound/Core3", "Sound/Core4", "Sound/Core5" } },
         };
 
     private BGMManager() {

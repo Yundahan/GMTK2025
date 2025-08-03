@@ -9,6 +9,9 @@ public class Lever : Interactable
     private bool leverPulled = false;
     private bool active = false;
 
+    public Sprite onSprite;
+    public Sprite offSprite;
+
     protected override void Awake()
     {
         base.Awake();
@@ -30,7 +33,11 @@ public class Lever : Interactable
         {
             animator.SetBool("isPressed", active);
             animator.SetBool("isON", active);
+        } else
+        {
+            UpdateSprite();
         }
+
         return true;
     }
 
@@ -43,6 +50,7 @@ public class Lever : Interactable
     {
 
         active = false;
+        UpdateSprite();
 
         if (animator != null)
         {
@@ -51,5 +59,14 @@ public class Lever : Interactable
         }
     }
 
-    
+    private void UpdateSprite()
+    {
+        if (active)
+        {
+            GetComponent<SpriteRenderer>().sprite = onSprite;
+        } else
+        {
+            GetComponent<SpriteRenderer>().sprite = offSprite;
+        }
+    }
 }

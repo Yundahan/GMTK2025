@@ -992,7 +992,7 @@ PrefabInstance:
     - target: {fileID: 6807624693902544844, guid: 829ec73dc11e6ec4591911efcfd3315e, type: 3}
       propertyPath: lever
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1908196085}
     - target: {fileID: 6953294083475593388, guid: 829ec73dc11e6ec4591911efcfd3315e, type: 3}
       propertyPath: m_LocalPosition.x
       value: 1.14
@@ -1825,6 +1825,17 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1908196085 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1155486750813639533, guid: b4800b40bebcc39418e45215478a7baf, type: 3}
+  m_PrefabInstance: {fileID: 428296988}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 66cbed9ec8ab1474ab8173046a26f0bc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &1921278391 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 2409949684351555786, guid: 8a4a2117e60db2b4a978673dc1188659, type: 3}

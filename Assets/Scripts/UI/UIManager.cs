@@ -9,20 +9,18 @@ public class UIManager : MonoBehaviour
     public GameObject uiMessage;
     public GameObject gameUI;
     public GameObject menuUI;
-    public GameObject zeigerParent;
+    public GameObject zeiger;
     public List<Image> shadowIndicators;
+    public List<Image> runes;
     public Sprite shadowInReserve;
     public Sprite shadowInPlay;
 
     private Dictionary<string, GameObject> currentTextsInGameGUI = new Dictionary<string, GameObject>();
     private LoopManager loopManager;
-    private float zeigerAngle = 0f;
-    private float angularSpeed;
 
     void Awake()
     {
         loopManager = FindFirstObjectByType<LoopManager>();
-        angularSpeed = 360f / loopManager.GetLoopDuration();
 
         for (int i = shadowIndicators.Count - 1; i >= 0; i--)
         {
@@ -37,8 +35,14 @@ public class UIManager : MonoBehaviour
     {
         if (loopManager.GetLooping())
         {
-            zeigerAngle -= angularSpeed * Time.deltaTime;
-            zeigerParent.transform.rotation = Quaternion.Euler(new Vector3(0, 0, zeigerAngle));
+            float loopElapsedTimeFraction = loopManager.GetLoopElapsedTime() / loopManager.GetLoopDuration();
+            zeiger.transform.rotation = Quaternion.Euler(new Vector3(0, 0, -360f * loopElapsedTimeFraction));
+            int runeNumber = Mathf.FloorToInt(12 * loopElapsedTimeFraction);
+
+            if (runeNumber >= 0 && runeNumber < runes.Count)
+            {
+                runes[runeNumber].gameObject.SetActive(true);
+            }
         }
     }
 
@@ -124,7 +128,11 @@ public class UIManager : MonoBehaviour
 
     public void Reset()
     {
-        zeigerAngle = 0f;
-        zeigerParent.transform.rotation = Quaternion.Euler(new Vector3(0, 0, 0));
+        zeiger.transform.rotation = Quaternion.Euler(new Vector3(0, 0, 0));
+
+        foreach (Image rune in runes)
+        {
+            rune.gameObject.SetActive(false);
+        }
     }
 }

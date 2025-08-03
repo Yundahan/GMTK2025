@@ -400,7 +400,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 100
   m_Sprite: {fileID: -9009641426861971402, guid: 6ac7976c7ce7c13458ab1c058e025a74, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -421,8 +421,8 @@ Transform:
   m_GameObject: {fileID: 233975014}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 6, y: 4.11, z: 0}
-  m_LocalScale: {x: 0.2799, y: 0.2799, z: 0.2799}
+  m_LocalPosition: {x: 6.04, y: 4.08, z: 0}
+  m_LocalScale: {x: 0.34808367, y: 0.34808367, z: 0.34808367}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -630,8 +630,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -956.11, y: -534.65}
-  m_SizeDelta: {x: 9.7851, y: 3.8986}
+  m_AnchoredPosition: {x: -956.68, y: -534.67}
+  m_SizeDelta: {x: 9.5714, y: 3.8986}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &411250447
 MonoBehaviour:
@@ -655,8 +655,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: This is ted
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 404ca1d7084837a40b4d211b845e61c8, type: 2}
-  m_sharedMaterial: {fileID: -8578473563916395936, guid: 404ca1d7084837a40b4d211b845e61c8, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -766,7 +766,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -954.9022, y: -538.94}
+  m_AnchoredPosition: {x: -955.36, y: -538.96}
   m_SizeDelta: {x: 12.2007, y: 3.8986}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &437878533
@@ -791,8 +791,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: 'ted also likes to give jump boosts [Shift]'
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 404ca1d7084837a40b4d211b845e61c8, type: 2}
-  m_sharedMaterial: {fileID: -8578473563916395936, guid: 404ca1d7084837a40b4d211b845e61c8, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -989,7 +989,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -954.9, y: -540.36}
+  m_AnchoredPosition: {x: -955.36, y: -540.36}
   m_SizeDelta: {x: 12.2007, y: 3.8986}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &461725323
@@ -1014,8 +1014,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: 'sometimes ted interacts with things [e]'
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 404ca1d7084837a40b4d211b845e61c8, type: 2}
-  m_sharedMaterial: {fileID: -8578473563916395936, guid: 404ca1d7084837a40b4d211b845e61c8, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -1546,7 +1546,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -956.11, y: -536.0999}
+  m_AnchoredPosition: {x: -956.57, y: -536.12}
   m_SizeDelta: {x: 9.7851, y: 3.8986}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &999273801
@@ -1571,8 +1571,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: 'ted likes to move [a] - [d]'
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 404ca1d7084837a40b4d211b845e61c8, type: 2}
-  m_sharedMaterial: {fileID: -8578473563916395936, guid: 404ca1d7084837a40b4d211b845e61c8, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -1924,7 +1924,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -949.58, y: -535.36}
+  m_AnchoredPosition: {x: -949.72, y: -535.36}
   m_SizeDelta: {x: 12.2007, y: 3.8986}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1268056460
@@ -1949,8 +1949,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: restarts the level
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 404ca1d7084837a40b4d211b845e61c8, type: 2}
-  m_sharedMaterial: {fileID: -8578473563916395936, guid: 404ca1d7084837a40b4d211b845e61c8, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -2368,8 +2368,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -956.11, y: -537.52}
-  m_SizeDelta: {x: 9.7851, y: 3.8986}
+  m_AnchoredPosition: {x: -955.5996, y: -537.52}
+  m_SizeDelta: {x: 11.7259, y: 3.8986}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1653431538
 MonoBehaviour:
@@ -2393,8 +2393,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: 'ted really likes to jump [Space]'
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 404ca1d7084837a40b4d211b845e61c8, type: 2}
-  m_sharedMaterial: {fileID: -8578473563916395936, guid: 404ca1d7084837a40b4d211b845e61c8, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -2551,8 +2551,8 @@ Transform:
   m_GameObject: {fileID: 1798150355}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0.7071068, w: 0.7071068}
-  m_LocalPosition: {x: 5.9, y: 3.63, z: 0}
-  m_LocalScale: {x: 0.19356385, y: 0.19789974, z: 0.3525111}
+  m_LocalPosition: {x: 6.0061, y: 3.7502, z: 0}
+  m_LocalScale: {x: 0.17327836, y: 0.18808392, z: 0.3525111}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -2648,8 +2648,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -954.9, y: -541.85}
-  m_SizeDelta: {x: 12.2007, y: 3.8986}
+  m_AnchoredPosition: {x: -954.07, y: -541.83}
+  m_SizeDelta: {x: 14.7825, y: 3.8986}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2052186909
 MonoBehaviour:
@@ -2671,10 +2671,10 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'and occasionally ted throws stuff [e] + [mouse]'
+  m_text: 'occasionally ted throws stuff [e] + [mouse]'
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 404ca1d7084837a40b4d211b845e61c8, type: 2}
-  m_sharedMaterial: {fileID: -8578473563916395936, guid: 404ca1d7084837a40b4d211b845e61c8, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -2736,7 +2736,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 3.1723971, z: 4.2579985, w: 0}
+  m_margin: {x: 0, y: 3.1723971, z: 4.3049393, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0

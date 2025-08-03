@@ -140,6 +140,7 @@ public class Key : Interactable
         hasBeenPickedUpAtLeastOnce = false;
         ownSpriteRenderer.enabled = false;
         childSpriteRenderer.enabled = true;
+        GetComponent<TrajectoryRenderer>().Reset();
     }
 
     public Vector2 GetThrowingDirection()

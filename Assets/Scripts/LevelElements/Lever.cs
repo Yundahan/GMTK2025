@@ -39,6 +39,8 @@ public class Lever : Interactable
 
     public override void Reset()
     {
+
+        active = false;
         UpdateSprite();
     }
 

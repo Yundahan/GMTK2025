@@ -22,6 +22,11 @@ public class UIManager : MonoBehaviour
     {
         loopManager = FindFirstObjectByType<LoopManager>();
 
+        if (loopManager == null)
+        {
+            return;
+        }
+
         for (int i = shadowIndicators.Count - 1; i >= 0; i--)
         {
             if (i >= loopManager.GetMaxShadows())
@@ -33,6 +38,11 @@ public class UIManager : MonoBehaviour
 
     void Update()
     {
+        if (loopManager == null)
+        {
+            return;
+        }
+
         if (loopManager.GetLooping())
         {
             float loopElapsedTimeFraction = loopManager.GetLoopElapsedTime() / loopManager.GetLoopDuration();

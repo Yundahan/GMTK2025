@@ -3,7 +3,7 @@ using UnityEngine.UI;
 
 public class LevelSelectImage : MonoBehaviour
 {
-    public bool firstLevelScreen = false;
+    public bool startScreen = false;
 
     private const int SCROLL_DISTANCE = 50;
     private const float SCROLL_SPEED = 500f;
@@ -18,7 +18,7 @@ public class LevelSelectImage : MonoBehaviour
 
         foreach (LevelButton levelButton in GetComponentsInChildren<LevelButton>())
         {
-            if (levelButton.sceneName == SceneLoader.Instance().GetActiveSceneName())
+            if (!startScreen && levelButton.sceneName == SceneLoader.Instance().GetActiveSceneName())
             {
                 // Center the button leading to the current scene
                 float targetY = Mathf.Clamp(Screen.height / 2 - levelButton.transform.localPosition.y, minY, maxY);

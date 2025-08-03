@@ -31,6 +31,7 @@ public class InputManager : MonoBehaviour
 
         if (Input.GetKey(KeyCode.LeftShift))
         {
+            player.GetComponent<LoopManager>().SetLooping(true);
             player.GetComponent<PlayerActions>().ActivateJumpBoosting();
         } else if (Input.GetKeyUp(KeyCode.LeftShift))
         {
@@ -48,6 +49,7 @@ public class InputManager : MonoBehaviour
 
             if (Input.GetKeyDown(KeyCode.Space))
             {
+                player.GetComponent<LoopManager>().SetLooping(true);
                 player.Jump();
             }
         }

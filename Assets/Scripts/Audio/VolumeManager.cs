@@ -93,6 +93,12 @@ public class VolumeManager : MonoBehaviour
         }
     }
 
+    public bool GetMute(string volumeType)
+    {
+        audioMixer.GetFloat(volumeType, out float volume);
+        return volume <= -79.9f;
+    }
+
     public static VolumeManager Instance()
     {
         if (instance == null)

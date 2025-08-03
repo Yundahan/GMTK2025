@@ -55,10 +55,9 @@ public class PlayerMovement : MonoBehaviour
             movingAnimator.SetBool("isJumping", false);
         } else
         {
-            // Player was falling last frame, but isnt anymore, so we play the landing sound
+            // Player was falling last frame, but isnt anymore, so we landed
             if (isFalling)
             {
-                SFXManager.Instance().PlaySFX("Landing");
                 GetComponent<PlayerActions>().RecordAction(Action.ActionType.LANDING);
                 isFalling = false;
             }

@@ -6,7 +6,7 @@ using UnityEngine;
 public class Key : Interactable
 {
     private const float THROWING_SPEED = 10f;
-    private const float PICKUP_DISTANCE = 1f;
+    private const float PICKUP_DISTANCE = 2f;
 
     private Sprite defaultSprite;
     public Sprite gemopst;

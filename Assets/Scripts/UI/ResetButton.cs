@@ -10,6 +10,7 @@ public class ResetButton : MonoBehaviour
 
     private void ResetScene()
     {
+        SFXManager.Instance().PlaySFX("Shadow");
         SceneLoader.Instance().ReloadScene();
     }
 }

@@ -20,15 +20,18 @@ public class Key : Interactable
     private float initialGravityScale;
     private Interaction lastPickUpEvent;
     private List<Tuple<Interaction, Interaction>> pickUpThrowPairs = new();
+    private SpriteRenderer ownSpriteRenderer;
+    public SpriteRenderer childSpriteRenderer;
 
     protected override void Awake()
     {
         base.Awake();
-        defaultSprite = GetComponent<SpriteRenderer>().sprite;
         this.keySpawnPoint = this.transform.position;
         rigidBody = GetComponent<Rigidbody2D>();
         this.initialGravityScale = rigidBody.gravityScale;
         rigidBody.gravityScale = 0f;
+        ownSpriteRenderer = GetComponent<SpriteRenderer>();
+        defaultSprite = ownSpriteRenderer.sprite;
         Physics2D.IgnoreCollision(GetComponent<Collider2D>(), player.GetComponent<Collider2D>());
     }
 
@@ -65,9 +68,12 @@ public class Key : Interactable
 
             if (this.interacter.gameObject != player.gameObject)
             {
-                GetComponent<SpriteRenderer>().sprite = gemopst;
+                ownSpriteRenderer.sprite = gemopst;
+                childSpriteRenderer.sprite = gemopst;
             }
 
+            ownSpriteRenderer.enabled = true;
+            childSpriteRenderer.enabled = false;
             hasBeenPickedUpAtLeastOnce = true;
             pickedUp = true;
             interaction.SetThrowingDirection(Vector2.zero);
@@ -100,7 +106,8 @@ public class Key : Interactable
             }
 
             // Throw key
-            GetComponent<SpriteRenderer>().sprite = defaultSprite;
+            ownSpriteRenderer.sprite = defaultSprite;
+            childSpriteRenderer.sprite = defaultSprite;
             throwingDirection = interaction.GetThrowingDirection();
             pickedUp = false;
             rigidBody.linearVelocity = Vector3.zero;
@@ -131,6 +138,8 @@ public class Key : Interactable
         this.transform.position = this.keySpawnPoint;
         this.interacter = null;
         hasBeenPickedUpAtLeastOnce = false;
+        ownSpriteRenderer.enabled = false;
+        childSpriteRenderer.enabled = true;
     }
 
     public Vector2 GetThrowingDirection()

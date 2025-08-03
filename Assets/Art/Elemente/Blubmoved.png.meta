@@ -1,52 +1,52 @@
 fileFormatVersion: 2
-guid: bc7195a8f790b5442ad2210dfb6fbdd9
+guid: 3d675375540e69947bd93be85aaed7e3
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 2608860474379659921
-    second: Blub_0
+      213: 2637845233135573317
+    second: Blubmoved_0
   - first:
-      213: -8566840097549886775
-    second: Blub_1
+      213: -8168124596018030754
+    second: Blubmoved_1
   - first:
-      213: 8075916513671004411
-    second: Blub_2
+      213: -2663674015830871134
+    second: Blubmoved_2
   - first:
-      213: -3796221512343845905
-    second: Blub_3
+      213: 3996877270762037268
+    second: Blubmoved_3
   - first:
-      213: 3799984694767815879
-    second: Blub_4
+      213: -4137940737820173499
+    second: Blubmoved_4
   - first:
-      213: -5601445963616906506
-    second: Blub_5
+      213: -339750783330138684
+    second: Blubmoved_5
   - first:
-      213: 5250130196511349674
-    second: Blub_6
+      213: -5414292804176593958
+    second: Blubmoved_6
   - first:
-      213: -9150329527080574987
-    second: Blub_7
+      213: 3568423252560269593
+    second: Blubmoved_7
   - first:
-      213: 8478915506533950940
-    second: Blub_8
+      213: 272592224355947364
+    second: Blubmoved_8
   - first:
-      213: 2751537225645455001
-    second: Blub_9
+      213: 7173527425015137656
+    second: Blubmoved_9
   - first:
-      213: -853690912886004551
-    second: Blub_10
+      213: 76090365668941294
+    second: Blubmoved_10
   - first:
-      213: -2877381371142692404
-    second: Blub_11
+      213: 6116259882647305324
+    second: Blubmoved_11
   - first:
-      213: 1425578429764430725
-    second: Blub_12
+      213: -2192146468510934491
+    second: Blubmoved_12
   - first:
-      213: -518139049974847570
-    second: Blub_13
+      213: 3810062868613141610
+    second: Blubmoved_13
   - first:
-      213: -4609741251522665842
-    second: Blub_14
+      213: -7001186399036084123
+    second: Blubmoved_14
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -90,7 +90,7 @@ TextureImporter:
   compressionQuality: 50
   spriteMode: 1
   spriteExtrude: 1
-  spriteMeshType: 1
+  spriteMeshType: 0
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
   spritePixelsToUnits: 100
@@ -142,13 +142,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Blub_0
+      name: Blubmoved_0
       rect:
         serializedVersion: 2
-        x: 301
-        y: 685
-        width: 63
-        height: 83
+        x: 160
+        y: 553
+        width: 143
+        height: 126
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -157,20 +157,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 19ae4f377c8843420800000000000000
-      internalID: 2608860474379659921
+      spriteID: 549d08d73428b9420800000000000000
+      internalID: 2637845233135573317
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Blub_1
+      name: Blubmoved_1
       rect:
         serializedVersion: 2
-        x: 376
-        y: 666
-        width: 93
-        height: 37
+        x: 299
+        y: 667
+        width: 75
+        height: 103
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -179,20 +179,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 9ca57f102587c1980800000000000000
-      internalID: -8566840097549886775
+      spriteID: e57d63dd4fdf4ae80800000000000000
+      internalID: -8168124596018030754
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Blub_2
+      name: Blubmoved_2
       rect:
         serializedVersion: 2
-        x: 541
-        y: 675
-        width: 39
-        height: 41
+        x: 373
+        y: 667
+        width: 104
+        height: 48
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -201,19 +201,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: bf04219f74b631070800000000000000
-      internalID: 8075916513671004411
+      spriteID: 2a376f8689ab80bd0800000000000000
+      internalID: -2663674015830871134
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Blub_3
+      name: Blubmoved_3
       rect:
         serializedVersion: 2
-        x: 129
-        y: 632
-        width: 58
+        x: 497
+        y: 637
+        width: 34
         height: 42
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -223,20 +223,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: fe38c04d5ac115bc0800000000000000
-      internalID: -3796221512343845905
+      spriteID: 410aa9e83b2c77730800000000000000
+      internalID: 3996877270762037268
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Blub_4
+      name: Blubmoved_4
       rect:
         serializedVersion: 2
-        x: 165
-        y: 562
-        width: 145
-        height: 114
+        x: 542
+        y: 679
+        width: 34
+        height: 35
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -245,20 +245,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 7cc8e8b52f14cb430800000000000000
-      internalID: 3799984694767815879
+      spriteID: 54b5c9c92d41396c0800000000000000
+      internalID: -4137940737820173499
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Blub_5
+      name: Blubmoved_5
       rect:
         serializedVersion: 2
-        x: 499
-        y: 643
-        width: 27
-        height: 33
+        x: 118
+        y: 630
+        width: 64
+        height: 46
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -267,20 +267,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 6f29116e29aa342b0800000000000000
-      internalID: -5601445963616906506
+      spriteID: 4c5427f6676f84bf0800000000000000
+      internalID: -339750783330138684
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Blub_6
+      name: Blubmoved_6
       rect:
         serializedVersion: 2
-        x: 602
-        y: 594
-        width: 66
-        height: 55
+        x: 604
+        y: 597
+        width: 55
+        height: 48
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -289,20 +289,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: aab5c9be8953cd840800000000000000
-      internalID: 5250130196511349674
+      spriteID: adbb91971619cd4b0800000000000000
+      internalID: -5414292804176593958
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Blub_7
+      name: Blubmoved_7
       rect:
         serializedVersion: 2
-        x: 104
-        y: 522
-        width: 49
-        height: 51
+        x: 97
+        y: 516
+        width: 58
+        height: 63
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -311,20 +311,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 5ff189096cf730180800000000000000
-      internalID: -9150329527080574987
+      spriteID: 9115919ba06958130800000000000000
+      internalID: 3568423252560269593
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Blub_8
+      name: Blubmoved_8
       rect:
         serializedVersion: 2
-        x: 673
-        y: 352
-        width: 93
-        height: 186
+        x: 688
+        y: 373
+        width: 76
+        height: 161
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -333,20 +333,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: cd5e18fdab82ba570800000000000000
-      internalID: 8478915506533950940
+      spriteID: 463154d0f2178c300800000000000000
+      internalID: 272592224355947364
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Blub_9
+      name: Blubmoved_9
       rect:
         serializedVersion: 2
-        x: 59
-        y: 484
-        width: 28
-        height: 29
+        x: 55
+        y: 464
+        width: 33
+        height: 48
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -355,41 +355,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 9967cd8478c6f2620800000000000000
-      internalID: 2751537225645455001
+      spriteID: 875cc82af2d7d8360800000000000000
+      internalID: 7173527425015137656
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Blub_10
+      name: Blubmoved_10
       rect:
         serializedVersion: 2
-        x: 98
+        x: 93
         y: 413
-        width: 56
-        height: 73
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 9b4637543a41724f0800000000000000
-      internalID: -853690912886004551
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Blub_11
-      rect:
-        serializedVersion: 2
-        x: 83
-        y: 287
-        width: 46
+        width: 63
         height: 86
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -399,20 +377,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: cc1a6b153ec7118d0800000000000000
-      internalID: -2877381371142692404
+      spriteID: eedd680d8c35e0100800000000000000
+      internalID: 76090365668941294
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Blub_12
+      name: Blubmoved_11
       rect:
         serializedVersion: 2
-        x: 766
-        y: 266
-        width: 28
-        height: 29
+        x: 78
+        y: 270
+        width: 63
+        height: 100
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -421,20 +399,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 58b6191670ca8c310800000000000000
-      internalID: 1425578429764430725
+      spriteID: c6c3a2b35f151e450800000000000000
+      internalID: 6116259882647305324
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Blub_13
+      name: Blubmoved_12
       rect:
         serializedVersion: 2
-        x: 39
-        y: 211
-        width: 27
-        height: 33
+        x: 762
+        y: 270
+        width: 33
+        height: 37
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -443,20 +421,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: ea7adfd77433fc8f0800000000000000
-      internalID: -518139049974847570
+      spriteID: 52a57c0c66ee391e0800000000000000
+      internalID: -2192146468510934491
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Blub_14
+      name: Blubmoved_13
       rect:
         serializedVersion: 2
-        x: 657
-        y: 99
-        width: 54
-        height: 61
+        x: 35
+        y: 196
+        width: 29
+        height: 47
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -465,8 +443,30 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: e82e68451c8e600c0800000000000000
-      internalID: -4609741251522665842
+      spriteID: a64979f0eff00e430800000000000000
+      internalID: 3810062868613141610
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Blubmoved_14
+      rect:
+        serializedVersion: 2
+        x: 673
+        y: 109
+        width: 36
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 560782f501ac6de90800000000000000
+      internalID: -7001186399036084123
       vertices: []
       indices: 
       edges: []
@@ -485,21 +485,21 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Blub_0: 2608860474379659921
-      Blub_1: -8566840097549886775
-      Blub_10: -853690912886004551
-      Blub_11: -2877381371142692404
-      Blub_12: 1425578429764430725
-      Blub_13: -518139049974847570
-      Blub_14: -4609741251522665842
-      Blub_2: 8075916513671004411
-      Blub_3: -3796221512343845905
-      Blub_4: 3799984694767815879
-      Blub_5: -5601445963616906506
-      Blub_6: 5250130196511349674
-      Blub_7: -9150329527080574987
-      Blub_8: 8478915506533950940
-      Blub_9: 2751537225645455001
+      Blubmoved_0: 2637845233135573317
+      Blubmoved_1: -8168124596018030754
+      Blubmoved_10: 76090365668941294
+      Blubmoved_11: 6116259882647305324
+      Blubmoved_12: -2192146468510934491
+      Blubmoved_13: 3810062868613141610
+      Blubmoved_14: -7001186399036084123
+      Blubmoved_2: -2663674015830871134
+      Blubmoved_3: 3996877270762037268
+      Blubmoved_4: -4137940737820173499
+      Blubmoved_5: -339750783330138684
+      Blubmoved_6: -5414292804176593958
+      Blubmoved_7: 3568423252560269593
+      Blubmoved_8: 272592224355947364
+      Blubmoved_9: 7173527425015137656
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

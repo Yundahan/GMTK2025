@@ -4,13 +4,15 @@ using UnityEngine;
 
 public class Door : ToggleObject
 {
-    public GameObject portalShine;
+    
     public string nextLevel;
 
     private const float LEVEL_END_DELAY = 1f;
 
     private Animator animator;
     private GameObject player;
+    private GameObject Blub;
+    public SpriteRenderer blub;
     private Key[] allKeys;
     private bool doorReached = false;
     private float doorReachedTime = -5000f;
@@ -39,17 +41,18 @@ public class Door : ToggleObject
         {
             SFXManager.Instance().PlaySFX("Portal");
             GetComponent<SpriteRenderer>().sprite = activeSprite;
+            blub.enabled = true;
         } else
         {
             GetComponent<SpriteRenderer>().sprite = inactiveSprite;
+            blub.enabled = false;
         }
     }
 
     void OnTriggerStay2D(Collider2D collision)
     {
         if (active && collision.gameObject == player && AllKeysCollected())
-        {
-            portalShine.SetActive(true);
+        {            
             animator.SetBool("isClosing", true);
             Simulation.Instance().ToggleSimulation();
             doorReached = true;
@@ -74,5 +77,6 @@ public class Door : ToggleObject
     {
         base.Reset();
         UpdateSprite();
+        blub.enabled = false;
     }
 }

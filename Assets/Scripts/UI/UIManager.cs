@@ -14,6 +14,7 @@ public class UIManager : MonoBehaviour
     public List<Image> runes;
     public Sprite shadowInReserve;
     public Sprite shadowInPlay;
+    public GameObject helpScreen;
 
     private Dictionary<string, GameObject> currentTextsInGameGUI = new Dictionary<string, GameObject>();
     private LoopManager loopManager;
@@ -123,6 +124,14 @@ public class UIManager : MonoBehaviour
             {
                 shadowIndicators[i].sprite = shadowInPlay;
             }
+        }
+    }
+
+    public void ToggleHelpScreen()
+    {
+        if (helpScreen != null)
+        {
+            helpScreen.SetActive(!helpScreen.activeSelf);
         }
     }
 

@@ -29,11 +29,11 @@ public class InputManager : MonoBehaviour
             FindFirstObjectByType<UIManager>().ToggleMenu();
         }
 
-        if (Input.GetKey(KeyCode.LeftShift))
+        if (Input.GetKey(KeyCode.LeftShift) || Input.GetKey(KeyCode.RightShift))
         {
             player.GetComponent<LoopManager>().SetLooping(true);
             player.GetComponent<PlayerActions>().ActivateJumpBoosting();
-        } else if (Input.GetKeyUp(KeyCode.LeftShift))
+        } else if (Input.GetKeyUp(KeyCode.LeftShift) || Input.GetKey(KeyCode.RightShift))
         {
             player.GetComponent<PlayerActions>().DeactivateJumpBoosting();
         }

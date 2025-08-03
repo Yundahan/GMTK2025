@@ -37,6 +37,11 @@ public class Lever : Interactable
         return leverPulled;
     }
 
+    public override void Reset()
+    {
+        UpdateSprite();
+    }
+
     protected void UpdateSprite()
     {
         if (active)

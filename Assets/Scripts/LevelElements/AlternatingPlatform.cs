@@ -4,11 +4,25 @@ public class AlternatingPlatform : Platform
 {
     public float pauseDuration = 1f;
 
+    private LoopManager loopManager;
+
     private float arrivalTimer = -5000f;
     private bool pausing;
 
+    protected override void Awake() 
+    { 
+        base.Awake();
+        loopManager = FindFirstObjectByType<LoopManager>();
+    }
+
     void FixedUpdate()
     {
+        // Don't start moving until the player starts
+        if (!loopManager.GetLooping())
+        {
+            return;
+        }
+
         if (pausing)
         {
             if (Time.time - arrivalTimer > pauseDuration)

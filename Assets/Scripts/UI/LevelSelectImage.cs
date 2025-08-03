@@ -47,10 +47,21 @@ public class LevelSelectImage : MonoBehaviour
 
         if (mouseY < SCROLL_DISTANCE && currentY < maxY)
         {
+            UpdateUIScalings();
             this.transform.position += new Vector3(0, scaledScrollSpeed * elapsedTime, 0);
         } else if (mouseY > Screen.height - SCROLL_DISTANCE && currentY > minY)
         {
+            UpdateUIScalings();
             this.transform.position -= new Vector3(0, scaledScrollSpeed * elapsedTime, 0);
         }
+    }
+
+    private void UpdateUIScalings()
+    {
+        float uiSizeFactor = Screen.height / 1080f;
+        float height = GetComponent<RectTransform>().rect.height;
+        minY = Screen.height - uiSizeFactor * height / 2;
+        maxY = uiSizeFactor * height / 2;
+        scaledScrollSpeed = SCROLL_SPEED * uiSizeFactor;
     }
 }

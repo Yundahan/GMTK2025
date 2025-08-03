@@ -9,9 +9,6 @@ public class Lever : Interactable
     private bool leverPulled = false;
     private bool active = false;
 
-    public Sprite activeSprite;
-    public Sprite inactiveSprite;
-
     protected override void Awake()
     {
         base.Awake();
@@ -26,9 +23,10 @@ public class Lever : Interactable
         }
 
         active = !active;
-        UpdateSprite();
         leverPulled = true;
         SFXManager.Instance().PlaySFX("Lever");
+        animator.SetBool("isPressed",  active);
+        animator.SetBool("isON", active);
         return true;
     }
 
@@ -41,18 +39,10 @@ public class Lever : Interactable
     {
 
         active = false;
-        UpdateSprite();
+        animator.SetBool("isPressed", false);
+        animator.SetBool("isON", false);
+
     }
 
-    protected void UpdateSprite()
-    {
-        if (active)
-        {
-            GetComponent<SpriteRenderer>().sprite = activeSprite;
-        }
-        else
-        {
-            GetComponent<SpriteRenderer>().sprite = inactiveSprite;
-        }
-    }
+    
 }

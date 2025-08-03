@@ -79,6 +79,8 @@ public class Key : Interactable
             interaction.SetThrowingDirection(Vector2.zero);
             this.throwingDirection = Vector3.zero;
             rigidBody.gravityScale = 0f;
+            rigidBody.angularVelocity = 0f;
+            this.transform.rotation = Quaternion.Euler(new Vector3(0, 0, 0));
             lastPickUpEvent = interaction;
             SFXManager.Instance().PlaySFX("Key");
         } else if (pickedUp)

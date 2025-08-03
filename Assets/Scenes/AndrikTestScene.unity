@@ -1112,14 +1112,6 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 3019070897872799924, guid: 8a4a2117e60db2b4a978673dc1188659, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 0.38497728
-      objectReference: {fileID: 0}
-    - target: {fileID: 3019070897872799924, guid: 8a4a2117e60db2b4a978673dc1188659, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 0.9152697
-      objectReference: {fileID: 0}
-    - target: {fileID: 3019070897872799924, guid: 8a4a2117e60db2b4a978673dc1188659, type: 3}
       propertyPath: m_LocalPosition.x
       value: -7.44
       objectReference: {fileID: 0}
@@ -1417,6 +1409,22 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6928520175098660295, guid: 9c31d3ab2621e5c4fb9667a75ddd952d, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9072418731673048524, guid: 9c31d3ab2621e5c4fb9667a75ddd952d, type: 3}
+      propertyPath: m_Color.a
+      value: 0.59607846
+      objectReference: {fileID: 0}
+    - target: {fileID: 9072418731673048524, guid: 9c31d3ab2621e5c4fb9667a75ddd952d, type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9072418731673048524, guid: 9c31d3ab2621e5c4fb9667a75ddd952d, type: 3}
+      propertyPath: m_Color.g
+      value: 0.97092533
+      objectReference: {fileID: 0}
+    - target: {fileID: 9072418731673048524, guid: 9c31d3ab2621e5c4fb9667a75ddd952d, type: 3}
+      propertyPath: m_Color.r
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []

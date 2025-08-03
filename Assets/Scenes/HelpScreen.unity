@@ -655,8 +655,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: This is ted
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: c873b0b32b49dc747912c0a00b6b205a, type: 2}
+  m_sharedMaterial: {fileID: 7075984921410524697, guid: c873b0b32b49dc747912c0a00b6b205a, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -791,8 +791,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: 'ted also likes to give jump boosts [Shift]'
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: c873b0b32b49dc747912c0a00b6b205a, type: 2}
+  m_sharedMaterial: {fileID: 7075984921410524697, guid: c873b0b32b49dc747912c0a00b6b205a, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -1014,8 +1014,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: 'sometimes ted interacts with things [e]'
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: c873b0b32b49dc747912c0a00b6b205a, type: 2}
+  m_sharedMaterial: {fileID: 7075984921410524697, guid: c873b0b32b49dc747912c0a00b6b205a, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -1571,8 +1571,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: 'ted likes to move [a] - [d]'
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: c873b0b32b49dc747912c0a00b6b205a, type: 2}
+  m_sharedMaterial: {fileID: 7075984921410524697, guid: c873b0b32b49dc747912c0a00b6b205a, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -1949,8 +1949,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: restarts the level
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: c873b0b32b49dc747912c0a00b6b205a, type: 2}
+  m_sharedMaterial: {fileID: 7075984921410524697, guid: c873b0b32b49dc747912c0a00b6b205a, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -2393,8 +2393,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: 'ted really likes to jump [Space]'
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: c873b0b32b49dc747912c0a00b6b205a, type: 2}
+  m_sharedMaterial: {fileID: 7075984921410524697, guid: c873b0b32b49dc747912c0a00b6b205a, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -2673,8 +2673,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: 'occasionally ted throws stuff [e] + [mouse]'
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: c873b0b32b49dc747912c0a00b6b205a, type: 2}
+  m_sharedMaterial: {fileID: 7075984921410524697, guid: c873b0b32b49dc747912c0a00b6b205a, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []

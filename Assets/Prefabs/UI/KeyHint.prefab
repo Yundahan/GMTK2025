@@ -60,7 +60,7 @@ Canvas:
   m_AdditionalShaderChannelsFlag: 25
   m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 0
-  m_SortingOrder: 50
+  m_SortingOrder: 150
   m_TargetDisplay: 0
 --- !u!114 &3800030158271354493
 MonoBehaviour:
@@ -251,7 +251,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Press E ot pick up key
+  m_text: Press E to pick up key
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: c873b0b32b49dc747912c0a00b6b205a, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}

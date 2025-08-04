@@ -12,6 +12,11 @@ public class LevelButton : MonoBehaviour
 
     public void LoadLevel()
     {
+        if (!Simulation.Instance().IsSimulating())
+        {
+            Simulation.Instance().ToggleSimulation();
+        }
+
         SceneLoader.Instance().LoadScene(sceneName);
     }
 }

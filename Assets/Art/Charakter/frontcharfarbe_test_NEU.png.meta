@@ -1,25 +1,25 @@
 fileFormatVersion: 2
-guid: da22a7040db96f04ca292eeabb773984
+guid: 40b88433656c7a249a0aa1a2e1285fa0
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 546488878509486406
-    second: frontcharfarbe_0
+      213: 4198435157593081984
+    second: frontcharfarbe_test_NEU_0
   - first:
-      213: -1725440735771850288
-    second: frontcharfarbe_1
+      213: 6319482886657584930
+    second: frontcharfarbe_test_NEU_1
   - first:
-      213: 3251767679760336602
-    second: frontcharfarbe_2
+      213: 8913639268441502107
+    second: frontcharfarbe_test_NEU_2
   - first:
-      213: 3612325881091290605
-    second: frontcharfarbe_3
+      213: 8361108669333477078
+    second: frontcharfarbe_test_NEU_3
   - first:
-      213: -1246369171855623993
-    second: frontcharfarbe_4
+      213: -7074226048463981296
+    second: frontcharfarbe_test_NEU_4
   - first:
-      213: 327922623114063364
-    second: frontcharfarbe_5
+      213: 1825348293386515460
+    second: frontcharfarbe_test_NEU_5
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -128,7 +128,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: frontcharfarbe_0
+      name: frontcharfarbe_test_NEU_0
       rect:
         serializedVersion: 2
         x: 62
@@ -143,14 +143,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 64172455db4859700800000000000000
-      internalID: 546488878509486406
+      spriteID: 088c8d41886d34a30800000000000000
+      internalID: 4198435157593081984
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: frontcharfarbe_1
+      name: frontcharfarbe_test_NEU_1
       rect:
         serializedVersion: 2
         x: 539
@@ -165,20 +165,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 0d98457eac00e08e0800000000000000
-      internalID: -1725440735771850288
+      spriteID: 22fa26f043053b750800000000000000
+      internalID: 6319482886657584930
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: frontcharfarbe_2
+      name: frontcharfarbe_test_NEU_2
       rect:
         serializedVersion: 2
         x: 613
-        y: 535
-        width: 401
-        height: 500
+        y: 534
+        width: 382
+        height: 468
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -187,20 +187,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: ad60634e979902d20800000000000000
-      internalID: 3251767679760336602
+      spriteID: b91bd6b20bb93bb70800000000000000
+      internalID: 8913639268441502107
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: frontcharfarbe_3
+      name: frontcharfarbe_test_NEU_3
       rect:
         serializedVersion: 2
-        x: 142
-        y: 229
-        width: 68
-        height: 195
+        x: 141
+        y: 182
+        width: 83
+        height: 236
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -209,20 +209,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: de5756bff3f812230800000000000000
-      internalID: 3612325881091290605
+      spriteID: 6d69f042900a80470800000000000000
+      internalID: 8361108669333477078
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: frontcharfarbe_4
+      name: frontcharfarbe_test_NEU_4
       rect:
         serializedVersion: 2
-        x: 374
-        y: 228
-        width: 67
-        height: 197
+        x: 389
+        y: 220
+        width: 60
+        height: 205
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -231,14 +231,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 7c83c8c77d104bee0800000000000000
-      internalID: -1246369171855623993
+      spriteID: 0153d78c3ec43dd90800000000000000
+      internalID: -7074226048463981296
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: frontcharfarbe_5
+      name: frontcharfarbe_test_NEU_5
       rect:
         serializedVersion: 2
         x: 742
@@ -253,8 +253,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 40e278863e30d8400800000000000000
-      internalID: 327922623114063364
+      spriteID: 4043baa0a90f45910800000000000000
+      internalID: 1825348293386515460
       vertices: []
       indices: 
       edges: []
@@ -283,17 +283,17 @@ TextureImporter:
         rgba: 4278255615
     - name: lower Head
       guid: 14d0fe814ed5b0a44880ea57b99f5f65
-      position: {x: -114.70218, y: -514.22894, z: 1}
-      rotation: {x: 0, y: 0, z: 0.0034827613, w: 0.9999939}
-      length: 185.5912
+      position: {x: -114.70218, y: -514.229, z: 1}
+      rotation: {x: 0, y: 0, z: 0.003478463, w: 0.999994}
+      length: 185.59132
       parentId: 1
       color:
         serializedVersion: 2
         rgba: 4278255360
     - name: upper Head
       guid: 4fa2b56d76e19cc479ec1ce7ad915888
-      position: {x: 185.59126, y: -0.0015943403, z: 1}
-      rotation: {x: 0, y: 0, z: 0.0032712244, w: 0.9999947}
+      position: {x: 185.5914, y: 0.0000046477685, z: 1}
+      rotation: {x: 0, y: 0, z: 0.0032755232, w: 0.9999947}
       length: 286.1383
       parentId: 2
       color:
@@ -301,25 +301,25 @@ TextureImporter:
         rgba: 4294967040
     - name: upper Left Arm
       guid: ffa19b3e461b23e4e8bf1bd0f119ea5f
-      position: {x: -83.771355, y: -287.4012, z: -1}
+      position: {x: -83.771355, y: -287.40128, z: -1}
       rotation: {x: 0, y: 0, z: 0.99994224, w: -0.010751997}
-      length: 119.88535
+      length: 119.88526
       parentId: 1
       color:
         serializedVersion: 2
         rgba: 4294901760
     - name: middle Left Arm
       guid: 1fdee323f81377c4f9a6f98310bedc3f
-      position: {x: 119.88527, y: 0.000008749757, z: -1}
+      position: {x: 119.88518, y: 0.000010704191, z: -1}
       rotation: {x: 0, y: 0, z: 0.009783828, w: 0.9999522}
-      length: 94.16141
+      length: 94.16144
       parentId: 4
       color:
         serializedVersion: 2
         rgba: 4294902015
     - name: lower Left Arm
       guid: 2384de4a7b4efdc4e84d9bcfb87ff46f
-      position: {x: 94.16143, y: 0.000024472187, z: -1}
+      position: {x: 94.16146, y: 0.000026926808, z: -1}
       rotation: {x: 0, y: 0, z: 0.021419536, w: 0.9997706}
       length: 138.38794
       parentId: 5
@@ -328,26 +328,26 @@ TextureImporter:
         rgba: 4278223103
     - name: upper Right Arm
       guid: fdcd22fc15e261c4f966c0b8697f4dfb
-      position: {x: -229.40488, y: -511.65146, z: -1}
+      position: {x: -229.40488, y: -511.65152, z: -1}
       rotation: {x: 0, y: 0, z: 0.9986255, w: 0.05241374}
-      length: 98.48952
+      length: 98.48958
       parentId: 1
       color:
         serializedVersion: 2
         rgba: 4278255488
     - name: middle Right Arm
       guid: f4fbca33e5b0bf54ebb56f589e4ff6d4
-      position: {x: 98.489555, y: -0.000033601515, z: -1}
-      rotation: {x: 0, y: 0, z: 0.0524142, w: 0.9986255}
-      length: 60.573288
+      position: {x: 98.48962, y: -0.00008824725, z: -1}
+      rotation: {x: 0, y: 0, z: 0.052414663, w: 0.99862546}
+      length: 60.573257
       parentId: 7
       color:
         serializedVersion: 2
         rgba: 4286643968
     - name: lower Right Arm
       guid: 9374dcd8e1c7916499024ea75763ba2d
-      position: {x: 60.573257, y: 0.00006005439, z: -1}
-      rotation: {x: 0, y: 0, z: -0.02987415, w: 0.99955374}
+      position: {x: 60.573227, y: 0.000075599215, z: -1}
+      rotation: {x: 0, y: 0, z: -0.029874614, w: 0.9995537}
       length: 151.05846
       parentId: 8
       color:
@@ -357,14 +357,14 @@ TextureImporter:
       guid: f17088525047c764f846d4be749ef636
       position: {x: -104.37729, y: -77.818825, z: -2}
       rotation: {x: 0, y: 0, z: 0.99684775, w: -0.0793384}
-      length: 82.01839
+      length: 82.01842
       parentId: 0
       color:
         serializedVersion: 2
         rgba: 4294901888
     - name: lower Right Leg
       guid: 18c99d9e57bbb6946b97d6ecea63b3e9
-      position: {x: 82.01841, y: 0.00008981711, z: -2}
+      position: {x: 82.01844, y: 0.00008550129, z: -2}
       rotation: {x: 0, y: 0, z: -0.021810437, w: 0.9997621}
       length: 91.947975
       parentId: 10
@@ -375,14 +375,14 @@ TextureImporter:
       guid: 77f587f7455ec7b428dacb68f304f157
       position: {x: -110.579994, y: 136.04657, z: -2}
       rotation: {x: 0, y: 0, z: 0.9932932, w: 0.115622625}
-      length: 83.771385
+      length: 83.771454
       parentId: 0
       color:
         serializedVersion: 2
         rgba: 4278255615
     - name: lower Left Leg
       guid: 4d4cffefe894e494db0fc0f59a30cdfa
-      position: {x: 83.77145, y: -0.000018273278, z: -2}
+      position: {x: 83.771515, y: -0.00001803849, z: -2}
       rotation: {x: 0, y: 0, z: 0.1452549, w: 0.9893943}
       length: 90.2984
       parentId: 12
@@ -5083,12 +5083,12 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      frontcharfarbe_0: 546488878509486406
-      frontcharfarbe_1: -1725440735771850288
-      frontcharfarbe_2: 3251767679760336602
-      frontcharfarbe_3: 3612325881091290605
-      frontcharfarbe_4: -1246369171855623993
-      frontcharfarbe_5: 327922623114063364
+      frontcharfarbe_test_NEU_0: 4198435157593081984
+      frontcharfarbe_test_NEU_1: 6319482886657584930
+      frontcharfarbe_test_NEU_2: 8913639268441502107
+      frontcharfarbe_test_NEU_3: 8361108669333477078
+      frontcharfarbe_test_NEU_4: -7074226048463981296
+      frontcharfarbe_test_NEU_5: 1825348293386515460
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
